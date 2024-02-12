@@ -1,0 +1,17 @@
+## NAVBAR
+<div class="Navigation-module--navTabsWrapper--71a231">
+<a class="NavigationTab-module--link--88cdd6" href="/establecimientos/servicios-grupo-pelo/en-es/">Peluquería</a>
+<a class="NavigationTab-module--link--88cdd6" href="/establecimientos/servicios-grupo-facial/en-es/">Faciales</a>
+<a class="NavigationTab-module--link--88cdd6" href="/establecimientos/servicios-grupo-unas/en-es/">Uñas</a>
+<a class="NavigationTab-module--link--88cdd6" href="/establecimientos/servicios-grupo-depilacion/en-es/">Depilación</a>
+<a class="NavigationTab-module--link--88cdd6" href="/establecimientos/servicios-grupo-cuerpo/en-es/">Corporales</a>
+<a class="NavigationTab-module--link--88cdd6" href="/establecimientos/servicios-grupo-masaje/en-es/">Masaje</a>
+<a class="NavigationTab-module--link--88cdd6" href="/establecimientos/tratamiento-afeitado-barba,corte-de-pelo-hombre,tinte-hombre/oferta-tipo-local/en-es/">Hombre</a>
+<a class="NavigationTab-module--link--88cdd6 NavigationTab-module--single--345ae3" href="/tarjeta-regalo/">Tarjeta Regalo</a>
+<a class="NavigationTab-module--link--88cdd6 NavigationTab-module--single--345ae3" href="/in-the-glow/">Blog - In The Glow</a>
+</div>
+## Formulario registro e inicio de seción
+<div class="styles-module--headerLinks--e48f35">
+<a href="/partners/" class="styles-module--business--5fe8c7 styles-module--link--2ae5de" data-link-type="list_your_business_button">Para tu negocio</a>
+<a href="/accion-protegida/?route=/" class="styles-module--login--a706b4 styles-module--link--2ae5de" data-link-type="log_in_button">Inicio sesión</a>
+</div>
