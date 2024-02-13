@@ -1,0 +1,23 @@
+import { Category } from "./category.model";
+import { Company } from "./company.model";
+
+export interface Treatment {
+    id: number;
+
+    title: string;
+    price: number;
+    descriptionShort: string;
+    descriptionLong: string;
+    afterCate: string; // cuidados posteriores
+
+    durationInMin: number; // duracion en minutos
+    category: Category;
+    company: Company;
+
+
+
+
+    // A futuro
+    // subCategory: SubCategory;
+
+}
