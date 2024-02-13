@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
   templateUrl: './company-list.component.html',
   styleUrl: './company-list.component.css'
 })
+
 export class CompanyListComponent {
+  
 
 }
