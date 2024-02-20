@@ -1,1 +1,30 @@
-<p>treatment-detail works!</p>
+<button (click)="loadProduct()">Ver Tratamiento </button>
+
+<!--
+<div *ngIf="product">
+  <p><strong>Título:</strong> {{product.title}}</p>
+  <p><strong>Precio:</strong> {{product.price}} </p>
+</div>
+<div *ngIf="!product">
+ <p style="color:red;">No existe el producto.</p>
+</div>
+-->
+
+@if (tratamiento) {
+
+    <div>
+        Existe producto {{tratamiento.title}} con precio {{tratamiento.price}} €
+    </div>
+    @if (tratamiento.price < 50) {
+      <div style="color:green;">El tratamiento es barato</div>
+    } @else if (tratamiento.price < 100) {
+      <div style="color:blue;">El tratamiento es regular</div>
+    } @else {
+      <div style="color:red;">El producto es superior </div>
+    }
+
+} @else {
+  <p>No existe el producto.</p>
+}
+
+
