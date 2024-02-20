@@ -8,7 +8,7 @@ export interface Treatment {
     price: number;
     descriptionShort: string;
     descriptionLong: string;
-    afterCate: string; // cuidados posteriores
+    afterCare: string; // cuidados posteriores
 
     durationInMin: number; // duracion en minutos
     category: Category;

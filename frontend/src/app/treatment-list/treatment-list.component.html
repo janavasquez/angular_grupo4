@@ -1,1 +1,54 @@
-<p>treatment-list works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+
+      <h1 class="mt-5">Listado de Tratamientos <i class="bi bi-book"></i></h1>
+
+      <button class="btn btn-primary"
+      routerLink="/treatments/create">Crear producto</button>
+
+      <table class="table table-striped mt-5">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Tratamiento</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Cuidados</th>
+            <th scope="col">Duración</th>
+            <th scope="col">Categorías</th>
+            <th scope="col">Centro de Servicio</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for(treatment of treatments; track treatment.id) {
+          <tr>
+            <td>{{treatment.id}}</td>
+            <td>{{treatment.title}}</td>
+            <td>{{treatment.price}}</td>
+            <td>{{treatment.descriptionShort}}</td>
+            <td>{{treatment.afterCare}}</td>
+            <td>{{treatment.durationInMin}}</td>
+            <td>{{treatment.category}}</td>
+             <!-- Asociación Many To One -->
+             <td>{{treatment.company.name}}</td>
+            <td>
+              <button class="btn btn-success me-2" [routerLink]="['/treatments', treatment.id, 'detail']">
+                <i class="bi bi-eye"></i>
+                Ver detalle
+              </button>
+              <button class="btn btn-success me-2" [routerLink]="['/treatments', treatment.id, 'update']">
+                <i class="bi bi-pencil"></i>
+                Editar
+              </button>
+
+
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
