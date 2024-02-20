@@ -1,3 +1,22 @@
 import { Routes } from '@angular/router';
+import { TreatmentListComponent } from './treatment-list/treatment-list.component';
+import { TreatmentDetailComponent } from './treatment-detail/treatment-detail.component';
+import { HomeComponent } from './home/home.component';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+
+  {
+    path: '',
+    component: HomeComponent
+  },
+  // Listado de tratamientos
+  {
+    path: 'treatments',
+    component: TreatmentListComponent
+  },
+  // La pantalla de detalle de un solo tratamiento
+  {
+    path: 'treatments/:id/detail',
+    component: TreatmentDetailComponent
+  },
+];
