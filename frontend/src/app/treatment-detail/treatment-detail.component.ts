@@ -14,7 +14,7 @@ export class TreatmentDetailComponent {
     tratamiento: Treatment  | undefined;
   Treatment: { title: string; price: number; } | undefined;
 
-    loadProduct() {
+    loadtratamiento() {
       console.log("Se ha hecho clic en loadProduct");
 
       this.Treatment = {

@@ -1,14 +1,5 @@
-<button (click)="loadProduct()">Ver Tratamiento </button>
+<button (click)="loadtratamiento()">Ver Tratamiento </button>
 
-<!--
-<div *ngIf="product">
-  <p><strong>Título:</strong> {{product.title}}</p>
-  <p><strong>Precio:</strong> {{product.price}} </p>
-</div>
-<div *ngIf="!product">
- <p style="color:red;">No existe el producto.</p>
-</div>
--->
 
 @if (tratamiento) {
 
@@ -20,11 +11,11 @@
     } @else if (tratamiento.price < 100) {
       <div style="color:blue;">El tratamiento es regular</div>
     } @else {
-      <div style="color:red;">El producto es superior </div>
+      <div style="color:red;">El tratamiento es superior </div>
     }
 
 } @else {
-  <p>No existe el producto.</p>
+  <p>No existe el tratamiento.</p>
 }
 
 
