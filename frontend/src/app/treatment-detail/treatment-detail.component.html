@@ -1,21 +1,4 @@
-<button (click)="loadtratamiento()">Ver Tratamiento </button>
+<button>Ver Tratamiento </button>
 
-
-@if (tratamiento) {
-
-    <div>
-        Existe tratamiento {{tratamiento.title}} con precio {{tratamiento.price}} €
-    </div>
-    @if (tratamiento.price < 50) {
-      <div style="color:green;">El tratamiento es barato</div>
-    } @else if (tratamiento.price < 100) {
-      <div style="color:blue;">El tratamiento es regular</div>
-    } @else {
-      <div style="color:red;">El tratamiento es superior </div>
-    }
-
-} @else {
-  <p>No existe el tratamiento.</p>
-}
 
 
