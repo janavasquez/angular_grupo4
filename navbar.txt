@@ -1,4 +1,5 @@
 ## NAVBAR
+
 <div class="Navigation-module--navTabsWrapper--71a231">
 <a class="NavigationTab-module--link--88cdd6" href="/establecimientos/servicios-grupo-pelo/en-es/">Peluquería</a>
 <a class="NavigationTab-module--link--88cdd6" href="/establecimientos/servicios-grupo-facial/en-es/">Faciales</a>
@@ -10,8 +11,25 @@
 <a class="NavigationTab-module--link--88cdd6 NavigationTab-module--single--345ae3" href="/tarjeta-regalo/">Tarjeta Regalo</a>
 <a class="NavigationTab-module--link--88cdd6 NavigationTab-module--single--345ae3" href="/in-the-glow/">Blog - In The Glow</a>
 </div>
+
 ## Formulario registro e inicio de seción
+
 <div class="styles-module--headerLinks--e48f35">
 <a href="/partners/" class="styles-module--business--5fe8c7 styles-module--link--2ae5de" data-link-type="list_your_business_button">Para tu negocio</a>
 <a href="/accion-protegida/?route=/" class="styles-module--login--a706b4 styles-module--link--2ae5de" data-link-type="log_in_button">Inicio sesión</a>
 </div>
+
+## Selección de menus desplegables
+
+https://ng-bootstrap.github.io/#/components/dropdown/examples
+https://ng-bootstrap.github.io/#/components/dropdown/examples#navbar
+
+## Fuente de la letra
+
+https://fonts.google.com/
+
+## Lista con cards
+
+https://getbootstrap.com/docs/5.3/examples/album/
+
+
