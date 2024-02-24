@@ -1,4 +1,3 @@
-import { DatePipe } from '@angular/common';
 import { Treatment } from './../interfaces/treatment.model';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
@@ -7,7 +6,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-treatment-list',
   standalone: true,
-  imports: [HttpClientModule, RouterLink, DatePipe],
+  imports: [HttpClientModule, RouterLink],
   templateUrl: './treatment-list.component.html',
   styleUrl: './treatment-list.component.css'
 })

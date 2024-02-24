@@ -1,4 +1,5 @@
-export interface Company { // Centro
+export interface Company {
+ // Centro
   id: number;
 
   name: string;
@@ -6,4 +7,6 @@ export interface Company { // Centro
   street: string;
   city: string;
   postalCode: string;
+  values: string;
+  treatments: any;
 }

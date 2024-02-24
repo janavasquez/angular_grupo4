@@ -1,14 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
 
+      <h1 class="mt-5">Listado de establecimientos <i class="bi bi-shop"></i></h1>
 
+      <button class="btn btn-primary"
+      routerLink="/company/create">Crear establecimiento</button>
 
-<h1 class="mt-5">Listado de empresas <i class="bi bi-people-fill"></i> </h1>
       <table class="table table-striped mt-5">
         <thead>
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Nombre</th>
-            <th scope="col">Foto</th>
-            <th scope="col">Ubicacion</th>
-            <th scope="col">Valoracion</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">Código postal</th>
+            <th scope="col">Valoración</th>
           </tr>
         </thead>
+        <tbody>
+          @for(company of companies; track company.id) {
+          <tr>
+            <td>{{company.id}}</td>
+            <td>{{company.name}}</td>
+            <td>{{company.street}}</td>
+            <td>{{company.city}}</td>
+            <td>{{company.postalCode}}</td>
+            <td>{{company.values}}</td>
+
+            <!-- Asociación Many To One -->
+            <td>{{company.treatments.title}}</td>
+
+            <td>
+              <button class="btn btn-success me-2" [routerLink]="['/company', company.id, 'detail']">
+                <i class="bi bi-eye"></i>
+                Ver detalle
+              </button>
+              <button class="btn btn-success me-2" [routerLink]="['/company', company.id, 'update']">
+                <i class="bi bi-pencil"></i>
+                Editar
+              </button>
+
+
+            </td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+

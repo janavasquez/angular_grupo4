@@ -290,7 +290,12 @@
             "cif": "A12345678",
             "street": "Calle Gran Vía",
             "city": "Madrid",
-            "postalCode": "28001"
+            "postalCode": "28001",
+            "values": "5",
+            "treatments":{
+              "id":1,
+              "title":"Corte de Cabello para Hombres"
+            }
         },
         {
             "id": 2,
@@ -298,7 +303,11 @@
             "cif": "B23456789",
             "street": "Calle Alcalá",
             "city": "Madrid",
-            "postalCode": "28013"
+            "postalCode": "28013",
+            "treatments":{
+              "id": 2,
+              "title":"Corte de Cabello para Mujeres"
+            }
         },
         {
             "id": 3,
