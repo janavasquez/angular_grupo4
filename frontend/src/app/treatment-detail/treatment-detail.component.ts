@@ -11,6 +11,9 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
   styleUrl: './treatment-detail.component.css'
 })
 export class TreatmentDetailComponent implements OnInit{
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
   treatment: Treatment | undefined;
 
