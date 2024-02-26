@@ -44,9 +44,11 @@ export const routes: Routes = [
     path: 'company',
     component: CompanyListComponent
   },
+  /*
   {
-    // Pendiente diana
+      path: ...
   },
+  */
   {
     path: 'category',
     component: CategoryListComponent

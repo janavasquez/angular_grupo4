@@ -1,28 +1,15 @@
-import { NgIf } from '@angular/common';
-import { Treatment } from './../interfaces/treatment.model';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-treatment-detail',
   standalone: true,
-  imports: [NgIf],
+  imports: [],
   templateUrl: './treatment-detail.component.html',
   styleUrl: './treatment-detail.component.css'
 })
-export class TreatmentDetailComponent {
+export class TreatmentDetailComponent implements OnInit{
 
-    tratamiento: Treatment  | undefined;
-  Treatment: { title: string; price: number; } | undefined;
 
-    loadTratamiento() {
-      console.log("Se ha hecho clic en loadProduct");
-
-      this.Treatment = {
-        title: "corte y peinado",
-        price: 35
-      };
-      console.log(this.Treatment);
-    }
 
 }
 
