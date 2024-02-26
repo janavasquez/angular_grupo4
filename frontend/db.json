@@ -304,6 +304,7 @@
             "street": "Calle Alcalá",
             "city": "Madrid",
             "postalCode": "28013",
+            "values":"8",
             "treatments":{
               "id": 2,
               "title":"Corte de Cabello para Mujeres"
@@ -315,7 +316,12 @@
             "cif": "C34567890",
             "street": "Calle Princesa",
             "city": "Madrid",
-            "postalCode": "28008"
+            "postalCode": "28008",
+            "values":"10",
+            "treatments":{
+              "id":3,
+              "title":"Manicura y Pedicura Semipermanente"
+            }
         },
         {
             "id": 4,
@@ -323,7 +329,12 @@
             "cif": "D45678901",
             "street": "Calle Bravo Murillo",
             "city": "Madrid",
-            "postalCode": "28020"
+            "postalCode": "28020",
+            "values": "4",
+            "treatments":{
+              "id":4,
+              "title":"Depilación"
+            }
         },
         {
             "id": 5,
@@ -331,7 +342,13 @@
             "cif": "E56789012",
             "street": "Calle Atocha",
             "city": "Madrid",
-            "postalCode": "28012"
+            "postalCode": "28012",
+            "values": "6",
+            "treatments" :{
+              "id":5,
+              "title":"Manicura Clásica"
+
+            }
         },
         {
             "id": 6,
@@ -339,7 +356,12 @@
             "cif": "F67890123",
             "street": "Calle Alcalá",
             "city": "Madrid",
-            "postalCode": "28009"
+            "postalCode": "28009",
+            "values": "4",
+            "treatments" :{
+              "id": 6,
+              "title":"Pedicura Deluxe"
+            }
         },
         {
             "id": 7,
@@ -347,7 +369,13 @@
             "cif": "G78901234",
             "street": "Calle Segovia",
             "city": "Madrid",
-            "postalCode": "28005"
+            "postalCode": "28005",
+            "values":"10",
+            "treatments" :{
+              "id": 7,
+              "title": "Corte de Cabello para Niños"
+
+            }
         },
         {
             "id": 8,
@@ -355,7 +383,14 @@
             "cif": "H89012345",
             "street": "Calle Toledo",
             "city": "Madrid",
-            "postalCode": "28005"
+            "postalCode": "28005",
+            "values":"12",
+            "treatments":{
+              "id": 8,
+              "title":"Tratamiento Facial Relajante"
+
+            }
+
         },
         {
             "id": 9,
@@ -363,7 +398,12 @@
             "cif": "I90123456",
             "street": "Calle Hortaleza",
             "city": "Madrid",
-            "postalCode": "28004"
+            "postalCode": "28004",
+            "values":"15",
+            "treatments":{
+              "id":9,
+              "title":"Masaje de Espalda y Hombros"
+            }
         },
         {
             "id": 10,
@@ -371,7 +411,12 @@
             "cif": "J01234567",
             "street": "Calle Fuencarral",
             "city": "Madrid",
-            "postalCode": "28010"
+            "postalCode": "28010",
+            "values":"6",
+            "treatments":{
+              "id":10,
+              "title":"Tratamiento Capilar de Hidratación Profunda"
+            }
         }
     ],
     "categories": [
