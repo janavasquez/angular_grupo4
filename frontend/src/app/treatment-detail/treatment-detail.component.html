@@ -1,4 +1,23 @@
-<button>Ver Tratamiento </button>
-
-
-
+<div class="container mt-5 text-center">
+  <h1>Descripción del tratamiento</h1>
+  <div class="row">
+    <div class="col text-center" style="margin: 20px;">
+      @if (treatment) {
+      <div class="card mb-3 p-3 mb-2 bg-primary-subtle text-primary-emphasis" >
+        <span class="border border-danger-subtle"></span>
+        <div class="card-body">
+          <h5 class="card-title">{{ treatment.title }}</h5>
+          <p class="card-text">{{ treatment.descriptionLong }}</p>
+          <p class="card-text">Cuidados posteriores: {{ treatment.afterCare }}</p>
+          <p class="card-text">Categoria: {{ treatment.category.name }}.</p>
+          <p class="card-text">Duración: {{ treatment.durationInMin }} minutos.</p>
+          <p class="card-text">Precio: {{ treatment.price }}€</p>
+          <p class="card-text">{{ treatment.company.name }}</p>
+          <p class="card-text">Categoria: {{ treatment.category.name }}.</p>
+          <a href="#" class="btn btn-primary">Button</a>
+        </div>
+      </div>
+      }
+    </div>
+  </div>
+</div>
