@@ -6,6 +6,8 @@ import { CategoryListComponent } from './category-list/category-list.component';
 import { CategoryDetailComponent } from './category-detail/category-detail.component';
 import { TreatmentFormComponent } from './treatment-form/treatment-form.component';
 import { CompanyListComponent } from './company-list/company-list.component';
+import { CompanyDetailComponent } from './company-detail/company-detail.component';
+import { CompanyFormComponent } from './company-form/company-form.component';
 
 export const routes: Routes = [
 
@@ -41,14 +43,25 @@ export const routes: Routes = [
   },
   // Rutas componente company
   {
-    path: 'company',
+    path: 'companies',
     component: CompanyListComponent
   },
-  /*
   {
-      path: ...
+    path: 'companies/:id/detail',
+    component: CompanyDetailComponent
   },
-  */
+  {
+    path: 'companies/create',
+    component: CompanyFormComponent
+  },
+  {
+    path: 'companies/:id/update',
+    component: CompanyFormComponent
+  },
+  {
+    path: 'companies/:id/delete',
+    component: CompanyFormComponent
+  },
   {
     path: 'category',
     component: CategoryListComponent
