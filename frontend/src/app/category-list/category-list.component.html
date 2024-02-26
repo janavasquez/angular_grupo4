@@ -1,1 +1,28 @@
-<p>category-list works!</p>
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+    <h1 class="mb-5 mt-1">CATEGORIAS</h1>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+      @for (category of categories; track category.id) {
+          <div class="col">
+            <div class="card shadow-sm">
+
+              <img class="bd-placeholder-img card-img-top" width="100%" height="225"
+              src="/assets/Img/uñas.png">
+
+              <div class="card-body">
+                <p class="card-text">{{categories}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/category', category.id, 'detail']">Ver</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Editar</button>
+                  </div>
+                  <small class="text-body-secondary">{{category}}</small>
+                </div>
+              </div>
+            </div>
+          </div>
+      }
+    </div>
+  </div>
+</div>
