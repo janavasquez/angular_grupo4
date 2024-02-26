@@ -8,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './treatment-detail.component.css'
 })
 export class TreatmentDetailComponent implements OnInit{
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
 
 
