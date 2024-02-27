@@ -2,6 +2,7 @@ import { Category } from "./category.model";
 import { Company } from "./company.model";
 
 export interface Treatment {
+
     id: number;
 
     title: string;
