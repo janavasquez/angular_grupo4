@@ -2,18 +2,16 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Treatment } from './../interfaces/treatment.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-treatment-detail',
   standalone: true,
-  imports: [HttpClientModule, RouterLink],
+  imports: [HttpClientModule, RouterLink, NgbCarouselModule],
   templateUrl: './treatment-detail.component.html',
   styleUrl: './treatment-detail.component.css'
 })
 export class TreatmentDetailComponent implements OnInit{
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
 
   treatment: Treatment | undefined;
 

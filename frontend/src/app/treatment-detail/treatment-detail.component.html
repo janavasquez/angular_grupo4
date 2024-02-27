@@ -1,23 +1,78 @@
 <div class="container mt-5 text-center">
   <h1>Descripción del tratamiento</h1>
   <div class="row">
-    <div class="col text-center" style="margin: 20px;">
+    <div class="col text-center" style="margin: 20px">
+
       @if (treatment) {
-      <div class="card mb-3 p-3 mb-2 bg-primary-subtle text-primary-emphasis" >
+
+      <div class="card mb-3 p-3 mb-2 bg-primary-subtle text-primary-emphasis">
         <span class="border border-danger-subtle"></span>
         <div class="card-body">
-          <h5 class="card-title">{{ treatment.title }}</h5>
-          <p class="card-text">{{ treatment.descriptionLong }}</p>
-          <p class="card-text">Cuidados posteriores: {{ treatment.afterCare }}</p>
-          <p class="card-text">Categoria: {{ treatment.category.name }}.</p>
-          <p class="card-text">Duración: {{ treatment.durationInMin }} minutos.</p>
-          <p class="card-text">Precio: {{ treatment.price }}€</p>
-          <p class="card-text">{{ treatment.company.name }}</p>
-          <p class="card-text">Categoria: {{ treatment.category.name }}.</p>
-          <a href="#" class="btn btn-primary">Button</a>
+          <div class="container mt-5">
+            <div class="row">
+              <div class="col-4 text-center col-md-4 col-sm-12 text-center">
+                @if (treatment.images) {
+                <ngb-carousel>
+                  @for (image of treatment.images; track image){
+                  <ng-template ngbSlide>
+                    <div class="picsum-img-wrapper">
+                      <img [src]="image" alt="Random first slide" />
+                    </div>
+                    <div class="carousel-caption">
+                      <h3>First slide label</h3>
+                      <p>
+                        Nulla vitae elit libero, a pharetra augue mollis
+                        interdum.
+                      </p>
+                    </div>
+                  </ng-template>
+                  }
+                </ngb-carousel>
+                }
+              </div>
+              <div class="col-8">
+                @if(treatment){
+                <div class="container px-4 py-5" id="icon-grid">
+                  <h2 class="pb-2 border-bottom">
+                    Fabricante con id {{ treatment.id }}
+                  </h2>
+
+                  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
+                    <div class="col d-flex align-items-start">
+                      <i
+                        class="bi bi-geo-alt text-info flex-shrink-0 me-3 fs-2"
+                      ></i>
+                      <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                          Nombre
+                        </h3>
+                        <p>{{ treatment.title }}</p>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <i
+                        class="bi bi-phone text-info flex-shrink-0 me-3 fs-2"
+                      ></i>
+                      <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                          Año de fundación
+                        </h3>
+                        <p>{{ treatment.descriptionLong }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                } @else {
+                <p>Tratamiento no encontrado.</p>
+                }
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       }
+
     </div>
   </div>
 </div>
