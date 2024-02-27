@@ -33,10 +33,7 @@
               <div class="col-8">
                 @if(treatment){
                 <div class="container px-4 py-5" id="icon-grid">
-                  <h2 class="pb-2 border-bottom">
-                    Fabricante con id {{ treatment.id }}
-                  </h2>
-
+                  <h2 class="pb-2 border-bottom">{{ treatment.title }}</h2>
                   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
                     <div class="col d-flex align-items-start">
                       <i
@@ -44,9 +41,9 @@
                       ></i>
                       <div>
                         <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                          Nombre
+                          Descripción
                         </h3>
-                        <p>{{ treatment.title }}</p>
+                        <p>{{ treatment.descriptionLong }}</p>
                       </div>
                     </div>
                     <div class="col d-flex align-items-start">
@@ -55,9 +52,53 @@
                       ></i>
                       <div>
                         <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
-                          Año de fundación
+                          Cuidados posteriores
                         </h3>
-                        <p>{{ treatment.descriptionLong }}</p>
+                        <p>{{ treatment.afterCare }}</p>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <i
+                        class="bi bi-phone text-info flex-shrink-0 me-3 fs-2"
+                      ></i>
+                      <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                          Duración
+                        </h3>
+                        <p>{{ treatment.durationInMin }} minutos</p>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <i
+                        class="bi bi-phone text-info flex-shrink-0 me-3 fs-2"
+                      ></i>
+                      <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                          Precio
+                        </h3>
+                        <p>{{ treatment.price }}€</p>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <i
+                        class="bi bi-phone text-info flex-shrink-0 me-3 fs-2"
+                      ></i>
+                      <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                          Centro de belleza
+                        </h3>
+                        <p>{{ treatment.company.name }}</p>
+                      </div>
+                    </div>
+                    <div class="col d-flex align-items-start">
+                      <i
+                        class="bi bi-phone text-info flex-shrink-0 me-3 fs-2"
+                      ></i>
+                      <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                          Categoria
+                        </h3>
+                        <p>{{ treatment.category.name }}</p>
                       </div>
                     </div>
                   </div>
