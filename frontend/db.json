@@ -116,6 +116,11 @@
             "id": 1,
             "title": "Corte de Cabello para Hombres",
             "price": 25,
+            "images": [
+              "https://picsum.photos/id/944/900/500",
+              "https://picsum.photos/id/1011/900/500",
+              "https://picsum.photos/id/984/900/500"
+            ],
             "descriptionShort": "Obtén un corte de cabello moderno y elegante diseñado para hombres.",
             "descriptionLong": "Transforma tu apariencia con nuestro servicio de corte de cabello para hombres, donde nuestros estilistas experimentados te darán un corte de cabello que complemente tus rasgos faciales y tu estilo personal. Este servicio incluye lavado, corte y estilizado.",
             "afterCare": "Después de tu corte de cabello, usa productos de estilizado recomendados por tu estilista para mantener tu look deseado.",
@@ -133,6 +138,11 @@
             "id": 2,
             "title": "Corte de Cabello para Mujeres",
             "price": 35,
+            "images": [
+              "https://picsum.photos/id/944/900/500",
+              "https://picsum.photos/id/1011/900/500",
+              "https://picsum.photos/id/984/900/500"
+            ],
             "descriptionShort": "Refresca tu apariencia con una sesión de corte y estilizado para mujeres.",
             "descriptionLong": "Transforma tu cabello con nuestro servicio de corte de cabello y estilizado para mujeres, donde nuestros talentosos estilistas te darán un corte de cabello personalizado y lo terminarán con técnicas de estilizado para adaptarse a tus preferencias. Este servicio incluye lavado, corte y secado con secadora.",
             "afterCare": "Después de tu corte de cabello y estilizado, usa productos profesionales para el cuidado del cabello recomendados por tu estilista para mantener tu nuevo look.",
@@ -150,6 +160,11 @@
             "id": 3,
             "title": "Manicura y Pedicura Semipermanente",
             "price": 60,
+            "images": [
+              "https://picsum.photos/id/944/900/500",
+              "https://picsum.photos/id/1011/900/500",
+              "https://picsum.photos/id/984/900/500"
+            ],
             "descriptionShort": "Disfruta de una sesión relajante de manicura y pedicura con esmalte semipermanente.",
             "descriptionLong": "Date un capricho con nuestro tratamiento de manicura y pedicura semipermanente, donde nuestros técnicos expertos te mimarán las manos y los pies. Este tratamiento incluye limado de uñas, cuidado de cutículas, masaje y aplicación de esmalte semipermanente en una amplia gama de colores.",
             "afterCare": "Después de tu manicura y pedicura semipermanente, evita actividades que puedan dañar tus uñas y aplica aceite de cutícula regularmente para mantenerlas hidratadas.",
@@ -167,6 +182,11 @@
             "id": 4,
             "title": "Depilación",
             "price": 40,
+            "images": [
+              "https://picsum.photos/id/944/900/500",
+              "https://picsum.photos/id/1011/900/500",
+              "https://picsum.photos/id/984/900/500"
+            ],
             "descriptionShort": "Consigue una piel suave y libre de vello con nuestro servicio de depilación.",
             "descriptionLong": "Di adiós al vello no deseado con nuestro servicio de depilación. Desde piernas hasta áreas íntimas, nuestros habilidosos esteticistas garantizarán una experiencia de depilación cómoda y efectiva, dejando tu piel suave y libre de vello durante semanas.",
             "afterCare": "Después de tu sesión de depilación, evita duchas calientes y exposición al sol para prevenir irritaciones, y humecta tu piel regularmente para mantener su suavidad.",
@@ -184,6 +204,11 @@
             "id": 5,
             "title": "Manicura Clásica",
             "price": 20,
+            "images": [
+              "https://picsum.photos/id/944/900/500",
+              "https://picsum.photos/id/1011/900/500",
+              "https://picsum.photos/id/984/900/500"
+            ],
             "descriptionShort": "Embellece tus uñas con nuestra manicura clásica.",
             "descriptionLong": "Luce unas uñas impecables con nuestra manicura clásica, donde nuestros expertos técnicos cuidarán de tus manos con limado de uñas, cuidado de cutículas, masaje y esmaltado con tu color favorito.",
             "afterCare": "Después de tu manicura clásica, evita actividades que puedan dañar tus uñas y aplica crema de manos regularmente para mantenerlas hidratadas y suaves.",
@@ -201,6 +226,11 @@
             "id": 6,
             "title": "Pedicura Deluxe",
             "price": 40,
+            "images": [
+              "https://picsum.photos/id/944/900/500",
+              "https://picsum.photos/id/1011/900/500",
+              "https://picsum.photos/id/984/900/500"
+            ],
             "descriptionShort": "Mima tus pies con nuestra pedicura deluxe.",
             "descriptionLong": "Date un capricho con nuestra pedicura deluxe, donde nuestros técnicos expertos cuidarán de tus pies con un baño relajante, limado de uñas, eliminación de durezas, exfoliación, masaje y esmaltado. Saldrás con los pies suaves, relajados y perfectamente cuidados.",
             "afterCare": "Después de tu pedicura deluxe, evita caminar descalzo en superficies ásperas y usa sandalias para proteger tus uñas recién esmaltadas.",
@@ -218,6 +248,11 @@
             "id": 7,
             "title": "Corte de Cabello para Niños",
             "price": 15,
+            "images": [
+              "https://picsum.photos/id/944/900/500",
+              "https://picsum.photos/id/1011/900/500",
+              "https://picsum.photos/id/984/900/500"
+            ],
             "descriptionShort": "Dale a tu hijo un corte de cabello divertido y moderno.",
             "descriptionLong": "Haz que la hora del corte de cabello sea divertida para tu hijo con nuestro servicio de corte de cabello para niños, donde nuestros estilistas expertos crearán un look moderno y atractivo para tu pequeño. Este servicio incluye lavado, corte y peinado.",
             "afterCare": "Después del corte de cabello de tu hijo, usa productos suaves y sin alcohol para el cuidado del cabello y evita el uso excesivo de productos de estilizado.",
@@ -235,6 +270,11 @@
             "id": 8,
             "title": "Tratamiento Facial Relajante",
             "price": 50,
+            "images": [
+              "https://picsum.photos/id/944/900/500",
+              "https://picsum.photos/id/1011/900/500",
+              "https://picsum.photos/id/984/900/500"
+            ],
             "descriptionShort": "Mima tu piel con nuestro tratamiento facial relajante.",
             "descriptionLong": "Dale a tu piel el cuidado que se merece con nuestro tratamiento facial relajante, donde nuestros esteticistas expertos usarán productos de alta calidad para limpiar, exfoliar y nutrir tu piel. Este tratamiento incluye masaje facial para una experiencia completa de relajación y renovación.",
             "afterCare": "Después de tu tratamiento facial, evita exponer tu piel al sol directo y usa protector solar diariamente para protegerla de los daños del sol.",
@@ -252,6 +292,11 @@
             "id": 9,
             "title": "Masaje de Espalda y Hombros",
             "price": 40,
+            "images": [
+              "https://picsum.photos/id/944/900/500",
+              "https://picsum.photos/id/1011/900/500",
+              "https://picsum.photos/id/984/900/500"
+            ],
             "descriptionShort": "Alivia la tensión y el estrés con nuestro masaje de espalda y hombros.",
             "descriptionLong": "Relájate y desconecta con nuestro masaje de espalda y hombros, donde nuestros terapeutas expertos usarán técnicas de masaje específicas para aliviar la tensión y el estrés acumulados en esta área. Este masaje te dejará sintiéndote renovado y revitalizado.",
             "afterCare": "Después de tu masaje de espalda y hombros, bebe mucha agua para ayudar a eliminar las toxinas liberadas durante el masaje y evita actividades que puedan tensar los músculos.",
@@ -269,6 +314,11 @@
             "id": 10,
             "title": "Tratamiento Capilar de Hidratación Profunda",
             "price": 45,
+            "images": [
+              "https://picsum.photos/id/944/900/500",
+              "https://picsum.photos/id/1011/900/500",
+              "https://picsum.photos/id/984/900/500"
+            ],
             "descriptionShort": "Restaura la salud y el brillo de tu cabello con nuestro tratamiento capilar de hidratación profunda.",
             "descriptionLong": "Revive tu cabello con nuestro tratamiento capilar de hidratación profunda, diseñado para restaurar la salud y el brillo de tu cabello. Nuestros productos nutritivos y revitalizantes penetrarán en cada hebra de tu cabello, dejándolo suave, sedoso y completamente hidratado.",
             "afterCare": "Después de tu tratamiento capilar, usa productos de cuidado del cabello ricos en nutrientes para mantener los beneficios de la hidratación y evita el uso excesivo de herramientas de calor.",
