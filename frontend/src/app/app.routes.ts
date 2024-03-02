@@ -8,6 +8,8 @@ import { TreatmentFormComponent } from './treatment-form/treatment-form.componen
 import { CompanyListComponent } from './company-list/company-list.component';
 import { CompanyDetailComponent } from './company-detail/company-detail.component';
 import { CompanyFormComponent } from './company-form/company-form.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 export const routes: Routes = [
 
@@ -69,5 +71,13 @@ export const routes: Routes = [
   {
     path: 'category/:id',
     component: CategoryDetailComponent
+  },
+  {
+    path: 'users',
+    component: UserListComponent
+  },
+  {
+    path: 'users/:id',
+    component: UserDetailComponent
   }
 ];

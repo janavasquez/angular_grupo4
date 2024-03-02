@@ -1,51 +1,55 @@
 <div class="container">
     <div class="row">
-      <div class="col-12">
-  
-        <h1 class="mt-5">Listado de Authors <i class="bi bi-people-fill"></i> </h1>
-        <table class="table table-striped mt-5">
-          <thead>
-            <tr>
-              <th scope="col">Id</th>
-              <th scope="col">Nombre Completo</th>
-              <th scope="col">Teléfono</th>
-              <th scope="col">Día de inscripción</th>
-              <th scope="col">dni</th>
-              <th scope="col">Contraseña</th>
-              <th scope="col">Dirección</th>ç
-              <th scope="col">Ciudad</th>
-              <th scope="col">Código postal</th>
-            </tr>
-          </thead>
-          <tbody>
-            @for(user of users; track user.id) {
-            <tr>
-              <td>{{user.id}}</td>
-              <td>
-                <a [routerLink]="['/users', user.id, 'detalle']">
-                  
-                </a>
-              </td>
-              <td>{{user.fullName}}</td>
-              <td>{{user.email}}</td>
-              <td>{{user.registerDate | date:'dd/MM/yy'}}</td>
-              <td>{{user.city}}</td>
-              <td>
-  
-                <button class="btn btn-success me-2 my-2" [routerLink]="['/user', user.id, 'detalle']">
-                  <i class="bi bi-eye"></i>
-                  Ver detalle
-                </button>
-  
-                <button class="btn btn-danger" (click)="deleteUsers(user.id)">
-                  <i class="bi bi-trash"></i> Borrar
-                </button>
-  
-              </td>
-            </tr>
-            }
-          </tbody>
-        </table>
-      </div>
+        <div class="col-12">
+
+            <h1 class="mt-5" style="color: rgb(140, 0, 255);">Usuarios registrados <i class="bi bi-people-fill"></i> </h1>
+            <table class="table table-striped mt-5">
+                <style>
+                    th {
+                        background-color: rgb(140, 0, 255); /* Color de fondo gris oscuro */
+                        color: white; /* Color del texto blanco */
+                        /* Añade otros estilos según sea necesario */
+                    }
+                </style>
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre Completo</th>
+                        <th scope="col">Correo electrónico</th>
+                        <th scope="col">Fecha de Inscripción</th>
+                        <th scope="col">Ciudad</th>
+                        <th scope="col">Dirección</th>
+                        <th scope="col">Código postal</th>
+                        <th scope="col">Centros</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for(user of users; track user) {
+                    <tr>
+                        <td>{{user.id}}</td>
+                        <td>{{user.fullName}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.registerDate | date:'dd/MM/yyyy'}}</td>
+                        <td>{{user.city}}</td>
+                        <td>{{user.street}}</td>
+                        <td>{{user.postalCode}}</td>
+                        <td>
+                            <style>
+                                .mi-boton-personalizado {
+                                    background-color: rgb(140, 0, 255); /* Color de fondo violeta */
+                                    color: #ffffff; /* Color del texto blanco */
+                                    /* Otros estilos según sea necesario */
+                                }
+                            </style>
+                            <button class="btn mi-boton-personalizado me-2 my-2" [routerLink]="['/users/:id']">
+                                <i class="bi bi-eye"></i>
+                                Ver detalle
+                            </button>
+                        </td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
-  </div>
+</div>

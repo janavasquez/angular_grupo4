@@ -1,38 +1,23 @@
-import { DatePipe } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { DatePipe, NgFor } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { User } from '../interfaces/user.model';
-import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [RouterLink, DatePipe, HttpClientModule],
+  imports: [HttpClientModule,RouterLink, NgFor,DatePipe],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.css'
 })
-export class UserListComponent {
+export class UserListComponent implements OnInit{
+users: User[] = [];
 
-  users: User[] = [];
-
-  constructor(private userService: UserService) {}
+constructor(private http: HttpClient){}
 
   ngOnInit(): void {
-    this.loadAuthors();
-  }
-  loadAuthors() {
-    this.userService.findAll()
-          .subscribe(users => this.users = users);
-  }
-  deleteAuthor(id: string | number) {
-    // 1. mostrar un confirm que pregunte si quiere borrar
-    const remove: boolean = confirm("¿Quiere borrar el autor de verdad?");
-
-    if(!remove) return; // si el usuario no ha confirmado entonces no se borra
-
-    this.userService.deleteById(id).subscribe(() => {
-        this.loadAuthors(); // refresca la tabla para que desaparezca el autor borrado
-    });
+    this.http.get<User[]>('http://localhost:3000/users')
+    .subscribe(user => this.users = user);
   }
 }
