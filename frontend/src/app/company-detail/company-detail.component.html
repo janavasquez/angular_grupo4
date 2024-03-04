@@ -1,1 +1,18 @@
 <p>company-detail works!</p>
+@if (company) {
+
+  <div [ngClass]="company.active ? 'is-active' : 'is-not-active'">
+    <p><strong>ID:</strong> {{company.id}}</p>
+    <p><strong>Name:</strong> {{company.Name}}</p>
+    <p><strong>Cif:</strong> {{company.cif}}</p>
+    <p><strong>Street:</strong> {{company.nif}}</p>
+    <p><strong>City:</strong> {{company.city}}</p>
+    <p><strong>PostalCode:</strong> {{company.PostalCode}}</p>
+    <p><strong>Values:</strong> {{company.values}}</p>
+    <p><strong>Treatments:</strong> {{company.Treatments}}</p>
+
+  </div>
+
+} @else {
+  
+}
