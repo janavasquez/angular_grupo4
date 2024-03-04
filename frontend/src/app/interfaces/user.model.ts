@@ -1,4 +1,5 @@
 export interface User {
+
   id: number;
 
   fullName: string;
@@ -11,5 +12,7 @@ export interface User {
   street: string;
   city: string;
   postalCode: string;
+  photo:string;
+  
 
 }

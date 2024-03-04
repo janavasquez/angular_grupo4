@@ -1,60 +1,84 @@
-<div class="fusion-row">
-    <div class="fusion-one-third one_third fusion-layout-column fusion-spacing-yes col-color-hover"
-        style="margin-top:0px;margin-bottom:20px;">
-        <div class="fusion-column-wrapper"><span
-                class="fusion-imageframe imageframe-none imageframe-1 display-block full-image grey-hover"><a
-                    class="fusion-no-lightbox" href="https://www.marcoaldany.com/servicios/peluqueria/corte/"
-                    target="_self"> <img alt=""
-                        src="https://www.marcoaldany.com/wp-content/uploads/2018/09/servicio-corte-2.png"
-                        class="img-responsive"></a></span>
-            <ul class="fusion-checklist fusion-checklist-1 service service--corte"
-                style="font-size:13px;line-height:22.1px;">
-                <li class="fusion-li-item"><span style="height:22.1px;width:22.1px;margin-right:9.1px;"
-                        class="icon-wrapper circle-no"><i class="fusion-li-icon fa fa-angle-right"
-                            style="color:#151515;"></i></span>
-                    <div class="fusion-li-item-content" style="margin-left:31.2px;">
-                        <p>Corte de pelo mujer</p>
-                    </div>
-                </li>
-                <li class="fusion-li-item"><span style="height:22.1px;width:22.1px;margin-right:9.1px;"
-                        class="icon-wrapper circle-no"><i class="fusion-li-icon fa fa-angle-right"
-                            style="color:#151515;"></i></span>
-                    <div class="fusion-li-item-content" style="margin-left:31.2px;">
-                        <p>Corte de pelo hombre</p>
-                    </div>
-                </li>
-                <li class="fusion-li-item"><span style="height:22.1px;width:22.1px;margin-right:9.1px;"
-                        class="icon-wrapper circle-no"><i class="fusion-li-icon fa fa-angle-right"
-                            style="color:#151515;"></i></span>
-                    <div class="fusion-li-item-content" style="margin-left:31.2px;">
-                        <p>Corte de pelo infantil</p>
-                    </div>
-                </li>
-                <li class="fusion-li-item"><span style="height:22.1px;width:22.1px;margin-right:9.1px;"
-                        class="icon-wrapper circle-no"><i class="fusion-li-icon fa fa-angle-right"
-                            style="color:#151515;"></i></span>
-                    <div class="fusion-li-item-content" style="margin-left:31.2px;">
-                        <p>Corte de puntas</p>
-                    </div>
-                </li>
-                <li class="fusion-li-item"><span style="height:22.1px;width:22.1px;margin-right:9.1px;"
-                        class="icon-wrapper circle-no"><i class="fusion-li-icon fa fa-angle-right"
-                            style="color:#151515;"></i></span>
-                    <div class="fusion-li-item-content" style="margin-left:31.2px;">
-                        <p>Diseño barba</p>
-                    </div>
-                </li>
-                <li class="fusion-li-item"><span style="height:22.1px;width:22.1px;margin-right:9.1px;"
-                        class="icon-wrapper circle-no"><i class="fusion-li-icon fa fa-angle-right"
-                            style="color:#151515;"></i></span>
-                    <div class="fusion-li-item-content" style="margin-left:31.2px;">
-                        <p class="shop">
-                            <a href="https://www.marcoaldany.com/servicios/ofertas/peluqueria/">Ver ofertas </a>
-                        </p>
-                    </div>
-                </li>
-            </ul>
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-4 text-center">
+  
+        <div class="px-4 py-5">
+            @if (user && user.photo && user.photo.length > 0){
+              <img class="img-fluid" [src]="user.photo" alt="Foto user">
+  
+              <div>
+                <button class="btn btn-danger my-2" (click)="deleteUser()">
+                  <i class="bi bi-trash"></i> Borrar
+                </button>
+              </div>
+  
+            } @else {
+              <img class="img-fluid" src="https://ui-avatars.com/api/?name=A&size=256">
+            }
+      </div>
+  
+      </div>
+      <div class="col-8">
+  
+        @if(user){
+        <div class="container px-4 py-5" id="icon-grid">
+          <h2 class="pb-2 border-bottom">Usuario con id {{user.id}}</h2>
+  
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
+
+
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-geo-alt text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Nombre completo</h3>
+                <p>{{user.fullName}}</p>
+              </div>
+            </div>
+
+
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-phone text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Correo electrónico</h3>
+                <p>{{user.email}}</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Día de registro</h3>
+                <p>{{user.registerDate}}</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Ciudad</h3>
+                <p>{{user.city}}</p>
+              </div>
+              <div class="col d-flex align-items-start">
+                <i class="bi bi-geo-alt text-info flex-shrink-0 me-3 fs-2"></i>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Dirección</h3>
+                  <p>{{user.street}}</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <i class="bi bi-geo-alt text-info flex-shrink-0 me-3 fs-2"></i>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Código postal</h3>
+                  <p>{{user.postalCode}}</p>
+                </div>
+              </div>
+              
+            </div>
+          </div>
         </div>
+  
+      } @else {
+        <p>user no encontrado.</p>
+      }
+      </div>
     </div>
-    
-</div>
+  </div>
+  
