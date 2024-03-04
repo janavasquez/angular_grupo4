@@ -1,13 +1,12 @@
 <div class="container mt-5 text-center">
-  <h1>Descripción del tratamiento</h1>
+  <h1 class="mt-5 text-center text-primary-emphasis">Descripción del tratamiento<i class="bi bi-card-checklist"></i></h1>
   <div class="row">
-    <div class="col text-center" style="margin: 20px">
+    <div class="col text-center" style="margin: 5px">
 
       @if (treatment) {
 
-      <div class="card mb-3 p-3 mb-2 bg-primary-subtle text-primary-emphasis">
-        <span class="border border-danger-subtle"></span>
-        <div class="card-body">
+      <div class="card mb-3 bg-success-subtle text-primary-emphasis">
+        <div class="card-body card mb-3 bg-success-subtle text-primary-emphasis">
           <div class="container mt-5">
             <div class="row">
               <div class="col-4 text-center col-md-4 col-sm-12 text-center">
@@ -29,6 +28,7 @@
                   }
                 </ngb-carousel>
                 }
+                <button type="button" class="btn btn-outline-info" style="margin: 10px;" [routerLink]="">Reservar</button>
               </div>
               <div class="col-8">
                 @if(treatment){
@@ -37,10 +37,10 @@
                   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
                     <div class="col d-flex align-items-start">
                       <i
-                        class="bi bi-geo-alt text-info flex-shrink-0 me-3 fs-2"
+                        class="bi bi-clipboard-check-fill text-info flex-shrink-0 me-3 fs-2"
                       ></i>
                       <div>
-                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
                           Descripción
                         </h3>
                         <p>{{ treatment.descriptionLong }}</p>
@@ -48,10 +48,10 @@
                     </div>
                     <div class="col d-flex align-items-start">
                       <i
-                        class="bi bi-phone text-info flex-shrink-0 me-3 fs-2"
+                        class="bi bi-clipboard2-heart-fill text-info flex-shrink-0 me-3 fs-2"
                       ></i>
                       <div>
-                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
                           Cuidados posteriores
                         </h3>
                         <p>{{ treatment.afterCare }}</p>
@@ -59,10 +59,10 @@
                     </div>
                     <div class="col d-flex align-items-start">
                       <i
-                        class="bi bi-phone text-info flex-shrink-0 me-3 fs-2"
+                        class="bi bi-hourglass-split text-info flex-shrink-0 me-3 fs-2"
                       ></i>
                       <div>
-                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
                           Duración
                         </h3>
                         <p>{{ treatment.durationInMin }} minutos</p>
@@ -70,10 +70,10 @@
                     </div>
                     <div class="col d-flex align-items-start">
                       <i
-                        class="bi bi-phone text-info flex-shrink-0 me-3 fs-2"
+                        class="bi bi-currency-euro text-info flex-shrink-0 me-3 fs-2"
                       ></i>
                       <div>
-                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
                           Precio
                         </h3>
                         <p>{{ treatment.price }}€</p>
@@ -81,10 +81,10 @@
                     </div>
                     <div class="col d-flex align-items-start">
                       <i
-                        class="bi bi-phone text-info flex-shrink-0 me-3 fs-2"
+                        class="bi bi-building-fill-exclamation text-info flex-shrink-0 me-3 fs-2"
                       ></i>
                       <div>
-                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
                           Centro de belleza
                         </h3>
                         <p>{{ treatment.company.name }}</p>
@@ -92,10 +92,10 @@
                     </div>
                     <div class="col d-flex align-items-start">
                       <i
-                        class="bi bi-phone text-info flex-shrink-0 me-3 fs-2"
+                        class="bi bi-tag-fill text-info flex-shrink-0 me-3 fs-2"
                       ></i>
                       <div>
-                        <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
+                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
                           Categoria
                         </h3>
                         <p>{{ treatment.category.name }}</p>
