@@ -28,6 +28,7 @@ export class UserService {
     }
 
     deleteById(id: number | string) {
+      // http://localhost:3000/users/2
       return this.httpClient.delete(`${this.backendUrl}/${id}`);
       }
 }
