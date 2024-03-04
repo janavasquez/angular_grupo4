@@ -65,11 +65,11 @@ export const routes: Routes = [
     component: CompanyFormComponent
   },
   {
-    path: 'category',
+    path: 'categories',
     component: CategoryListComponent
   },
   {
-    path: 'category/:id',
+    path: 'categories/:id/detail',
     component: CategoryDetailComponent
   },
   {

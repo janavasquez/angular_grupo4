@@ -1,7 +1,7 @@
 {
     "users": [
         {
-            "id": 1,
+            "id": "1",
             "fullName": "María García",
             "email": "maria.garcia@example.com",
             "phone": "612345678",
@@ -10,10 +10,11 @@
             "street": "Calle Mayor",
             "registerDate": "01/01/2014",
             "city": "Madrid",
-            "postalCode": "28001"
+            "postalCode": "28001",
+            "photo": "/assets/img_user/1 Usuario_Maria.jpg"
         },
         {
-            "id": 2,
+            "id": "2",
             "fullName": "Juan Rodríguez",
             "email": "juan.rodriguez@example.com",
             "phone": "623456789",
@@ -22,10 +23,12 @@
             "street": "Calle Gran Vía",
             "registerDate": "01/02/2015",
             "city": "Madrid",
-            "postalCode": "28013"
+            "postalCode": "28013",
+            "photo": "/assets/img_user/2 Usuario_Juan.jpg"
         },
         {
-            "id": 3,
+
+            "id": "3",
             "fullName": "Ana Martínez",
             "email": "ana.martinez@example.com",
             "phone": "634567890",
@@ -34,10 +37,11 @@
             "street": "Calle Princesa",
             "registerDate": "01/03/2016",
             "city": "Madrid",
-            "postalCode": "28008"
+            "postalCode": "28008",
+            "photo": "/assets/img_user/3 Usuario_Ana.jpg"
         },
         {
-            "id": 4,
+            "id": "4",
             "fullName": "David López",
             "email": "david.lopez@example.com",
             "phone": "645678901",
@@ -46,10 +50,11 @@
             "street": "Calle Bravo Murillo",
             "registerDate": "01/04/2017",
             "city": "Madrid",
-            "postalCode": "28020"
+            "postalCode": "28020",
+            "photo": "/assets/img_user/4 Usuario_David.jpg"
         },
         {
-            "id": 5,
+            "id": "5",
             "fullName": "Laura Sánchez",
             "email": "laura.sanchez@example.com",
             "phone": "656789012",
@@ -58,10 +63,11 @@
             "street": "Calle Atocha",
             "registerDate": "01/05/2018",
             "city": "Madrid",
-            "postalCode": "28012"
+            "postalCode": "28012",
+            "photo": "/assets/img_user/5 Usuario_Laura.jpg"
         },
         {
-            "id": 6,
+            "id": "6",
             "fullName": "Carlos Pérez",
             "email": "carlos.perez@example.com",
             "phone": "667890123",
@@ -70,10 +76,11 @@
             "street": "Calle Alcalá",
             "registerDate": "01/06/2019",
             "city": "Madrid",
-            "postalCode": "28009"
+            "postalCode": "28009",
+            "photo": "/assets/img_user/6 Usuario_Carlos.jpg"
         },
         {
-            "id": 7,
+            "id": "7",
             "fullName": "Sara Gómez",
             "email": "sara.gomez@example.com",
             "phone": "678901234",
@@ -82,10 +89,11 @@
             "street": "Calle Segovia",
             "registerDate": "01/07/2020",
             "city": "Madrid",
-            "postalCode": "28005"
+            "postalCode": "28005",
+            "photo": "/assets/img_user/7 Usuario_Sara.jpg"
         },
         {
-            "id": 8,
+            "id": "8",
             "fullName": "Pablo Martín",
             "email": "pablo.martin@example.com",
             "phone": "689012345",
@@ -94,10 +102,11 @@
             "street": "Calle Toledo",
             "registerDate": "01/08/2021",
             "city": "Madrid",
-            "postalCode": "28005"
+            "postalCode": "28005",
+            "photo": "/assets/img_user/8 Usuario_Pablo.jpg"
         },
         {
-            "id": 9,
+            "id": "9",
             "fullName": "Elena Jiménez",
             "email": "elena.jimenez@example.com",
             "phone": "690123456",
@@ -106,10 +115,11 @@
             "street": "Calle Hortaleza",
             "registerDate": "01/09/2022",
             "city": "Madrid",
-            "postalCode": "28004"
+            "postalCode": "28004",
+            "photo": "/assets/img_user/9 Usuario_Elena.jpg"
         },
         {
-            "id": 10,
+            "id": "10",
             "fullName": "Mario Ruiz",
             "email": "mario.ruiz@example.com",
             "phone": "701234567",
@@ -118,7 +128,8 @@
             "street": "Calle Fuencarral",
             "registerDate": "01/10/2023",
             "city": "Madrid",
-            "postalCode": "28010"
+            "postalCode": "28010",
+            "photo":"/assets/img_user/10 Usuario_Mario.jpg"
         }
     ],
     "treatments": [
