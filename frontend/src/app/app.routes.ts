@@ -10,6 +10,8 @@ import { CompanyDetailComponent } from './company-detail/company-detail.componen
 import { CompanyFormComponent } from './company-form/company-form.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserLoginComponent } from './user-login/user-login.component';
+import { UserRegisterComponent } from './user-register/user-register.component';
 
 export const routes: Routes = [
 
@@ -79,5 +81,13 @@ export const routes: Routes = [
   {
     path: 'users/:id',
     component: UserDetailComponent
+  },
+  {
+    path: 'login',
+    component: UserLoginComponent
+  },
+  {
+    path: 'register',
+    component: UserRegisterComponent
   }
 ];
