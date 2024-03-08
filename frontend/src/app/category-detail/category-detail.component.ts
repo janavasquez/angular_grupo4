@@ -2,7 +2,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Category } from './../interfaces/category.model';
 import { Component, OnInit } from '@angular/core';
-import { NgbCarousel, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-category-detail',
@@ -15,7 +15,6 @@ import { NgbCarousel, NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 export class CategoryDetailComponent implements OnInit {
 
   Category: Category| undefined;
-Categories: any;
 
   constructor(private http:HttpClient,
     private activatedRoute: ActivatedRoute,
