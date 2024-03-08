@@ -9,4 +9,5 @@ export interface Company {
   postalCode: string;
   values: string;
   treatments: any;
+  active: boolean;
 }
