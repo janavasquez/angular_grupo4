@@ -1,17 +1,75 @@
-<p>company-detail works!</p>
-@if (company) {
+div class="container mt-5">
+    <div class="row">
+      <div class="col-4 text-center">
 
-  <div [ngClass]="company.active ? 'is-active' : 'is-not-active'">
-    <p><strong>ID:</strong> {{company.id}}</p>
-    <p><strong>Name:</strong> {{company.name}}</p>
-    <p><strong>Cif:</strong> {{company.cif}}</p>
-    <p><strong>City:</strong> {{company.city}}</p>
-    <p><strong>PostalCode:</strong> {{company.postalCode}}</p>
-    <p><strong>Values:</strong> {{company.values}}</p>
-    <p><strong>Treatments:</strong> {{company.treatments}}</p>
+        <div class="px-4 py-5">
+            @if (company && company.photo && company.photo.length > 0){
+              <img class="img-fluid" [src]="company.photo" alt="Foto company">
 
+              <div>
+                <button class="btn btn-danger my-2" (click)="deletecompany()">
+                  <i class="bi bi-trash"></i> Borrar
+                </button>
+              </div>
+
+            }
+      </div>
+
+      </div>
+      <div class="col-8">
+
+        @if(company){
+        <div class="container px-4 py-5" id="icon-grid">
+          <h2 class="pb-2 border-bottom">Company id {{company.id}}</h2>
+
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
+
+
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-geo-alt text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Company Name </h3>
+                <p>{{company.Name}}</p>
+              </div>
+            </div>
+
+
+                      </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Año de fundada </h3>
+                <p>{{company.registerDate}}</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-cup-straw text-info flex-shrink-0 me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Ciudad</h3>
+                <p>{{company.city}}</p>
+              </div>
+              <div class="col d-flex align-items-start">
+                <i class="bi bi-geo-alt text-info flex-shrink-0 me-3 fs-2"></i>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Dirección</h3>
+                  <p>{{company.street}}</p>
+                </div>
+              </div>
+              <div class="col d-flex align-items-start">
+                <i class="bi bi-geo-alt text-info flex-shrink-0 me-3 fs-2"></i>
+                <div>
+                  <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Código postal</h3>
+                  <p>{{company.postalCode}}</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      } @else {
+        <p>company no encontrada.</p>
+      }
+      </div>
+    </div>
   </div>
-
-} @else {
-  
-}
