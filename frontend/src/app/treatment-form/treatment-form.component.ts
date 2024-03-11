@@ -5,12 +5,12 @@ import { Category } from '../interfaces/category.model';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-treatment-form',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule, NgbDatepickerModule],
+  imports: [ReactiveFormsModule, HttpClientModule, NgbDatepickerModule, RouterLink],
   templateUrl: './treatment-form.component.html',
   styleUrl: './treatment-form.component.css'
 })

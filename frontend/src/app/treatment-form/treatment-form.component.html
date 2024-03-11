@@ -3,9 +3,9 @@
     <div class="col">
 
       @if(isUpdate){
-        <h1 class="mt-5">Actualizar o editar tratamiento</h1>
+        <h1 class="mt-5 text-center text-primary-emphasis">Actualizar o editar tratamiento <i class="bi bi-person-hearts"></i></h1>
       } @else {
-        <h1 class="mt-5">Crear tratamiento</h1>
+        <h1 class="mt-5 text-center text-primary-emphasis">Crear tratamiento <i class="bi bi-person-hearts"></i></h1>
       }
 
       <form class="mt.5" [formGroup]="treatmentForm" (ngSubmit)="save()">
@@ -44,16 +44,38 @@
           formControlName="durationInMin" placeholder="">
           <label for="durationInMin">Duración (min)</label>
         </div>
-        <div class="form-floating mb_3">
+        <div class="form-floating mb-3">
           <select class="form-select"
           id="company"
           formControlName="company"
-          [compareWith]="compareObjects">
+          [compareWith]="compareObjects"
+          multiple
+          style="min-height: 100px;">
+          <option selected>Selecciona un centro de servicio</option>
+          @for (company of companies; track company.id) {
+            <option [ngValue]="company">{{company.name}}</option>
+          }
         </select>
+        <label for="company">Centro de servicio</label>
         </div>
-
+        <div class="form-floating mb-3">
+          <select class="form-select"
+          id="categories"
+          formControlName="categories"
+          aria-label="categorias"
+          [compareWith]="compareObjects">
+          <option selected>Selecciona una categoria</option>
+          @for (category of categories; track category.id) {
+            <option [ngValue]="category">{{category.name}}</option>
+          }
+        </select>
+        <label for="category">Categoria</label>
+        </div>
+        <div class="d-grid gap-2">
+          <button class="btn btn-success" type="submit">Enviar</button>
+          <button class="btn btn-danger" type="button" [routerLink]="['/treatments']">Cancelar</button>
+        </div>
       </form>
-
     </div>
   </div>
 </div>
