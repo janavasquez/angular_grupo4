@@ -13,6 +13,9 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { CompanyFormComponent } from './company-form/company-form.component';
+import { BookingListComponent } from './booking-list/booking-list.component';
+import { BookingDetailComponent } from './booking-detail/booking-detail.component';
+import { BookingFormComponent } from './booking-form/booking-form.component';
 
 export const routes: Routes = [
 
@@ -86,5 +89,29 @@ export const routes: Routes = [
   {
     path: 'register',
     component: UserRegisterComponent
+  },
+  {
+    path: 'booking',
+    component: BookingListComponent
+  },
+  {
+    path: 'booking/:id/detail',
+    component: BookingDetailComponent
+  },
+  {
+    path: 'booking/create',
+    component: BookingFormComponent
+  },
+  {
+    path: 'booking/:id/create',
+    component: BookingFormComponent
+  },
+  {
+    path: 'booking/:id/update',
+    component: BookingFormComponent
+  },
+  {
+    path: 'booking/:id/delete',
+    component: BookingFormComponent
   }
 ];

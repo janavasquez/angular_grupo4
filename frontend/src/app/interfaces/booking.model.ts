@@ -7,6 +7,6 @@ export interface Booking {
   startDate: Date;
   discount: number;
 
-  user:User;
+  user: User;
   treatment: Treatment;
 }
