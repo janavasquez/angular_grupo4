@@ -86,8 +86,8 @@ export const routes: Routes = [
     path: 'login',
     component: UserLoginComponent
   },
-  {
-    path: 'register',
+  {                   
+    path: 'register', 
     component: UserRegisterComponent
   }
 ];
