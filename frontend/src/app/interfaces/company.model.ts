@@ -10,4 +10,5 @@ export interface Company {
   values: string;
   treatments: any;
   active: boolean;
+  photo:string;
 }

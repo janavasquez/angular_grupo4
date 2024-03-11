@@ -356,7 +356,7 @@
     ],
     "companies": [
         {
-            "id": 1,
+            "id": "1",
             "name": "Spa de Belleza",
             "cif": "A12345678",
             "street": "Calle Gran Vía",
@@ -368,7 +368,7 @@
             ]
         },
         {
-            "id": 2,
+            "id": "2",
             "name": "Salón de Belleza",
             "cif": "B23456789",
             "street": "Calle Alcalá",
@@ -377,12 +377,14 @@
             "values":"8",
             "treatments":[
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
 
             },
 
         {
-            "id": 3,
+            "id": "3",
             "name": "Centro de Belleza Rosa",
             "cif": "C34567890",
             "street": "Calle Princesa",
@@ -391,10 +393,12 @@
             "values":"10",
             "treatments":[
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
         },
         {
-            "id": 4,
+            "id": "4",
             "name": "Peluquería Juan",
             "cif": "D45678901",
             "street": "Calle Bravo Murillo",
@@ -403,10 +407,12 @@
             "values": "4",
             "treatments":[
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
         },
         {
-            "id": 5,
+            "id": "5",
             "name": "Belleza Total",
             "cif": "E56789012",
             "street": "Calle Atocha",
@@ -415,12 +421,14 @@
             "values": "6",
             "treatments": [
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
 
             },
 
         {
-            "id": 6,
+            "id": "6",
             "name": "Peluquería Estilo",
             "cif": "F67890123",
             "street": "Calle Alcalá",
@@ -429,11 +437,13 @@
             "values": "4",
             "treatments" :[
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
             },
 
         {
-            "id": 7,
+            "id": "7",
             "name": "Belleza y Estética Sara",
             "cif": "G78901234",
             "street": "Calle Segovia",
@@ -442,12 +452,14 @@
             "values":"10",
             "treatments" :[
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
 
             },
 
         {
-            "id": 8,
+            "id": "8",
             "name": "Peluquería Pablo",
             "cif": "H89012345",
             "street": "Calle Toledo",
@@ -456,13 +468,15 @@
             "values":"12",
             "treatments":[
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
 
             },
 
 
         {
-            "id": 9,
+            "id": "9",
             "name": "Estética Elena",
             "cif": "I90123456",
             "street": "Calle Hortaleza",
@@ -471,10 +485,12 @@
             "values":"15",
             "treatments":[
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
         },
         {
-            "id": 10,
+            "id": "10",
             "name": "Belleza Mario",
             "cif": "J01234567",
             "street": "Calle Fuencarral",
@@ -483,7 +499,9 @@
             "values":"6",
             "treatments":[
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
 
             }
 

@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Company } from '../interfaces/company.model';
@@ -7,11 +7,11 @@ import { Company } from '../interfaces/company.model';
 @Component({
   selector: 'app-company-form',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, HttpClientModule],
   templateUrl: './company-form.component.html',
   styleUrl: './company-form.component.css'
 })
-export class CompanyformComponent {
+export class CompanyFormComponent {
 
   company: Company | undefined;
 
