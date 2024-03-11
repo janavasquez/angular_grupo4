@@ -1,1 +1,59 @@
-<p>treatment-form works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      @if(isUpdate){
+        <h1 class="mt-5">Actualizar o editar tratamiento</h1>
+      } @else {
+        <h1 class="mt-5">Crear tratamiento</h1>
+      }
+
+      <form class="mt.5" [formGroup]="treatmentForm" (ngSubmit)="save()">
+
+        <input type="hidden" formControlName="id">
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="title"
+          formControlName="title" placeholder="">
+          <label for="title">Tratamiento</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="number" min="0" step="0.01"
+          class="form-control" id="price"
+          formControlName="price" placeholder="">
+          <label for="price">Precio (€)</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="descriptionShort"
+          formControlName="descriptionShort" placeholder="">
+          <label for="descriptionShort">Descripción corta</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="descriptionLong"
+          formControlName="descriptionLong" placeholder="">
+          <label for="descriptionLong">Descripción larga</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="afterCare"
+          formControlName="afterCare" placeholder="">
+          <label for="afterCare">Cuidados posteriores</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="number" min="0" step="0.01"
+          class="form-control" id="durationInMin"
+          formControlName="durationInMin" placeholder="">
+          <label for="durationInMin">Duración (min)</label>
+        </div>
+        <div class="form-floating mb_3">
+          <select class="form-select"
+          id="company"
+          formControlName="company"
+          [compareWith]="compareObjects">
+        </select>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
