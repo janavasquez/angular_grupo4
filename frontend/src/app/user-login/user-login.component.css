@@ -1,0 +1,10 @@
+/* 2.- Añadimos esta clase CSS para darle el estilo de bootstrap */
+.form-signin {
+    max-width: 330px;
+    padding: 1rem;
+}
+.mi-boton-personalizado {
+    background-color: rgb(140, 0, 255); /* Color de fondo violeta */
+    color: #ffffff; /* Color del texto blanco */
+    /* Otros estilos según sea necesario */
+}

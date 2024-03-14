@@ -134,7 +134,7 @@
     ],
     "treatments": [
         {
-            "id": 1,
+            "id": "1",
             "title": "Corte de Cabello para Hombres",
             "price": 25,
             "images": [
@@ -147,16 +147,16 @@
             "afterCare": "Después de tu corte de cabello, usa productos de estilizado recomendados por tu estilista para mantener tu look deseado.",
             "durationInMin": 30,
             "category": {
-                "id": 2,
+                "id": "2",
                 "name": "Servicios de Cabello"
             },
             "company": {
-                "id": 2,
+                "id": "2",
                 "name": "Salón de Belleza"
             }
         },
         {
-            "id": 2,
+            "id": "2",
             "title": "Corte de Cabello para Mujeres",
             "price": 35,
             "images": [
@@ -169,16 +169,16 @@
             "afterCare": "Después de tu corte de cabello y estilizado, usa productos profesionales para el cuidado del cabello recomendados por tu estilista para mantener tu nuevo look.",
             "durationInMin": 45,
             "category": {
-                "id": 2,
+                "id": "2",
                 "name": "Servicios de Cabello"
             },
             "company": {
-                "id": 2,
+                "id": "2",
                 "name": "Salón de Belleza"
             }
         },
         {
-            "id": 3,
+            "id": "3",
             "title": "Manicura y Pedicura Semipermanente",
             "price": 60,
             "images": [
@@ -191,16 +191,16 @@
             "afterCare": "Después de tu manicura y pedicura semipermanente, evita actividades que puedan dañar tus uñas y aplica aceite de cutícula regularmente para mantenerlas hidratadas.",
             "durationInMin": 90,
             "category": {
-                "id": 1,
+                "id": "1",
                 "name": "Cuidado de Uñas"
             },
             "company": {
-                "id": 1,
+                "id": "1",
                 "name": "Spa de Belleza"
             }
         },
         {
-            "id": 4,
+            "id": "4",
             "title": "Depilación",
             "price": 40,
             "images": [
@@ -213,16 +213,16 @@
             "afterCare": "Después de tu sesión de depilación, evita duchas calientes y exposición al sol para prevenir irritaciones, y humecta tu piel regularmente para mantener su suavidad.",
             "durationInMin": 45,
             "category": {
-                "id": 3,
+                "id": "3",
                 "name": "Servicios de Depilación"
             },
             "company": {
-                "id": 1,
+                "id": "1",
                 "name": "Spa de Belleza"
             }
         },
         {
-            "id": 5,
+            "id": "5",
             "title": "Manicura Clásica",
             "price": 20,
             "images": [
@@ -235,16 +235,16 @@
             "afterCare": "Después de tu manicura clásica, evita actividades que puedan dañar tus uñas y aplica crema de manos regularmente para mantenerlas hidratadas y suaves.",
             "durationInMin": 45,
             "category": {
-                "id": 1,
+                "id": "1",
                 "name": "Cuidado de Uñas"
             },
             "company": {
-                "id": 1,
+                "id": "1",
                 "name": "Spa de Belleza"
             }
         },
         {
-            "id": 6,
+            "id": "6",
             "title": "Pedicura Deluxe",
             "price": 40,
             "images": [
@@ -257,16 +257,16 @@
             "afterCare": "Después de tu pedicura deluxe, evita caminar descalzo en superficies ásperas y usa sandalias para proteger tus uñas recién esmaltadas.",
             "durationInMin": 60,
             "category": {
-                "id": 1,
+                "id": "1",
                 "name": "Cuidado de Uñas"
             },
             "company": {
-                "id": 1,
+                "id": "1",
                 "name": "Spa de Belleza"
             }
         },
         {
-            "id": 7,
+            "id": "7",
             "title": "Corte de Cabello para Niños",
             "price": 15,
             "images": [
@@ -279,16 +279,16 @@
             "afterCare": "Después del corte de cabello de tu hijo, usa productos suaves y sin alcohol para el cuidado del cabello y evita el uso excesivo de productos de estilizado.",
             "durationInMin": 30,
             "category": {
-                "id": 2,
+                "id": "2",
                 "name": "Servicios de Cabello"
             },
             "company": {
-                "id": 2,
+                "id": "2",
                 "name": "Salón de Belleza"
             }
         },
         {
-            "id": 8,
+            "id": "8",
             "title": "Tratamiento Facial Relajante",
             "price": 50,
             "images": [
@@ -301,16 +301,16 @@
             "afterCare": "Después de tu tratamiento facial, evita exponer tu piel al sol directo y usa protector solar diariamente para protegerla de los daños del sol.",
             "durationInMin": 60,
             "category": {
-                "id": 4,
+                "id": "4",
                 "name": "Tratamientos Faciales"
             },
             "company": {
-                "id": 1,
+                "id": "1",
                 "name": "Spa de Belleza"
             }
         },
         {
-            "id": 9,
+            "id": "9",
             "title": "Masaje de Espalda y Hombros",
             "price": 40,
             "images": [
@@ -323,16 +323,16 @@
             "afterCare": "Después de tu masaje de espalda y hombros, bebe mucha agua para ayudar a eliminar las toxinas liberadas durante el masaje y evita actividades que puedan tensar los músculos.",
             "durationInMin": 30,
             "category": {
-                "id": 5,
+                "id": "6",
                 "name": "Masajes"
             },
             "company": {
-                "id": 1,
+                "id": "1",
                 "name": "Spa de Belleza"
             }
         },
         {
-            "id": 10,
+            "id": "10",
             "title": "Tratamiento Capilar de Hidratación Profunda",
             "price": 45,
             "images": [
@@ -345,18 +345,18 @@
             "afterCare": "Después de tu tratamiento capilar, usa productos de cuidado del cabello ricos en nutrientes para mantener los beneficios de la hidratación y evita el uso excesivo de herramientas de calor.",
             "durationInMin": 45,
             "category": {
-                "id": 2,
+                "id": "2",
                 "name": "Servicios de Cabello"
             },
             "company": {
-                "id": 2,
+                "id": "2",
                 "name": "Salón de Belleza"
             }
         }
     ],
     "companies": [
         {
-            "id": 1,
+            "id": "1",
             "name": "Spa de Belleza",
             "cif": "A12345678",
             "street": "Calle Gran Vía",
@@ -368,7 +368,7 @@
             ]
         },
         {
-            "id": 2,
+            "id": "2",
             "name": "Salón de Belleza",
             "cif": "B23456789",
             "street": "Calle Alcalá",
@@ -377,12 +377,14 @@
             "values":"8",
             "treatments":[
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
 
             },
 
         {
-            "id": 3,
+            "id": "3",
             "name": "Centro de Belleza Rosa",
             "cif": "C34567890",
             "street": "Calle Princesa",
@@ -391,10 +393,12 @@
             "values":"10",
             "treatments":[
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
         },
         {
-            "id": 4,
+            "id": "4",
             "name": "Peluquería Juan",
             "cif": "D45678901",
             "street": "Calle Bravo Murillo",
@@ -403,10 +407,12 @@
             "values": "4",
             "treatments":[
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
         },
         {
-            "id": 5,
+            "id": "5",
             "name": "Belleza Total",
             "cif": "E56789012",
             "street": "Calle Atocha",
@@ -415,12 +421,14 @@
             "values": "6",
             "treatments": [
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
 
             },
 
         {
-            "id": 6,
+            "id": "6",
             "name": "Peluquería Estilo",
             "cif": "F67890123",
             "street": "Calle Alcalá",
@@ -429,11 +437,13 @@
             "values": "4",
             "treatments" :[
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
             },
 
         {
-            "id": 7,
+            "id": "7",
             "name": "Belleza y Estética Sara",
             "cif": "G78901234",
             "street": "Calle Segovia",
@@ -442,12 +452,14 @@
             "values":"10",
             "treatments" :[
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
 
             },
 
         {
-            "id": 8,
+            "id": "8",
             "name": "Peluquería Pablo",
             "cif": "H89012345",
             "street": "Calle Toledo",
@@ -456,13 +468,15 @@
             "values":"12",
             "treatments":[
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
 
             },
 
 
         {
-            "id": 9,
+            "id": "9",
             "name": "Estética Elena",
             "cif": "I90123456",
             "street": "Calle Hortaleza",
@@ -471,10 +485,12 @@
             "values":"15",
             "treatments":[
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
         },
         {
-            "id": 10,
+            "id": "10",
             "name": "Belleza Mario",
             "cif": "J01234567",
             "street": "Calle Fuencarral",
@@ -483,7 +499,9 @@
             "values":"6",
             "treatments":[
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
 
             }
 
@@ -492,70 +510,70 @@
     ],
     "categories": [
         {
-            "id": 1,
+            "id": "1",
             "name": "Cuidado de Uñas",
             "photoUrl": "url_de_la_foto_1",
             "color": "#FF5733",
             "minAge": 18
         },
         {
-            "id": 2,
+            "id": "2",
             "name": "Servicios de Cabello",
             "photoUrl": "url_de_la_foto_2",
             "color": "#3366FF",
             "minAge": 18
         },
         {
-            "id": 3,
+            "id": "3",
             "name": "Depilación",
             "photoUrl": "url_de_la_foto_3",
             "color": "#33CC33",
             "minAge": 18
         },
         {
-            "id": 4,
+            "id": "4",
             "name": "Tratamientos Faciales",
             "photoUrl": "url_de_la_foto_4",
             "color": "#FFCC00",
             "minAge": 18
         },
         {
-            "id": 5,
+            "id": "5",
             "name": "Masajes",
             "photoUrl": "url_de_la_foto_5",
             "color": "#9933FF",
             "minAge": 18
         },
         {
-            "id": 6,
+            "id": "6",
             "name": "Maquillaje",
             "photoUrl": "url_de_la_foto_6",
             "color": "#FF3366",
             "minAge": 18
         },
         {
-            "id": 7,
+            "id": "7",
             "name": "Tratamientos Corporales",
             "photoUrl": "url_de_la_foto_7",
             "color": "#33CCCC",
             "minAge": 18
         },
         {
-            "id": 8,
+            "id": "8",
             "name": "Depilación Láser",
             "photoUrl": "url_de_la_foto_8",
             "color": "#996633",
             "minAge": 18
         },
         {
-            "id": 9,
+            "id": "9",
             "name": "Peluquería",
             "photoUrl": "url_de_la_foto_9",
             "color": "#663399",
             "minAge": 18
         },
         {
-            "id": 10,
+            "id": "10",
             "name": "Manicura y Pedicura",
             "photoUrl": "url_de_la_foto_10",
             "color": "#99CC00",
@@ -564,7 +582,7 @@
     ],
     "booking": [
         {
-            "id": 1,
+            "id": "1",
             "startDate": "2024-02-06",
             "discount": 0,
             "user": {
@@ -597,7 +615,7 @@
             }
         },
         {
-            "id": 2,
+            "id": "2",
             "startDate": "2024-02-07",
             "discount": 10,
             "user": {
@@ -612,7 +630,7 @@
                 "postalCode": "28013"
             },
             "treatment": {
-                "id": 9,
+                "id": "9",
                 "title": "Masaje de Espalda y Hombros",
                 "price": 40,
                 "descriptionShort": "Alivia la tensión y el estrés con nuestro masaje de espalda y hombros.",
@@ -624,13 +642,13 @@
                     "name": "Masajes"
                 },
                 "company": {
-                    "id": 1,
+                    "id": "1",
                     "name": "Spa de Belleza"
                 }
             }
         },
         {
-            "id": 3,
+            "id": "3",
             "startDate": "2024-02-08",
             "discount": 5,
             "user": {
@@ -645,7 +663,7 @@
                 "postalCode": "28008"
             },
             "treatment": {
-                "id": 8,
+                "id": "8",
                 "title": "Tratamiento Facial Relajante",
                 "price": 50,
                 "descriptionShort": "Mima tu piel con nuestro tratamiento facial relajante.",
@@ -657,17 +675,17 @@
                     "name": "Tratamientos Faciales"
                 },
                 "company": {
-                    "id": 1,
+                    "id": "1",
                     "name": "Spa de Belleza"
                 }
             }
         },
         {
-            "id": 4,
+            "id": "4",
             "startDate": "2024-02-09",
             "discount": 0,
             "user": {
-                "id": 4,
+                "id": "4",
                 "fullName": "David López",
                 "email": "david.lopez@example.com",
                 "phone": "645678901",
@@ -729,11 +747,11 @@
             }
         },
         {
-            "id": 6,
+            "id": "6",
             "startDate": "2024-02-11",
             "discount": 20,
             "user": {
-                "id": 6,
+                "id": "6",
                 "fullName": "Carlos Pérez",
                 "email": "carlos.perez@example.com",
                 "phone": "667890123",
@@ -744,7 +762,7 @@
                 "postalCode": "28009"
             },
             "treatment": {
-                "id": 5,
+                "id": "5",
                 "title": "Manicura Clásica",
                 "price": 20,
                 "descriptionShort": "Embellece tus uñas con nuestra manicura clásica.",
@@ -752,21 +770,21 @@
                 "afterCare": "Después de tu manicura clásica, evita actividades que puedan dañar tus uñas y aplica crema de manos regularmente para mantenerlas hidratadas y suaves.",
                 "durationInMin": 45,
                 "category": {
-                    "id": 1,
+                    "id": "1",
                     "name": "Cuidado de Uñas"
                 },
                 "company": {
-                    "id": 1,
+                    "id": "1",
                     "name": "Spa de Belleza"
                 }
             }
         },
         {
-            "id": 7,
+            "id": "7",
             "startDate": "2024-02-12",
             "discount": 0,
             "user": {
-                "id": 7,
+                "id": "7",
                 "fullName": "Sara Gómez",
                 "email": "sara.gomez@example.com",
                 "phone": "678901234",
@@ -777,7 +795,7 @@
                 "postalCode": "28005"
             },
             "treatment": {
-                "id": 4,
+                "id": "4",
                 "title": "Depilación",
                 "price": 40,
                 "descriptionShort": "Consigue una piel suave y libre de vello con nuestro servicio de depilación.",
@@ -785,21 +803,21 @@
                 "afterCare": "Después de tu sesión de depilación, evita duchas calientes y exposición al sol para prevenir irritaciones, y humecta tu piel regularmente para mantener su suavidad.",
                 "durationInMin": 45,
                 "category": {
-                    "id": 3,
+                    "id": "3",
                     "name": "Servicios de Depilación"
                 },
                 "company": {
-                    "id": 1,
+                    "id": "1",
                     "name": "Spa de Belleza"
                 }
             }
         },
         {
-            "id": 8,
+            "id": "8",
             "startDate": "2024-02-13",
             "discount": 10,
             "user": {
-                "id": 8,
+                "id": "8",
                 "fullName": "Pablo Martín",
                 "email": "pablo.martin@example.com",
                 "phone": "689012345",
@@ -810,7 +828,7 @@
                 "postalCode": "28005"
             },
             "treatment": {
-                "id": 3,
+                "id": "3",
                 "title": "Manicura y Pedicura Semipermanente",
                 "price": 60,
                 "descriptionShort": "Disfruta de una sesión relajante de manicura y pedicura con esmalte semipermanente.",
@@ -818,21 +836,21 @@
                 "afterCare": "Después de tu manicura y pedicura semipermanente, evita actividades que puedan dañar tus uñas y aplica aceite de cutícula regularmente para mantenerlas hidratadas.",
                 "durationInMin": 90,
                 "category": {
-                    "id": 1,
+                    "id": "1",
                     "name": "Cuidado de Uñas"
                 },
                 "company": {
-                    "id": 1,
+                    "id": "1",
                     "name": "Spa de Belleza"
                 }
             }
         },
         {
-            "id": 9,
+            "id": "9",
             "startDate": "2024-02-14",
             "discount": 0,
             "user": {
-                "id": 9,
+                "id": "9",
                 "fullName": "Elena Jiménez",
                 "email": "elena.jimenez@example.com",
                 "phone": "690123456",
@@ -843,7 +861,7 @@
                 "postalCode": "28004"
             },
             "treatment": {
-                "id": 2,
+                "id": "2",
                 "title": "Corte de Cabello para Mujeres",
                 "price": 35,
                 "descriptionShort": "Refresca tu apariencia con una sesión de corte y estilizado para mujeres.",
@@ -855,17 +873,17 @@
                     "name": "Servicios de Cabello"
                 },
                 "company": {
-                    "id": 2,
+                    "id": "2",
                     "name": "Salón de Belleza"
                 }
             }
         },
         {
-            "id": 10,
+            "id": "10",
             "startDate": "2024-02-15",
-            "discount": 5,
+            "discount": "5",
             "user": {
-                "id": 10,
+                "id": "10",
                 "fullName": "Mario Ruiz",
                 "email": "mario.ruiz@example.com",
                 "phone": "701234567",
@@ -876,7 +894,7 @@
                 "postalCode": "28010"
             },
             "treatment": {
-                "id": 1,
+                "id": "1",
                 "title": "Corte de Cabello para Hombres",
                 "price": 25,
                 "descriptionShort": "Obtén un corte de cabello moderno y elegante diseñado para hombres.",
@@ -884,11 +902,11 @@
                 "afterCare": "Después de tu corte de cabello, usa productos de estilizado recomendados por tu estilista para mantener tu look deseado.",
                 "durationInMin": 30,
                 "category": {
-                    "id": 2,
+                    "id": "2",
                     "name": "Servicios de Cabello"
                 },
                 "company": {
-                    "id": 2,
+                    "id": "2",
                     "name": "Salón de Belleza"
                 }
             }
@@ -896,11 +914,11 @@
     ],
     "comments": [
         {
-            "id": 1,
+            "id": "1",
             "rating": 5,
             "opinion": "¡Excelente servicio! Me encantó el tratamiento.",
             "user": {
-                "id": 1,
+                "id": "1",
                 "fullName": "María García",
                 "email": "maria.garcia@example.com",
                 "phone": "612345678",
@@ -911,7 +929,7 @@
                 "postalCode": "28001"
             },
             "company": {
-                "id": 1,
+                "id": "1",
                 "name": "Spa de Belleza",
                 "cif": "A12345678",
                 "street": "Calle Gran Vía",
@@ -919,7 +937,7 @@
                 "postalCode": "28001"
             },
             "treatment": {
-                "id": 1,
+                "id": "1",
                 "title": "Manicura y Pedicura",
                 "price": 30,
                 "descriptionShort": "Servicio de manicura y pedicura para lucir unas uñas impecables.",
@@ -927,14 +945,14 @@
                 "afterCate": "Después de tu manicura y pedicura, hidrata tus manos y pies regularmente para mantenerlos suaves y saludables.",
                 "durationInMin": 60,
                 "category": {
-                    "id": 1,
+                    "id": "1",
                     "name": "Cuidado de Uñas",
                     "photoUrl": "url_de_la_foto_1",
                     "color": "#FF5733",
                     "minAge": 18
                 },
                 "company": {
-                    "id": 1,
+                    "id": "1",
                     "name": "Spa de Belleza",
                     "cif": "A12345678",
                     "street": "Calle Gran Vía",
@@ -944,11 +962,11 @@
             }
         },
         {
-            "id": 2,
+            "id": "2",
             "rating": 4,
             "opinion": "Muy buen tratamiento. Resultados excelentes.",
             "user": {
-                "id": 2,
+                "id": "2",
                 "fullName": "Juan Rodríguez",
                 "email": "juan.rodriguez@example.com",
                 "phone": "623456789",
@@ -959,7 +977,7 @@
                 "postalCode": "28001"
             },
             "company": {
-                "id": 2,
+                "id": "2",
                 "name": "Salón de Belleza",
                 "cif": "B23456789",
                 "street": "Calle Alcalá",
@@ -967,7 +985,7 @@
                 "postalCode": "28013"
             },
             "treatment": {
-                "id": 2,
+                "id": "2",
                 "title": "Corte de Cabello para Hombre",
                 "price": 20,
                 "descriptionShort": "Corte de cabello moderno y elegante para hombres.",
@@ -975,14 +993,14 @@
                 "afterCate": "Después del corte de cabello, usa productos de estilizado para mantener tu look.",
                 "durationInMin": 30,
                 "category": {
-                    "id": 2,
+                    "id": "2",
                     "name": "Servicios de Cabello",
                     "photoUrl": "url_de_la_foto_2",
                     "color": "#3366FF",
                     "minAge": 18
                 },
                 "company": {
-                    "id": 2,
+                    "id": "2",
                     "name": "Salón de Belleza",
                     "cif": "B23456789",
                     "street": "Calle Alcalá",

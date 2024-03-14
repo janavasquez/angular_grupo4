@@ -7,11 +7,12 @@ import { CategoryDetailComponent } from './category-detail/category-detail.compo
 import { TreatmentFormComponent } from './treatment-form/treatment-form.component';
 import { CompanyListComponent } from './company-list/company-list.component';
 import { CompanyDetailComponent } from './company-detail/company-detail.component';
-import { CompanyFormComponent } from './company-form/company-form.component';
+
 import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegisterComponent } from './user-register/user-register.component';
+import { CompanyFormComponent } from './company-form/company-form.component';
 
 export const routes: Routes = [
 
@@ -60,10 +61,6 @@ export const routes: Routes = [
   },
   {
     path: 'companies/:id/update',
-    component: CompanyFormComponent
-  },
-  {
-    path: 'companies/:id/delete',
     component: CompanyFormComponent
   },
   {
