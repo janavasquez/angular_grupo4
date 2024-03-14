@@ -1,1 +1,13 @@
 <p>company-form works!</p>
+
+<form (ngSubmit)="agregarCompany()">
+  <input type="text" [(ngModel)]="nombreCompany" name="nombreCompany" placeholder="Nombre Company" required>
+  <button type="submit">Agregar Empresa</button>
+</form>
+
+<ul>
+  <li *ngFor="let company">
+    {{ empresa }}
+    <button (click)="eliminarCompany(company)">Eliminar</button>
+  </li>
+</ul>
