@@ -14,7 +14,7 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 
 export class CategoryDetailComponent implements OnInit {
 
-  Category: Category| undefined;
+  category: Category| undefined;
 
   constructor(private http:HttpClient,
     private activatedRoute: ActivatedRoute,
@@ -24,7 +24,11 @@ export class CategoryDetailComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       let id = params ['id'];
-      this.http.get<Category>('http://localhost:3000/categories/${id}')
+      this.http.get<Category>(`http://localhost:3000/categories/${id}`).subscribe(c => this.category = c) // esto es para los acentos
+
+      // otra forma seria http://localhost:3000/categories mas el nombre del componente.id
+
+
     });
 
   }

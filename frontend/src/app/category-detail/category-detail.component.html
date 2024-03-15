@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col text-center" style="margin: 20px">
 
-      @if (Category) {
+      @if (category) {
 
       <div class="card mb-3 p-3 mb-2 bg-primary-subtle text-primary-emphasis">
         <span class="border border-danger-subtle"></span>
@@ -10,9 +10,9 @@
           <div class="container mt-5">
             <div class="row">
               <div class="col-4 text-center col-md-4 col-sm-12 text-center">
-                @if (Category.images) {
+                @if (category.images) {
                 <ngb-carousel>
-                  @for (image of Category.images; track image){
+                  @for (image of category.images; track image){
                   <ng-template ngbSlide>
                     <div class="picsum-img-wrapper">
                       <img [src]="image" alt="Random first slide" />
@@ -30,9 +30,9 @@
                 }
               </div>
               <div class="col-8">
-                @if(Category){
+                @if(category){
                 <div class="container px-4 py-5" id="icon-grid">
-                  <h2 class="pb-2 border-bottom">{{ Category.title }}</h2>
+                  <h2 class="pb-2 border-bottom">{{ category.title }}</h2>
                   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
                     <div class="col d-flex align-items-start">
                       <i
@@ -42,7 +42,7 @@
                         <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
                           Descripción
                         </h3>
-                        <p>{{ Category.id }}</p>
+                        <p>{{ category.id }}</p>
                       </div>
                     </div>
                     <div class="col d-flex align-items-start">
@@ -53,7 +53,7 @@
                         <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
                           Cuidados posteriores
                         </h3>
-                        <p>{{ Category.name }}</p>
+                        <p>{{ category.name }}</p>
                       </div>
                     </div>
                     <div class="col d-flex align-items-start">
@@ -64,7 +64,7 @@
                         <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
                           FOTO
                         </h3>
-                        <p>{{ Category.photoUrl}} minutos</p>
+                        <p>{{ category.photoUrl}} minutos</p>
                       </div>
                     </div>
                     <div class="col d-flex align-items-start">
@@ -75,7 +75,7 @@
                         <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">
                           EDAD MINIMA
                         </h3>
-                        <p>{{ Category.minAge }}€</p>
+                        <p>{{ category.minAge }}€</p>
                       </div>
                     </div>
                     <div class="col d-flex align-items-start">
