@@ -1,30 +1,54 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">SIEMPRE BELLA</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-md navbar-light bg-body-tertiary">
+  <div class="container-fluid bg-custom">
+
+    <a class="navbar-brand" routerLink="/">
+      <img style="max-width:40px;" src="/assets/img/silueta_pelo.png" alt="logo">
+      SIEMPRE BELLA
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      aria-controls="navbarContent"
+      [attr.aria-expanded]="!collapsed"
+      aria-label="Toggle navigation"
+      (click)="collapsed = !collapsed"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Spa</a>
-        <a class="nav-link" href="#">Peluqueria</a>
-        <a class="nav-link" href="treatments">Tratamientos</a>
-        <a class="nav-link" href="categories">Categorias</a>
-        <!-- <a class="nav-link disabled" aria-disabled="true">Depilación</a> -->
-        <a class="nav-link" href="users">Usuarios</a>
-        <div>
 
-          <style>
-            .mi-boton-personalizado {
-                background-color: rgb(140, 0, 255); /* Color de fondo violeta */
-                color: #ffffff; /* Color del texto blanco */
-                /* Otros estilos según sea necesario */
-            }
-        </style>
-          <button type="button" class="btn mi-boton-personalizado ms-5" routerLink="/login"><strong>Login</strong></button>
-          <button type="button" class="btn mi-boton-personalizado ms-5" routerLink="/register"><strong>Registro</strong></button>
-        </div>
-        </div>
+    <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
+      <ul class="navbar-nav me-auto">
+
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/"> Home </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/treatments']"> Tratamientos </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/categories']"> Categorías</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/companies']"> Centros </a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active me-2" [routerLink]="['/users']">Usuarios</a>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn mi-boton-rc me-3 mb-2" routerLink="/login">Login</button>
+        </li>
+        <li class="nav-item">
+          <button type="button" class="btn mi-boton-rc me-2 mb-2" routerLink="/register">Registro</button>
+        </li>
+      </ul>
+
     </div>
   </div>
 </nav>
