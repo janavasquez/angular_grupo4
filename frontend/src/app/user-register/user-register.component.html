@@ -1,92 +1,186 @@
 <main class="form-signin w-100 m-auto">
-    <form [formGroup]="registerForm" (ngSubmit)="save()">
-      <!--Podemos poneer una imagen del logo aquí:
+  <form [formGroup]="registerForm" (ngSubmit)="save()">
+    <!--Podemos poneer una imagen del logo aquí:
           <img class="mb-4" src="" alt="" width="72" height="57">  -->
-          <h1 class="h3 mb-3 fw-normal">Crear nueva cuenta</h1>
+    <h1 class="h3 mb-3 fw-normal text-center mt-5 fw-bold">Regístrate</h1>
 
-
-          <div class="form-floating">
-              <input type="name" class="form-control" id="nickname" placeholder="rolando_cepeda"
-                  formControlName="nickname">
-              <label for="nickname">Nickname</label>
-              <!--Vamos a validar nickname: ['', Validators.required] -->
-              <div>
-                  @if (registerForm.controls.nickname.touched && registerForm.controls.nickname.errors) {
-                  <div>
-                      @if (registerForm.controls.nickname.errors['required']){
-                      <small class="text-danger">Nickname es obligatorio</small>
-                      }@else if(registerForm.controls.nickname.errors['minlength']){
-                      <small class="text-danger">Nickname debe tener longitud >= 3 caracteres.</small>
-                      }@else if(registerForm.controls.nickname.errors['maxlength']){
-                      <small class="text-danger">Nickname debe tener longitud <= 15 caracteres.</small>
-                              }
-  
-  
-                  </div>
-  
-                  }
-              </div>
-  
-          </div>
-  
-          <div class="form-floating">
-              <input type="email" class="form-control" id="email" placeholder="name@example.com"
-                  formControlName="email">
-              <label for="email">Email</label>
-              @if(registerForm.controls.email.touched && registerForm.controls.email.errors) {
-              <div>
-                  @if (registerForm.controls.email.errors['required']) {
-                  <small class="text-danger">Email es obligatorio.</small>
-  
-                  }
-                  @if (registerForm.controls.email.errors['email']) {
-                  <small class="text-danger">Email debe tener el formato correcto</small>
-  
-                  }
-              </div>
-              }
-  
-          </div>
-  
-          <div class="form-floating">
-              <input type="text" class="form-control" id="phone" placeholder="678594345" formControlName="phone">
-              <label for="phone">Teléfono móvil</label>
-              @if(registerForm.controls.phone.touched && registerForm.controls.phone.errors) {
-              <div>
-                  @if (registerForm.controls.phone.errors['required']) {
-                  <small class="text-danger">El teléfono es obligatorio.</small>
-  
-                  }
-                  @if (registerForm.controls.phone.errors['pattern']) {
-                  <small class="text-danger">El teléfono debe tener un formato de 9 dígitos</small>
-  
-                  }
-              </div>
-              }
-          </div>
-          <div class="form-floating">
-              <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
-              <label for="password">Contraseña</label>
-          </div>
-  
-          <div class="form-floating">
-              <input type="password" class="form-control" id="passwordConfirm" placeholder="Password"
-                  formControlName="passwordConfirm">
-              <label for="passwordConfirm">Confirme la contraseña</label>
-              @if(registerForm.controls.passwordConfirm.touched && registerForm.getError('confirmError')) {
-              <div>
-                  
-                  <small class="text-danger">Las contraseñas no coinciden</small>
-  
-              </div>
-              }
-          </div>
-  
-  
-          <button class="btn mi-boton-personalizado w-100 py-2" type="submit" [disabled]="registerForm.invalid">Crear cuenta</button>
-          @if(registerForm.invalid){
-          <small class="text-danger">Debes completar de forma correcta todos los campos para guardarlos</small>
+    <div class="form-floating">
+      <input
+        type="name"
+        class="form-control"
+        id="nickname"
+        placeholder="rolando_cepeda"
+        formControlName="nickname"
+      />
+      <label for="nickname">Nombre de usuario</label>
+      <!--Vamos a validar nickname: ['', Validators.required] -->
+      <div>
+        @if (registerForm.controls.nickname.touched &&
+        registerForm.controls.nickname.errors) {
+        <div>
+          @if (registerForm.controls.nickname.errors['required']){
+          <small class="text-danger">Nickname es obligatorio</small>
+          }@else if(registerForm.controls.nickname.errors['minlength']){
+          <small class="text-danger"
+            >Nickname debe tener longitud >= 3 caracteres.</small
+          >
+          }@else if(registerForm.controls.nickname.errors['maxlength']){
+          <small class="text-danger"
+            >Nickname debe tener longitud <= 15 caracteres.</small
+          >
           }
-          <p class="mt-5 mb-3 text-body-secondary">© 2017–2024</p>
-      </form>
-  </main>
+        </div>
+        }
+      </div>
+    </div>
+
+    <div class="form-floating">
+        <input
+          type="name"
+          class="form-control"
+          id="name"
+          placeholder="rolando_cepeda"
+          formControlName="name"
+        />
+        <label for="name">Nombre</label>
+        <!--Vamos a validar name: ['', Validators.required] -->
+        <div>
+          @if (registerForm.controls.name.touched &&
+          registerForm.controls.name.errors) {
+          <div>
+            @if (registerForm.controls.name.errors['required']){
+            <small class="text-danger">El nombre es obligatorio</small>
+            }@else if(registerForm.controls.name.errors['minlength']){
+            <small class="text-danger"
+              >El nombre debe tener longitud >= 3 caracteres.</small
+            >
+            }@else if(registerForm.controls.name.errors['maxlength']){
+            <small class="text-danger"
+              >El nombre debe tener longitud <= 15 caracteres.</small
+            >
+            }
+          </div>
+          }
+        </div>
+      </div>
+
+      <div class="form-floating">
+        <input
+          type="name"
+          class="form-control"
+          id="surname"
+          placeholder="rolando_cepeda"
+          formControlName="surname"
+        />
+        <label for="surname">Apellidos</label>
+        <!--Vamos a validar surname: ['', Validators.required] -->
+        <div>
+          @if (registerForm.controls.surname.touched &&
+          registerForm.controls.surname.errors) {
+          <div>
+            @if (registerForm.controls.surname.errors['required']){
+            <small class="text-danger">El apellido es obligatorio</small>
+            }@else if(registerForm.controls.surname.errors['minlength']){
+            <small class="text-danger"
+              >El apellido debe tener longitud >= 3 caracteres.</small
+            >
+            }@else if(registerForm.controls.surname.errors['maxlength']){
+            <small class="text-danger"
+              >El apellido debe tener longitud <= 15 caracteres.</small
+            >
+            }
+          </div>
+          }
+        </div>
+      </div>
+
+    <div class="form-floating">
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="name@example.com"
+        formControlName="email"
+      />
+      <label for="email">Email</label>
+      @if(registerForm.controls.email.touched &&
+      registerForm.controls.email.errors) {
+      <div>
+        @if (registerForm.controls.email.errors['required']) {
+        <small class="text-danger">Email es obligatorio.</small>
+
+        } @if (registerForm.controls.email.errors['email']) {
+        <small class="text-danger">Email debe tener el formato correcto</small>
+
+        }
+      </div>
+      }
+    </div>
+
+    <div class="form-floating">
+      <input
+        type="text"
+        class="form-control"
+        id="phone"
+        placeholder="678594345"
+        formControlName="phone"
+      />
+      <label for="phone">Teléfono móvil</label>
+      @if(registerForm.controls.phone.touched &&
+      registerForm.controls.phone.errors) {
+      <div>
+        @if (registerForm.controls.phone.errors['required']) {
+        <small class="text-danger">El teléfono es obligatorio.</small>
+
+        } @if (registerForm.controls.phone.errors['pattern']) {
+        <small class="text-danger"
+          >El teléfono debe tener un formato de 9 dígitos</small
+        >
+
+        }
+      </div>
+      }
+    </div>
+    <div class="form-floating">
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="Password"
+        formControlName="password"
+      />
+      <label for="password">Contraseña</label>
+    </div>
+
+    <div class="form-floating">
+      <input
+        type="password"
+        class="form-control"
+        id="passwordConfirm"
+        placeholder="Password"
+        formControlName="passwordConfirm"
+      />
+      <label for="passwordConfirm">Confirme la contraseña</label>
+      @if(registerForm.controls.passwordConfirm.touched &&
+      registerForm.getError('confirmError')) {
+      <div>
+        <small class="text-danger">Las contraseñas no coinciden</small>
+      </div>
+      }
+    </div>
+
+    <button
+      class="btn mi-boton-personalizado w-100 py-2"
+      type="submit"
+      [disabled]="registerForm.invalid"
+    >
+      Crear cuenta
+    </button>
+    @if(registerForm.invalid){
+    <small class="text-danger"
+      >Debes completar todos los campos para crear tu cuenta</small
+    >
+    }
+    <p class="mt-5 mb-3 text-body-secondary text-center">© 2023–2024</p>
+  </form>
+</main>

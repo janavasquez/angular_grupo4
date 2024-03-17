@@ -846,7 +846,7 @@
             }
         },
         {
-            "id": "10",
+            "id": "9",
             "startDate": "2024-02-14",
             "discount": 0,
             "user": {
@@ -881,7 +881,7 @@
         {
             "id": "10",
             "startDate": "2024-02-15",
-            "discount": 5,
+            "discount": "5",
             "user": {
                 "id": "10",
                 "fullName": "Mario Ruiz",
@@ -914,11 +914,11 @@
     ],
     "comments": [
         {
-            "id": 1,
+            "id": "1",
             "rating": 5,
             "opinion": "¡Excelente servicio! Me encantó el tratamiento.",
             "user": {
-                "id": 1,
+                "id": "1",
                 "fullName": "María García",
                 "email": "maria.garcia@example.com",
                 "phone": "612345678",
@@ -929,7 +929,7 @@
                 "postalCode": "28001"
             },
             "company": {
-                "id": 1,
+                "id": "1",
                 "name": "Spa de Belleza",
                 "cif": "A12345678",
                 "street": "Calle Gran Vía",
@@ -937,7 +937,7 @@
                 "postalCode": "28001"
             },
             "treatment": {
-                "id": 1,
+                "id": "1",
                 "title": "Manicura y Pedicura",
                 "price": 30,
                 "descriptionShort": "Servicio de manicura y pedicura para lucir unas uñas impecables.",
@@ -945,14 +945,14 @@
                 "afterCate": "Después de tu manicura y pedicura, hidrata tus manos y pies regularmente para mantenerlos suaves y saludables.",
                 "durationInMin": 60,
                 "category": {
-                    "id": 1,
+                    "id": "1",
                     "name": "Cuidado de Uñas",
                     "photoUrl": "url_de_la_foto_1",
                     "color": "#FF5733",
                     "minAge": 18
                 },
                 "company": {
-                    "id": 1,
+                    "id": "1",
                     "name": "Spa de Belleza",
                     "cif": "A12345678",
                     "street": "Calle Gran Vía",
@@ -962,11 +962,11 @@
             }
         },
         {
-            "id": 2,
+            "id": "2",
             "rating": 4,
             "opinion": "Muy buen tratamiento. Resultados excelentes.",
             "user": {
-                "id": 2,
+                "id": "2",
                 "fullName": "Juan Rodríguez",
                 "email": "juan.rodriguez@example.com",
                 "phone": "623456789",
@@ -977,7 +977,7 @@
                 "postalCode": "28001"
             },
             "company": {
-                "id": 2,
+                "id": "2",
                 "name": "Salón de Belleza",
                 "cif": "B23456789",
                 "street": "Calle Alcalá",
@@ -985,7 +985,7 @@
                 "postalCode": "28013"
             },
             "treatment": {
-                "id": 2,
+                "id": "2",
                 "title": "Corte de Cabello para Hombre",
                 "price": 20,
                 "descriptionShort": "Corte de cabello moderno y elegante para hombres.",
@@ -993,14 +993,14 @@
                 "afterCate": "Después del corte de cabello, usa productos de estilizado para mantener tu look.",
                 "durationInMin": 30,
                 "category": {
-                    "id": 2,
+                    "id": "2",
                     "name": "Servicios de Cabello",
                     "photoUrl": "url_de_la_foto_2",
                     "color": "#3366FF",
                     "minAge": 18
                 },
                 "company": {
-                    "id": 2,
+                    "id": "2",
                     "name": "Salón de Belleza",
                     "cif": "B23456789",
                     "street": "Calle Alcalá",
