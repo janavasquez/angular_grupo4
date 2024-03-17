@@ -1,1 +1,46 @@
-<p>category-form works!</p>
+<form [formGroup]="categoryForm" (ngSubmit)="save()">
+
+  <div>
+    <label for="id"></label>
+    <input type="text" id="id" formControlName="id">
+  </div>
+
+  <div>
+    <label for="name">Nombre</label>
+    <input type="text" id="name" formControlName="name"
+    min="" step="1">
+  </div>
+
+  <div>
+    <label for="photourl">imagen</label>
+    <input type="checkbox" id="photourl" formControlName="photoUrl">
+  </div>
+
+  <div>
+    <label for="minAge">Edad Minima</label>
+    <input type="minAge" id="minAge" formControlName="minAge"
+    min="18">
+  </div>
+
+
+  <div>
+    <label for="category">Categoría</label>
+    <div>
+      <label for="Cuidado de uñas">Cuidado de uñas</label>
+      <input id="Cuuidado de uñas" value="Cuidado de uñas" type="radio" formControlName="category">
+
+      <label for="Peluqueria">Peluqueria</label>
+      <input id="peluqueria" value="peluqueria" type="radio" formControlName="category">
+
+      <label for="depilacion">Depilacion</label>
+      <input id="depilacion" value="depilacion" type="radio" formControlName="category">
+
+      <label for="tratamiento faciales y corporales">Tratamiento faciales y corporales</label>
+      <input id="tratamiento faciales y corporales" value="tratamiento faciales y corporales" type="radio" formControlName="category">
+
+
+    </div>
+  </div>
+
+  <button type="submit">Subir</button>
+</form>
