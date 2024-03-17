@@ -1,24 +1,80 @@
-<p>company-form works!</p>
-<form (ngSubmit)="onSubmit()">
-  <div>
-  <label for="nombre company">Nombre company:</label>
-  <input type="text" id="nombre Company" [(ngModel)]="nombre company" name="nombre Company" required>
-  </div>
-  <div>
-    <label for="cif">Cif:</label>
-    <input type="text" id="nif" [(ngModel)]="nif" name="nif" required>
-    </div>
-    <div>
-     <label for="street">Street:</label>
-      <input type="text" id="street" [(ngModel)]="street" name="street" required>
-      </div>
-      <div>
-        <label for="city">City:</label>
-        <input type="text" id="city" [(ngModel)]="city" name="city" required>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+
+      <!-- Mostrar "creación" o "actualización" si ya existe el producto -->
+
+      @if(isUpdate){
+        <h1 class="mt-5">Actualizar/Editar o Crear Centro</h1>
+      } @else {
+        <h1 class="mt-5">Crear nuevo Centro</h1>
+      }
+
+      <form class="mt-5" [formGroup]="companyForm" (ngSubmit)="save()">
+
+        <!-- Campo oculto id -->
+        <input type="hidden" formControlName="id">
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="title" formControlName="title"
+          placeholder="">
+          <label for="title">id</label>
         </div>
-        <div>
-          <label for="postalcode">Postalcode:</label>
-          <input type="text" id="Postalcode" [(ngModel)]="Postalcode" name="postalcode" required>
-          </div>
- <button type="submit">Enviar</button>
-</form>
+
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="title" formControlName="title"
+            placeholder="">
+            <label for="title">name</label>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="title" formControlName="title"
+              placeholder="">
+              <label for="title">cif</label>
+            </div>
+
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="title" formControlName="title"
+                placeholder="">
+                <label for="title">street</label>
+              </div>
+
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="title" formControlName="title"
+                  placeholder="">
+                  <label for="title">city</label>
+                </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="title" formControlName="title"
+                    placeholder="">
+                    <label for="title">postalCode</label>
+                  </div>
+
+                    <div class="form-floating mb-3">
+                      <input type="text" class="form-control" id="title" formControlName="title"
+                      placeholder="">
+                      <label for="title">treatment</label>
+                    </div>
+
+                      <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="title" formControlName="title"
+                        placeholder="">
+                        <label for="title">active</label>
+                      </div>
+
+                        <div class="form-floating mb-3">
+                          <input type="text" class="form-control" id="title" formControlName="title"
+                          placeholder="">
+                          <label for="title">photo</label>
+                        </div>
+
+        <div class="d-grid gap-2">
+          <button class="btn btn-success" type="submit">Enviar</button>
+          <button class="btn btn-danger" type="button">Cancelar</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>
