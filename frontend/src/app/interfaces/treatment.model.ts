@@ -13,7 +13,7 @@ export interface Treatment {
     afterCare: string; // cuidados posteriores
 
     durationInMin: number; // duracion en minutos
-    category: Category;
+    category: Category[];
     company: Company;
 
 

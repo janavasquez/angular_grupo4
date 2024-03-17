@@ -1,1 +1,148 @@
-<p>booking-detail works!</p>
+<div class="container mt-5 text-center">
+  <h1 class="mt-5 text-center text-primary-emphasis">Detalles de la reserva <i class="bi bi-card-checklist"></i></h1>
+  <div class="row">
+    <div class="col tex-center" style="margin: 5px">
+
+      @if (booking) {
+        <div class="card mb-3 bg-success-subtle text-primary-emphasis">
+          <div class="card-body card mb-3 bg-success-subtle text-primary-emphasis">
+            <div class="container mt-5">
+              <div class="row">
+              <div class="col-4 text-center col-md-4 col-sm-12 text-center">
+                @if (booking.treatment.images) {
+                  <ngb-carousel>
+                    @for (image of booking.treatment.images; track image) {
+                      <ng-template ngbSlide>
+                        <div class="picsum-img-wrapper">
+                          <img [src]="image" alt="Random first slide" />
+                        </div>
+                        <div class="carousel-caption">
+                          <h3>First slide label</h3>
+                          <p>
+                            Nulla vitae elit libero, a pharetra augue mollis
+                            interdum.
+                          </p>
+                        </div>
+                      </ng-template>
+                    }
+                  </ngb-carousel>
+                }
+                <button type="button" class="btn btn-outline-info" style="margin: 10px;" [routerLink]="['/booking', booking.id, 'delete']">Cancelar reserva</button>
+              </div>
+              <div class="col-8">
+                @if(booking) {
+                  <div class="container px-4 py-5" id="icon-grid">
+                    <h2 class="pb-2 border-bottom">{{booking.treatment.title}}</h2>
+                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
+                      <div class="col d-flex align-items-start">
+                        <i
+                        class="bi bi-file-earmark-person-fill text-info flex-shrink-0 me-3 fs-2"
+                      ></i>
+                      <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis text-center">
+                          Reserva a nombre de:
+                        </h3>
+                        <p>{{booking.user.fullName}}</p>
+                      </div>
+                      </div>
+                      <div class="col d-flex align-items-start">
+                        <i
+                        class="bi bi-hourglass-split text-info flex-shrink-0 me-3 fs-2"
+                      ></i>
+                      <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis text-center">
+                          Duración
+                        </h3>
+                        <p>{{booking.treatment.durationInMin}} minutos</p>
+                      </div>
+                      </div>
+                      <div class="col d-flex align-items-start">
+                        <i
+                        class="bi bi-currency-euro text-info flex-shrink-0 me-3 fs-2"
+                      ></i>
+                      <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
+                          Precio
+                        </h3>
+                        <p>{{booking.treatment.price}}€</p>
+                      </div>
+                      </div>
+                      <div class="col d-flex align-items-start">
+                        <i
+                        class="bi bi-arrow-down-circle-fill text-info flex-shrink-0 me-3 fs-2"
+                      ></i>
+                      <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
+                          Descuento
+                        </h3>
+                        <p>{{booking.discount}}€</p>
+                      </div>
+                      </div>
+                      <div class="col d-flex align-items-start">
+                        <i
+                        class="bi bi-calendar2-check-fill text-info flex-shrink-0 me-3 fs-2"
+                      ></i>
+                      <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
+                          Día de la reserva
+                        </h3>
+                        <p>{{booking.startDate}}</p>
+                      </div>
+                      </div>
+                      <div class="col d-flex align-items-start">
+                        <i
+                        class="bi bi-building-fill text-info flex-shrink-0 me-3 fs-2"
+                      ></i>
+                      <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
+                          Centro de belleza
+                        </h3>
+                        <p>{{booking.treatment.company.name}}</p>
+                      </div>
+                      </div>
+                      <div class="col d-flex align-items-start">
+                        <i
+                        class="bi bi-building-fill-check text-info flex-shrink-0 me-3 fs-2"
+                      ></i>
+                      <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
+                          Dirección
+                        </h3>
+                        <p>{{booking.treatment.company.street}}</p>
+                      </div>
+                      </div>
+                      <div class="col d-flex align-items-start">
+                        <i
+                        class="bi bi-clipboard-check-fill text-info flex-shrink-0 me-3 fs-2"
+                      ></i>
+                      <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
+                          Descripción del tratamiento
+                        </h3>
+                        <p>{{booking.treatment.descriptionLong}}</p>
+                      </div>
+                      </div>
+                      <div class="col d-flex align-items-start">
+                        <i
+                        class="bi bi-clipboard2-heart-fill text-info flex-shrink-0 me-3 fs-2"
+                      ></i>
+                      <div>
+                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
+                          Cuidados posteriores
+                        </h3>
+                        <p>{{booking.treatment.afterCare}}</p>
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+                }
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+
+    </div>
+  </div>
+</div>
