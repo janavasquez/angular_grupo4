@@ -28,6 +28,7 @@ export class BookingFormComponent implements OnInit {
   });
 
   isUpdate: boolean = false;
+  isForDelete: boolean = false;
 
   constructor(private httpClient: HttpClient,
     private activatedRoute: ActivatedRoute,

@@ -1,3 +1,4 @@
+import { Category } from './../../frontend/src/app/interfaces/category.model';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -22,7 +23,8 @@ import { CommentsController } from './comments/comments.controller';
       entities: [Treatment],
       synchronize: true, // generar tablas en base de datos
       logging: true
-    })
+    }),
+    TypeOrmModule.forFeature([Treatment])
   ],
   controllers: [AppController, BookingController, CategoryController, CompanyController, TreatmentController, UserController, CommentsController],
   providers: [AppService],
