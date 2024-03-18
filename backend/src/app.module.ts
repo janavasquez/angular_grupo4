@@ -24,8 +24,10 @@ import { Company } from './company/company.model';
       entities: [Treatment, Company],
       synchronize: true, // generar tablas en base de datos
       logging: true
-    })
+    }),
+    TypeOrmModule.forFeature([Treatment, Company])
   ],
+
   
   controllers: [AppController, BookingController, CategoryController, CompanyController, TreatmentController, UserController, CommentsController],
   providers: [AppService],

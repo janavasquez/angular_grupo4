@@ -20,6 +20,7 @@
           <input
           class="form-control"
           id="startDate"
+          placeholder="yyyy-mm-dd"
           formControlName="startDate"
           ngbDatepicker
           #d="ngbDatepicker">
@@ -33,7 +34,7 @@
           multiple
           style="min-height: 100px;">
           <option selected>Selecciona un tratamiento</option>
-          @for(treatment of treatment; track treatment.id) {
+          @for(treatment of treatments; track treatment.id) {
             <option [ngValue]="treatment">{{treatment.title}}</option>
           }
         </select>

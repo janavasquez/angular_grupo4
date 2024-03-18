@@ -78,7 +78,7 @@ export class CompanyFormComponent implements OnInit {
         city: '',
         postalCode: '',
         values: '',
-        treatments: undefined,
+        treatments: '',
         active: false,
         photo: ''
       };

@@ -1,6 +1,6 @@
-import { Company } from './../../../frontend/src/app/interfaces/company.model';
-import { Category } from './../../../frontend/src/app/interfaces/category.model';
 import { ApiProperty } from "@nestjs/swagger";
+import { Category } from "src/category/category.model";
+import { Company } from "src/company/company.model";
 import { Column, Entity, JoinTable, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
@@ -45,6 +45,6 @@ export class Treatment {
 
     @ApiProperty({example: {id: 1}})
     @ManyToOne(() => Company, {eager: true})
-    Company: Company;
+    company: Company;
 
 }
