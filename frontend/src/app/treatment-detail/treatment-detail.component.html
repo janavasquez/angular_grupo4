@@ -28,7 +28,7 @@
                   }
                 </ngb-carousel>
                 }
-                <button type="button" class="btn btn-outline-info" style="margin: 10px;" [routerLink]="">Reservar</button>
+                <button type="button" class="btn btn-outline-info" style="margin: 10px;" [routerLink]="['/booking', treatment.id, 'create']">Reservar</button>
               </div>
               <div class="col-8">
                 @if(treatment){
@@ -98,7 +98,7 @@
                         <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
                           Categoria
                         </h3>
-                        <p>{{ treatment.category.name }}</p>
+                        <p>{{ treatment.category }}</p>
                       </div>
                     </div>
                   </div>

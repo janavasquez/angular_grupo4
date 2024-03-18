@@ -1,1 +1,52 @@
-<p>booking-form works!</p>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      @if(isUpdate){
+        <h1 class="mt-5 text-center text-primary-emphasis">Actualizar o editar reserva</h1>
+      } @else {
+        <h1 class="mt-5 text-center text-primary-emphasis">Crear reserva</h1>
+      }
+      <form class="mt.5" [formGroup]="bookingForm" (ngSubmit)="save()">
+        <input type="hidden" formControlName="id">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="user"
+          formControlName="user" placeholder="">
+          <label for="user">Usuario</label>
+        </div>
+        <div class="input-group mb-3">
+          <input
+          class="form-control"
+          id="startDate"
+          formControlName="startDate"
+          ngbDatepicker
+          #d="ngbDatepicker">
+          <button class="btn btn-outline-secundary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+        </div>
+        <div class="form-floating mb-3">
+          <select class="form-select"
+          id="treatment"
+          formControlName="treatment"
+          [compareWith]="compareObjects"
+          multiple
+          style="min-height: 100px;">
+          <option selected>Selecciona un tratamiento</option>
+          @for(treatment of treatment; track treatment.id) {
+            <option [ngValue]="treatment">{{treatment.title}}</option>
+          }
+        </select>
+        <label for="treatment">Tratamiento</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="number" min="0" step="0.1"
+          class="form-control" id="discount"
+          formControlName="discount" placeholder="">
+          <label for="discount">Descuento (€)</label>
+        </div>
+        <div class="d-grid gap-2">
+          <button class="btn btn-success" type="submit">Enviar</button>
+          <button class="btn btn-danger" type="button" [routerLink]="['/booking']">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
