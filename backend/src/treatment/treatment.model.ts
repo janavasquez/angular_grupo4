@@ -3,6 +3,7 @@ import { Category } from "src/category/category.model";
 import { Company } from "src/company/company.model";
 import { Column, Entity, JoinTable, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
+
 @Entity()
 export class Treatment {
 
