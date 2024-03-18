@@ -21,6 +21,3 @@ Para gestionar el proyecto:
     * Columna completado
 
 Alternativa: Notion.
-
-nest new backend --skip-git --package-manager npm
-

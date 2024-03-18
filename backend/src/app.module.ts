@@ -10,6 +10,7 @@ import { CompanyController } from './company/company.controller';
 import { TreatmentController } from './treatment/treatment.controller';
 import { UserController } from './user/user.controller';
 import { CommentsController } from './comments/comments.controller';
+import { Company } from './company/company.model';
 
 @Module({
   imports: [
@@ -20,12 +21,12 @@ import { CommentsController } from './comments/comments.controller';
       username: 'root',
       password: 'admin',
       database: 'grupo4_backend', // crear esta base de datos en MySQL primero
-      entities: [Treatment],
+      entities: [Treatment, Company],
       synchronize: true, // generar tablas en base de datos
       logging: true
-    }),
-    TypeOrmModule.forFeature([Treatment])
+    })
   ],
+  
   controllers: [AppController, BookingController, CategoryController, CompanyController, TreatmentController, UserController, CommentsController],
   providers: [AppService],
 })
