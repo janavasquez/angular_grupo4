@@ -4,4 +4,5 @@ export interface Category {
   photoUrl: string;
   color: string;
   minAge: number;
+  //description; agregar
 }

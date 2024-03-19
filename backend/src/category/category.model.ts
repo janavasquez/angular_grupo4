@@ -15,4 +15,6 @@ export class Category{
     @Column()
     photo: string;
 
+    // para filtar por categoria debe de coincidir con el detail component
+
 }
