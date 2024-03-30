@@ -17,17 +17,18 @@ import { Booking } from '../interfaces/booking.model';
 export class BookingFormComponent implements OnInit {
 
   user: User[] = [];
-  treatment: Treatment[] = [];
+  treatments: Treatment[] = [];
 
   bookingForm = new FormGroup({
     id: new FormControl(),
     user: new FormControl(),
-    startDate: new FormControl(new Date),
+    startDate: new FormControl(new Date()),
     treatment: new FormControl(),
     discount: new FormControl
   });
 
   isUpdate: boolean = false;
+  isForDelete: boolean = false;
 
   constructor(private httpClient: HttpClient,
     private activatedRoute: ActivatedRoute,
@@ -35,19 +36,23 @@ export class BookingFormComponent implements OnInit {
 
   ngOnInit(): void {
 
+    if(this.router.url.includes('update')) {
+      this.isUpdate = true;
+    }
     const urlUser = 'http://localhost:3000/users';
     this.httpClient.get<User[]>(urlUser)
     .subscribe(user => this.user = user);
 
     const urlTrea = 'http://localhost:3000/treatments';
     this.httpClient.get<Treatment[]>(urlTrea)
-    .subscribe(treatment => this.treatment = treatment);
+    .subscribe(treatments => this.treatments = treatments);
 
     this.activatedRoute.params.subscribe(params => {
       let id = params['id'];
       this.httpClient.get<Booking>(`http://localhost:3000/booking/${id}`)
       .subscribe(booking => {
-        this.isUpdate = true;
+        console.log(booking);
+
         this.bookingForm.reset({
           id: booking.id,
           user: booking.user.fullName,

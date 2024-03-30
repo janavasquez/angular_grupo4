@@ -2,15 +2,10 @@
     <div class="row">
         <div class="col-12">
 
-            <h1 class="mt-5" style="color: rgb(140, 0, 255);">Usuarios registrados <i class="bi bi-people-fill"></i> </h1>
-            <table class="table table-striped mt-5">
-                <style>
-                    th {
-                        background-color: rgb(140, 0, 255); /* Color de fondo gris oscuro */
-                        color: white; /* Color del texto blanco */
-                        /* Añade otros estilos según sea necesario */
-                    }
-                </style>
+            <h1 class="mt-5" style="color: rgb(140, 0, 255);">Usuarios registrados <i class="bi bi-people-fill"></i>
+            </h1>
+            <table class="table table-striped mt-3">
+
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
@@ -34,17 +29,17 @@
                         <td>{{user.street}}</td>
                         <td>{{user.postalCode}}</td>
                         <td>
-                            <style>
-                                .mi-boton-personalizado {
-                                    background-color: rgb(140, 0, 255); /* Color de fondo violeta */
-                                    color: #ffffff; /* Color del texto blanco */
-                                    /* Otros estilos según sea necesario */
-                                }
-                            </style>
-                            <button class="btn mi-boton-personalizado me-2 my-2" [routerLink]="['/users', user.id]">
+
+                            <button class="btn mi-boton-personalizado m-2" [routerLink]="['/users', user.id]">
                                 <i class="bi bi-eye"></i>
                                 Ver detalle
                             </button>
+                            <button type="button" class="btn mi-boton-personalizado m-2"
+                                [routerLink]="['/users', user.id, 'update']">
+                                <i class="bi bi-pencil"></i>
+                                Editar
+                            </button>
+
                         </td>
                     </tr>
                     }

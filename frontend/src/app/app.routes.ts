@@ -17,7 +17,11 @@ import { CompanyFormComponent } from './company-form/company-form.component';
 import { BookingListComponent } from './booking-list/booking-list.component';
 import { BookingDetailComponent } from './booking-detail/booking-detail.component';
 import { BookingFormComponent } from './booking-form/booking-form.component';
+<<<<<<< HEAD
+import { UserFormComponent } from './user-form/user-form.component';
+=======
 import { CategoryFormComponent } from './category-form/category-form.component';
+>>>>>>> d4fa7953f4870865678c4cbfdf57c3f89ca1e961
 
 export const routes: Routes = [
 
@@ -78,6 +82,8 @@ export const routes: Routes = [
     component: CategoryDetailComponent
   },
   {
+<<<<<<< HEAD
+=======
     path: 'categories/create',
     component:CategoryFormComponent
 
@@ -95,6 +101,7 @@ export const routes: Routes = [
     component: UserDetailComponent
   },
   {
+>>>>>>> d4fa7953f4870865678c4cbfdf57c3f89ca1e961
     path: 'login',
     component: UserLoginComponent
   },
@@ -121,5 +128,25 @@ export const routes: Routes = [
   {
     path: 'booking/:id/delete',
     component: BookingFormComponent
+  },
+  {
+    path: 'users',
+    component: UserListComponent
+  },
+  {
+    path: 'users/:id',
+    component: UserDetailComponent
+  },
+  {
+    path: 'users/:id/create',
+    component: UserFormComponent
+  },
+  {
+    path: 'users/:id/update',
+    component: UserFormComponent
+  },
+  {
+    path: 'users/:id/delete',
+    component: UserFormComponent
   }
 ];
