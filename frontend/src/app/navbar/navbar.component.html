@@ -42,9 +42,13 @@
       </ul>
 
       <ul class="navbar-nav ms-auto fs-5">
-        <li class="nav-item">
-          <a class="nav-link active me-2" [routerLink]="['/users']">Usuarios</a>
-        </li>
+        <li class="nav-item" ngbDropdown>
+					<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown2" role="button"> Usuarios </a>
+					<div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu dropdown-menu-end">
+						<a ngbDropdownItem [routerLink]="['/users']" (click)="$event.preventDefault()">Lista de usuarios</a>
+						<a ngbDropdownItem [routerLink]="['/users/:id/create']" (click)="$event.preventDefault()">Crear Usuario</a>
+					</div>
+				</li>
         <li class="nav-item">
           <button type="button" class="btn mi-boton-rc me-3 mb-2" routerLink="/login">Login</button>
         </li>

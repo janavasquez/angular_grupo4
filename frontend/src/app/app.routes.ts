@@ -16,6 +16,7 @@ import { CompanyFormComponent } from './company-form/company-form.component';
 import { BookingListComponent } from './booking-list/booking-list.component';
 import { BookingDetailComponent } from './booking-detail/booking-detail.component';
 import { BookingFormComponent } from './booking-form/booking-form.component';
+import { UserFormComponent } from './user-form/user-form.component';
 
 export const routes: Routes = [
 
@@ -75,14 +76,6 @@ export const routes: Routes = [
     component: CategoryDetailComponent
   },
   {
-    path: 'users',
-    component: UserListComponent
-  },
-  {
-    path: 'users/:id',
-    component: UserDetailComponent
-  },
-  {
     path: 'login',
     component: UserLoginComponent
   },
@@ -109,5 +102,25 @@ export const routes: Routes = [
   {
     path: 'booking/:id/delete',
     component: BookingFormComponent
+  },
+  {
+    path: 'users',
+    component: UserListComponent
+  },
+  {
+    path: 'users/:id',
+    component: UserDetailComponent
+  },
+  {
+    path: 'users/:id/create',
+    component: UserFormComponent
+  },
+  {
+    path: 'users/:id/update',
+    component: UserFormComponent
+  },
+  {
+    path: 'users/:id/delete',
+    component: UserFormComponent
   }
 ];
