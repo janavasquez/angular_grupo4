@@ -24,6 +24,30 @@ export class Company {
     id: number;
 
     @Column()
-    name: string;
+  name: string;
+
+  @Column()
+  cif: string;
+
+  @Column()
+  street: string;
+
+  @Column()
+  city: string;
+
+  @Column()
+  postalCode: string;
+
+  @Column()
+  values: string;
+
+  @Column()
+  treatments: any;
+
+  @Column()
+  active: boolean;
+  
+  @Column()
+  photo:string;
 
 }
