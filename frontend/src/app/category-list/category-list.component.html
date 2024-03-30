@@ -16,7 +16,11 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/categories', category.id, 'detail']">Ver</button>
+                    <button type="button" class="btn btnsm btn-outline-secondary" [routerLink]="['/categories', category.id, 'update']"> crear categoria</button>
+
                   </div>
+
+
                   <small class="text-body-secondary">{{category.minAge}}</small>
                 </div>
               </div>

@@ -1,3 +1,4 @@
+import { Category } from './../../frontend/src/app/interfaces/category.model';
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -9,7 +10,11 @@ import { CompanyController } from './company/company.controller';
 import { TreatmentController } from './treatment/treatment.controller';
 import { UserController } from './user/user.controller';
 import { CommentsController } from './comments/comments.controller';
+<<<<<<< Updated upstream
 import { Company } from './company/company.model';
+=======
+import { Booking } from './booking/booking.model';
+>>>>>>> Stashed changes
 
 @Module({
   imports: [
@@ -20,12 +25,21 @@ import { Company } from './company/company.model';
       username: 'root',
       password: 'admin',
       database: 'grupo4_backend', // crear esta base de datos en MySQL primero
+<<<<<<< Updated upstream
       entities: [Treatment, Company],
       synchronize: true, // generar tablas en base de datos
       logging: true
     }),
-    TypeOrmModule.forFeature([Company]),
+    TypeOrmModule.forFeature([Treatment, Company])
+=======
+      entities: [Treatment, Booking],
+      synchronize: true, // generar tablas en base de datos
+      logging: true
+    }),
+    TypeOrmModule.forFeature([Treatment, Booking])
+>>>>>>> Stashed changes
   ],
+
   
   controllers: [AppController, BookingController, CategoryController, CompanyController, TreatmentController, UserController, CommentsController],
   providers: [AppService],

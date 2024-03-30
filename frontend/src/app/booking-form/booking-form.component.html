@@ -6,6 +6,9 @@
       } @else {
         <h1 class="mt-5 text-center text-primary-emphasis">Crear reserva</h1>
       }
+      @if(isForDelete){
+        <h1 class="mt-5 text-center text-primary-emphasis">Cancelar reserva{{isForDelete}}</h1>
+      }
       <form class="mt.5" [formGroup]="bookingForm" (ngSubmit)="save()">
         <input type="hidden" formControlName="id">
         <div class="form-floating mb-3">
@@ -17,6 +20,7 @@
           <input
           class="form-control"
           id="startDate"
+          placeholder="yyyy-mm-dd"
           formControlName="startDate"
           ngbDatepicker
           #d="ngbDatepicker">
@@ -30,7 +34,7 @@
           multiple
           style="min-height: 100px;">
           <option selected>Selecciona un tratamiento</option>
-          @for(treatment of treatment; track treatment.id) {
+          @for(treatment of treatments; track treatment.id) {
             <option [ngValue]="treatment">{{treatment.title}}</option>
           }
         </select>

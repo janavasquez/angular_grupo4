@@ -8,7 +8,7 @@ export interface Company {
   city: string;
   postalCode: string;
   values: string;
-  treatments: any;
+  treatments: string;
   active: boolean;
   photo:string;
 }
