@@ -1,5 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { Treatment } from "src/treatment/treatment.model";
+import { User } from "src/user/user.model";
 import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
