@@ -1,3 +1,4 @@
+import { Treatment } from './../../../backend/src/treatment/treatment.model';
 import { Routes } from '@angular/router';
 import { TreatmentListComponent } from './treatment-list/treatment-list.component';
 import { TreatmentDetailComponent } from './treatment-detail/treatment-detail.component';
@@ -16,6 +17,7 @@ import { CompanyFormComponent } from './company-form/company-form.component';
 import { BookingListComponent } from './booking-list/booking-list.component';
 import { BookingDetailComponent } from './booking-detail/booking-detail.component';
 import { BookingFormComponent } from './booking-form/booking-form.component';
+import { CategoryFormComponent } from './category-form/category-form.component';
 
 export const routes: Routes = [
 
@@ -66,6 +68,7 @@ export const routes: Routes = [
     path: 'companies/:id/update',
     component: CompanyFormComponent
   },
+  // rutas componentes categories
   {
     path: 'categories',
     component: CategoryListComponent
@@ -73,6 +76,15 @@ export const routes: Routes = [
   {
     path: 'categories/:id/detail',
     component: CategoryDetailComponent
+  },
+  {
+    path: 'categories/create',
+    component:CategoryFormComponent
+
+  },
+  {
+    path:'categories/:id/update',
+    component:CategoryFormComponent
   },
   {
     path: 'users',

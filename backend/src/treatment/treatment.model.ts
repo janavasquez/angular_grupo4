@@ -4,6 +4,6 @@ import { Entity, PrimaryGeneratedColumn } from "typeorm";
 export class Treatment {
 
     @PrimaryGeneratedColumn()
-    id: number;
+    id: number = 0;
 
 }

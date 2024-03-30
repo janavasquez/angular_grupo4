@@ -18,10 +18,10 @@
     </button>
 
     <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
-      <ul class="navbar-nav me-auto">
+      <ul class="navbar-nav me-auto fs-5">
 
         <li class="nav-item">
-          <a class="nav-link active" routerLink="/"> Home </a>
+          <a class="nav-link active" routerLink="/"> Inicio </a>
         </li>
 
         <li class="nav-item">
@@ -35,9 +35,13 @@
         <li class="nav-item">
           <a class="nav-link active" [routerLink]="['/companies']"> Centros </a>
         </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" [routerLink]="['/booking']"> Reservas </a>
+        </li>
       </ul>
 
-      <ul class="navbar-nav ms-auto">
+      <ul class="navbar-nav ms-auto fs-5">
         <li class="nav-item">
           <a class="nav-link active me-2" [routerLink]="['/users']">Usuarios</a>
         </li>

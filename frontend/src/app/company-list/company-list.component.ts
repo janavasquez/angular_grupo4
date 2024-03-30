@@ -19,7 +19,7 @@ export class CompanyListComponent implements OnInit {
   constructor(private httpClient: HttpClient) {}
 
   ngOnInit(): void {
-    this.httpClient.get<Company[]>('http://localhost:3000/company')
+    this.httpClient.get<Company[]>('http://localhost:3000/companies')
     .subscribe(companies => this.companies = companies);
   }
 
