@@ -23,11 +23,11 @@ import { User } from './user/user.model';
       username: 'root',
       password: 'admin',
       database: 'grupo4_backend', // crear esta base de datos en MySQL primero
-      entities: [Treatment, Company, Booking, Category, User],
+      entities: [Treatment, Company, Booking, Category, User, Comment],
       synchronize: true, // generar tablas en base de datos
       logging: true
     }),
-    TypeOrmModule.forFeature([Treatment, Company, Booking, Category, User])
+    TypeOrmModule.forFeature([Treatment, Company, Booking, Category, User, Comment])
   ],
 
   

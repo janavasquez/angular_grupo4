@@ -5,6 +5,6 @@ export interface Booking {
   id: number;
   startDate: Date;
   discount: number;
-  user: User;
-  treatment: Treatment;
+  user?: User;
+  treatment?: Treatment;
 }

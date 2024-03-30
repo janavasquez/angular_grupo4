@@ -9,7 +9,7 @@ export interface Comment { // valoracion
   rating: number;
   opinion: string;
 
-  user: User;
-  company: Company;
-  treatment: Treatment;
+  user?: User;
+  company?: Company;
+  treatment?: Treatment;
 }
