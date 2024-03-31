@@ -18,8 +18,12 @@ categoryForm = new FormGroup({
   name: new FormControl(),
   photoUrl: new FormControl(),
   minAge: new FormControl(),
+  treatment: new FormControl(''),
+  description: new FormControl('')
 
-}); photoFile: File | undefined;
+});
+
+photoFile: File | undefined;
 photoPreview: string | undefined;
 isUpdate: boolean = false;
 category: Category | undefined;
@@ -72,8 +76,10 @@ onFileChange(event: Event) {
 
     let formData = new FormData();
     formData.append('id', this.categoryForm.get('id')?.value ?? 0);
-    formData.append('name', this.categoryForm.get('firstName')?.value ?? '');
-    formData.append('photoUrl', this.categoryForm.get('lastName')?.value ?? '');
+    formData.append('name', this.categoryForm.get('name')?.value ?? '');
+    formData.append('photoUrl', this.categoryForm.get('photoUrl')?.value ?? '');
+    formData.append('treatment', this.categoryForm.get('nametreatment')?.value ?? '');
+    formData.append('description', this.categoryForm.get('description')?.value ?? '');
     formData.append('minAge', this.categoryForm.get('id')?.value ?? 0);
 
 

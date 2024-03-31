@@ -513,28 +513,33 @@
             "id": "1",
             "name": "Cuidado de Uñas",
             "photoUrl": "url_de_la_foto_1",
-            "color": "#FF5733",
+            "treatment": "Treatment",
+            "description": "somos especialistas en el cuidado de uñas, nuestro productos son de alta calidad ",
             "minAge": 18
+
         },
         {
             "id": "2",
             "name": "Peluqueria",
             "photoUrl": "url_de_la_foto_2",
-            "color": "#3366FF",
+            "treatment": "Treatment",
+            "description": "somos especialistas en el cuidado del pelo, nuestro productos son de alta calidad ",
             "minAge": 18
         },
         {
             "id": "3",
             "name": "Depilación",
             "photoUrl": "url_de_la_foto_3",
-            "color": "#33CC33",
+            "treatment": "Treatment",
+            "description": "Nuestro productos son de alta calidad y personal cualificado te garantizamos el mejor servicio. ",
             "minAge": 18
         },
         {
             "id": "4",
             "name": "Tratamientos Faciales y corporales",
             "photoUrl": "url_de_la_foto_4",
-            "color": "#FFCC00",
+            "treatment": "Treatment",
+            "description": "somos especialistas en el cuidado de tu piel, nuestro productos son de alta calidad ",
             "minAge": 18
         }
 

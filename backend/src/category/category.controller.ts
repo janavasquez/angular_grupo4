@@ -52,11 +52,11 @@ async deleteById(
      }
 
     try {
-        // Opción 1: Borrar el libro
-        // Primero desasociar o borrar aquellas cosas que apunten al libro
+        // Opción 1: Borrar categotias
+        // Primero desasociar o borrar aquellas cosas que apunten a categoria
         // this.bookRepository.delete(id);
 
-        // Opción 2: Despublicar libro
+        // Opción 2: Despublicar categoria
         const category = await this.categoryRepo.findOne({
             where: {name: name}
         });
