@@ -1,4 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
+import { Company } from "src/company/company.model";
 import { Treatment } from "src/treatment/treatment.model";
 import { User } from "src/user/user.model";
 import { Column, CreateDateColumn, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
@@ -15,6 +16,10 @@ export class Booking {
     startDate: Date;
 
     @ApiProperty()
+    @Column({type: 'decimal', default: false})
+    price: number;
+
+    @ApiProperty()
     @Column({type: 'decimal', precision: 14, scale: 2})
     discount: number;
 
@@ -25,5 +30,9 @@ export class Booking {
     @ApiProperty()
     @ManyToOne(() => Treatment, {eager: true})
     treatment: Treatment;
+
+    @ApiProperty()
+    @ManyToOne(() => Company, {eager: true})
+    company: Company;
 
 }

@@ -9,7 +9,7 @@ export class Treatment {
 
     @ApiProperty()
     @PrimaryGeneratedColumn()
-    id: number = 0;
+    id: number;
 
     @ApiProperty()
     @Column({unique: true})
