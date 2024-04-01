@@ -14,9 +14,6 @@ export class Category{
     photo: string;
 
     @Column()
-    treatment: Treatment;
-
-    @Column()
     description: string;
 
 
