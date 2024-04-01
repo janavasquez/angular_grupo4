@@ -10,9 +10,9 @@
           <div class="container mt-5">
             <div class="row">
               <div class="col-4 text-center col-md-4 col-sm-12 text-center">
-                @if (treatment.images) {
+                @if (treatment.image) {
                 <ngb-carousel>
-                  @for (image of treatment.images; track image){
+                  @for (image of treatment.image; track image){
                   <ng-template ngbSlide>
                     <div class="picsum-img-wrapper">
                       <img [src]="image" alt="Random first slide" />
@@ -96,9 +96,12 @@
                       ></i>
                       <div>
                         <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
-                          Categoria
+                          Categorias
                         </h3>
-                        <p>{{ treatment.category }}</p>
+                        @for (category of treatment.categories; track category.id) {
+                          <p>{{ category.name }}</p>
+                        }
+
                       </div>
                     </div>
                   </div>

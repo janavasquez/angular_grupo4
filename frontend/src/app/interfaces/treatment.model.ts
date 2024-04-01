@@ -6,12 +6,12 @@ export interface Treatment {
     id: number;
     title: string;
     price: number;
-    images: string[];
+    image: string;
     descriptionShort: string;
     descriptionLong: string;
     afterCare: string; // cuidados posteriores
     durationInMin: number; // duracion en minutos
-    category: Category[];
+    categories: Category[];
     company: Company;
 
 

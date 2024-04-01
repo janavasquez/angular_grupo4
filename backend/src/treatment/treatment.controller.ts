@@ -26,7 +26,7 @@ export class TreatmentController {
     @Get('filter-by-category/:id')
     findByCategoryId(@Param('id', ParseIntPipe) id: number) {
         return this.treatmentRepository.find({
-            where: {category: {id: id}}
+            where: {categories: {id: id}}
         });
     }
 
@@ -46,6 +46,8 @@ export class TreatmentController {
 
     @Post()
     create(@Body() treatment: Treatment) {
+        console.log(treatment);
+        
         return this.treatmentRepository.save(treatment);
     }
 

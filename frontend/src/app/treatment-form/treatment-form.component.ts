@@ -16,7 +16,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 })
 export class TreatmentFormComponent implements OnInit{
 
-  companies: Company[] = [];
+  companies: Company [] = [];
   categories: Category [] = [];
 
   treatmentForm = new FormGroup({
@@ -27,11 +27,15 @@ export class TreatmentFormComponent implements OnInit{
     descriptionLong: new FormControl(),
     afterCare: new FormControl(),
     durationInMin: new FormControl(),
-    companies: new FormControl(),
-    categories: new FormControl<Category[]>([])
+    company: new FormControl(),
+    categories: new FormControl(),
+    image: new FormControl()
   });
 
   isUpdate: boolean = false;
+  photoPreview: string | undefined;
+  photoFile: File | undefined;
+  treatment: Treatment | undefined;
 
   constructor(
     private httpClient: HttpClient,
@@ -40,17 +44,22 @@ export class TreatmentFormComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    const urlCom = 'http://localhost:3000/companies';
+    const urlCom = 'http://localhost:3000/company';
     this.httpClient.get<Company[]>(urlCom)
     .subscribe(companies => this.companies = companies);
 
-    const urlCat = 'http://localhost:3000/categories';
+    const urlCat = 'http://localhost:3000/category';
     this.httpClient.get<Category[]>(urlCat)
     .subscribe(categories => this.categories = categories);
 
     this.activatedRoute.params.subscribe(params => {
       let id = params['id'];
-      this.httpClient.get<Treatment>(`http://localhost:3000/treatments/${id}`)
+      if(!id)
+        return; // si no existe id entonces no traemos treatment del backend
+
+
+        // si sí existe id entonces es una actualización y por tanto traemos los datos del backend para actualizarlos
+      this.httpClient.get<Treatment>(`http://localhost:3000/treatment/${id}`)
       .subscribe(treatment => {
         this.isUpdate = true;
 
@@ -62,36 +71,55 @@ export class TreatmentFormComponent implements OnInit{
           descriptionLong: treatment.descriptionLong,
           afterCare: treatment.afterCare,
           durationInMin: treatment.durationInMin,
-          categories: treatment.category,
-          companies: treatment.company
+          categories: treatment.categories,
+          company: treatment.company,
+          image: treatment.image
         });
       });
     });
   }
 
-  save(): void {
+  onFileChange(event: Event) {
+    let target = event.target as HTMLInputElement;
+    if (target.files !== null && target.files.length > 0) {
+      this.photoFile = target.files[0];
+      let reader = new FileReader();
+      reader.onload = event => this.photoPreview = reader.result as string;
+      reader.readAsDataURL(this.photoFile);
+    }
+  }
 
-    const treatment: Treatment = {
-      id: this.treatmentForm.get('id')?.value ?? 0,
-      title: this.treatmentForm.get('title')?.value ?? '',
-      price: this.treatmentForm.get('price')?.value ?? 0,
-      descriptionShort: this.treatmentForm.get('descriptionShort')?.value ?? '',
-      descriptionLong: this.treatmentForm.get('descriptionLong')?.value ?? '',
-      afterCare: this.treatmentForm.get('afterCare')?.value ?? '',
-      durationInMin: this.treatmentForm.get('durationInMin')?.value ?? 0,
-      category: this.treatmentForm.get('categories')?.value ?? [],
-      company: this.treatmentForm.get('companies')?.value ?? '',
-      images: []
-    };
+  save() {
 
-    if(this.isUpdate){
-      const urlForUpdate = 'http://localhost:3000/treatments' + treatment.id;
-      this.httpClient.put<Treatment>(urlForUpdate, treatment)
-      .subscribe(data => this.router.navigate(['/treatments']));
+    let formData = new FormData();
+    formData.append('id', this.treatmentForm.get('id')?.value ?? 0);
+    formData.append('title', this.treatmentForm.get('title')?.value ?? '');
+    formData.append('price', this.treatmentForm.get('price')?.value + '');
+    formData.append('descriptionShort', this.treatmentForm.get('descriptionShort')?.value ?? '');
+    formData.append('descriptionLong', this.treatmentForm.get('descriptionlong')?.value ?? '');
+    formData.append('afterCare', this.treatmentForm.get('afterCare')?.value ?? '');
+    formData.append('durationInMin', this.treatmentForm.get('durationInMin')?.value ?? '');
+    formData.append('categories', this.treatmentForm.get('categories')?.value ?? '');
+    formData.append('company', this.treatmentForm.get('company')?.value ?? '');
+    formData.append('image', this.treatmentForm.get('image')?.value ?? '');
+
+    if(this.photoFile) formData.append('file', this.photoFile);
+
+    if(this.isUpdate) {
+      const id =  this.treatmentForm.get('id')?.value;
+      this.httpClient.put<Treatment>('http://localhost:3000/treatment/' + id, formData)
+      .subscribe(treatment => {
+        this.photoFile = undefined;
+        this.photoPreview = undefined;
+        this.treatment = treatment;
+      });
     } else {
-      const url = 'http://localhost:3000/treatments';
-      this.httpClient.post<Treatment>(url, treatment)
-      .subscribe(data => this.router.navigate(['/treatments']));
+      this.httpClient.post<Treatment>('http://localhost:3000/treatment', formData)
+      .subscribe(treatment => {
+        this.photoFile = undefined;
+        this.photoPreview = undefined;
+        this.treatment = treatment;
+      });
     }
 
   };

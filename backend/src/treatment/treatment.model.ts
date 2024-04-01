@@ -21,7 +21,7 @@ export class Treatment {
 
     @ApiProperty()
     @Column()
-    images: string;
+    image: string;
 
     @ApiProperty()
     @Column({length: 80})
@@ -42,7 +42,7 @@ export class Treatment {
     @ApiProperty({example: [{id: 1}]})
     @ManyToMany(() => Category, {eager: true})
     @JoinTable()
-    category: Category[];
+    categories: Category[];
 
     @ApiProperty({example: {id: 1}})
     @ManyToOne(() => Company, {eager: true})

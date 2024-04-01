@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-lg-8">
 
       @if(isUpdate){
         <h1 class="mt-5 text-center text-primary-emphasis">Actualizar o editar tratamiento <i class="bi bi-person-hearts"></i></h1>
@@ -10,12 +10,20 @@
 
       <form class="mt.5" [formGroup]="treatmentForm" (ngSubmit)="save()">
 
-        <input type="hidden" formControlName="id">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="id"
+          formControlName="id" readonly>
+          <label for="id">Id</label>
+        </div>
 
         <div class="form-floating mb-3">
           <input type="text" class="form-control" id="title"
           formControlName="title" placeholder="">
-          <label for="title">Tratamiento</label>
+          <label for="title">Nombre del tratamiento</label>
+        </div>
+        <div class="input-group mb-3">
+          <label class="input-group-text" for="photoUrl">Foto del tratamiento</label>
+          <input type="file" class="form-control" id="photoUrl" (change)="onFileChange($event)">
         </div>
         <div class="form-floating mb-3">
           <input type="number" min="0" step="0.01"
@@ -29,8 +37,10 @@
           <label for="descriptionShort">Descripción corta</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="descriptionLong"
-          formControlName="descriptionLong" placeholder="">
+          <textarea type="text" class="form-control" id="descriptionLong"
+          formControlName="descriptionLong"
+          placeholder="Texto largo" rows="4" cols="50">
+        </textarea>
           <label for="descriptionLong">Descripción larga</label>
         </div>
         <div class="form-floating mb-3">
@@ -72,10 +82,21 @@
         <label for="category">Categoria</label>
         </div>
         <div class="d-grid gap-2">
-          <button class="btn btn-success" type="submit">Enviar</button>
+          <button class="btn btn-success" type="submit">Guardar</button>
           <button class="btn btn-danger" type="button" [routerLink]="['/treatments']">Cancelar</button>
         </div>
       </form>
+    </div>
+    <div class="col-lg-4">
+      @if(photoPreview) {
+        <h3 class="my-5">Previsualización de foto</h3>
+        <img class="rounded mx-auto d-block" [src]="photoPreview"
+        style="max-width: 500px;">
+      }
+      @if (!photoPreview && treatment?.image) {
+        <h3 class="my-5">Previsualización de foto</h3>
+        <img class="img-fluid" [src]="'http://localhost:3000/assets/img/' + treatment?.image">
+      }
     </div>
   </div>
 </div>
