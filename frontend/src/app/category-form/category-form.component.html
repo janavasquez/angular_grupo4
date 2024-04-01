@@ -13,9 +13,9 @@
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="firstName" formControlName="firstName"
+          <input type="text" class="form-control" id="name" formControlName="name"
           placeholder="">
-          <label for="firstName">Nombre</label>
+          <label for="name">Nombre</label>
         </div>
 
 
@@ -28,10 +28,24 @@
         </div>
 
         <div class="form-floating mb-3">
+          <textarea type="text" class="form-control" id="description" formControlName="description"
+          placeholder="Texto largo" rows="4" cols="50">
+        </textarea>
+          <label for="bio">Descripcion</label>
+        </div>
+
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="treatment" formControlName="treatment"
+          placeholder="">
+          <label for="treatment">Tratamiento</label>
+        </div>
+
+        <div class="form-floating mb-3">
           <input type="number" min="0" step="0"
           class="form-control" id="minAge" formControlName="minAge"
           placeholder="">
-          <label for="salary">Edad minima </label>
+          <label for="minAge">Edad minima </label>
         </div>
 
 
