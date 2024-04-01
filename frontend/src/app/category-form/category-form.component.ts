@@ -49,7 +49,13 @@ ngOnInit(): void{
       this.isUpdate = true;
       this.category= category;
 
-      this.categoryForm.reset(category)
+      this.categoryForm.reset({
+        id: category.id,
+        name: category.name,
+        minAge: category.minAge,
+        photoUrl: category.photoUrl,
+        description: category.description
+      })
 
       });
 

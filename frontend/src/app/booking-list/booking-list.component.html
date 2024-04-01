@@ -15,7 +15,7 @@
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
-                      <h5 class="card-title">{{booking.treatment.title}}</h5>
+                      <h5 class="card-title">{{booking.treatment?.title}}</h5>
                       <p class="card-text">{{booking.startDate}}</p>
                       <p class="card-text"><small class="text-primary-emphasis">Descuento {{booking.discount}}€</small></p>
                       <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/booking', booking.id, 'detail']">Descripción</button>

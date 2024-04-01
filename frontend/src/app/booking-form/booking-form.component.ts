@@ -55,7 +55,7 @@ export class BookingFormComponent implements OnInit {
 
         this.bookingForm.reset({
           id: booking.id,
-          user: booking.user.fullName,
+          user: booking.user?.fullName,
           startDate: booking.startDate,
           treatment: booking.treatment,
           discount: booking.discount
@@ -71,7 +71,8 @@ export class BookingFormComponent implements OnInit {
       user: this.bookingForm.get('user')?.value ?? '',
       startDate: this.bookingForm.get('startdate')?.value ?? new Date,
       treatment: this.bookingForm.get('treatment')?.value ?? '',
-      discount: this.bookingForm.get('discount')?.value ?? 0
+      discount: this.bookingForm.get('discount')?.value ?? 0,
+      price: this.bookingForm.get('price')?.value ?? 0
     };
 
     if(this.isUpdate){
