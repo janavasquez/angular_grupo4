@@ -6,6 +6,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { Booking } from '../interfaces/booking.model';
+import { Company } from '../interfaces/company.model';
 
 @Component({
   selector: 'app-booking-form',
@@ -18,17 +19,22 @@ export class BookingFormComponent implements OnInit {
 
   user: User[] = [];
   treatments: Treatment[] = [];
+  companies: Company [] = [];
+  price = 0;
 
   bookingForm = new FormGroup({
     id: new FormControl(),
     user: new FormControl(),
     startDate: new FormControl(new Date()),
     treatment: new FormControl(),
-    discount: new FormControl
+    discount: new FormControl(),
+    price: new FormControl()
   });
 
+  booking: Booking | undefined;
   isUpdate: boolean = false;
   isForDelete: boolean = false;
+  showConfirmMessage = false;
 
   constructor(private httpClient: HttpClient,
     private activatedRoute: ActivatedRoute,
@@ -39,28 +45,19 @@ export class BookingFormComponent implements OnInit {
     if(this.router.url.includes('update')) {
       this.isUpdate = true;
     }
-    const urlUser = 'http://localhost:3000/users';
+    const urlUser = 'http://localhost:3000/user';
     this.httpClient.get<User[]>(urlUser)
     .subscribe(user => this.user = user);
 
-    const urlTrea = 'http://localhost:3000/treatments';
+    const urlTrea = 'http://localhost:3000/treatment';
     this.httpClient.get<Treatment[]>(urlTrea)
-    .subscribe(treatments => this.treatments = treatments);
+    .subscribe(treatment => this.treatments = treatment);
 
     this.activatedRoute.params.subscribe(params => {
-      let id = params['id'];
-      this.httpClient.get<Booking>(`http://localhost:3000/booking/${id}`)
-      .subscribe(booking => {
-        console.log(booking);
-
-        this.bookingForm.reset({
-          id: booking.id,
-          user: booking.user?.fullName,
-          startDate: booking.startDate,
-          treatment: booking.treatment,
-          discount: booking.discount
-        });
-      });
+      const id = params['id'];
+      if(!id) return;
+      this.httpClient.get<Booking>("http://localhost:3000/booking/" + id)
+      .subscribe(booking => this.booking = booking)
     });
   }
 
@@ -84,7 +81,11 @@ export class BookingFormComponent implements OnInit {
       this.httpClient.post<Booking>(url, booking)
       .subscribe(data => this.router.navigate(['/booking']));
     }
-
+    this.httpClient.post<Booking>('http://localhost:3000/booking', booking)
+    .subscribe(booking => {
+      console.log(booking);
+      this.showConfirmMessage = true;
+    });
   };
 
   compareObjects(o1: any, o2: any): boolean {

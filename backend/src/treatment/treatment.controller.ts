@@ -1,7 +1,8 @@
-import { Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put } from '@nestjs/common';
+import { Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Treatment } from './treatment.model';
 import { Repository } from 'typeorm';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('treatment')
 export class TreatmentController {
@@ -45,24 +46,31 @@ export class TreatmentController {
     }
 
     @Post()
-    create(@Body() treatment: Treatment) {
-        console.log(treatment);
-        
-        return this.treatmentRepository.save(treatment);
+    @UseInterceptors(FileInterceptor('file'))
+    async create(@UploadedFile() file: Express.Multer.File,
+    @Body() treatment: Treatment) {
+        if(file) {
+            treatment.image = file.filename;
+        }
+        console.log(treatment)
+        return await this.treatmentRepository.save(treatment);
     }
 
     @Put(':id')
+    @UseInterceptors(FileInterceptor('file'))
     async update(
+        @UploadedFile() file: Express.Multer.File,
         @Param('id', ParseIntPipe) id: number,
         @Body() treatment: Treatment
     ) {
-        const exists = await this.treatmentRepository.existsBy({
-            id: id
-        });
-        if(!exists) {
-            throw new NotFoundException('El tratamiento no existe');
+        if(!await this.treatmentRepository.existsBy({id: id})) {
+            throw new NotFoundException('Tratamiento no encontrado');
         }
-        return this.treatmentRepository.save(treatment);
+        if(file) {
+            treatment.image = file.filename;
+        }
+        treatment.id = id;
+        return await this.treatmentRepository.save(treatment)
     }
 
     @Delete(':id')

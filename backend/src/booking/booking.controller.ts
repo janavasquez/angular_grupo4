@@ -1,4 +1,4 @@
-import { Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put } from '@nestjs/common';
+import { Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put, Query } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Booking } from './booking.model';
 import { Repository } from 'typeorm';
@@ -33,6 +33,13 @@ export class BookingController {
     findByTreatmentId(@Param('id', ParseIntPipe) id: number) {
         return this.bookingRepository.find({
             where: {treatment: {id: id}}
+        });
+    }
+
+    @Get('filter')
+    findWithFilter(@Query() filters: any) {
+        return this.bookingRepository.find({
+            where: filters
         });
     }
 
