@@ -26,24 +26,21 @@ export class CompanyController {
         });
     }
     
-    @Get('filter-by-category/:id')
-    findByCategoryId(@Param('id', ParseIntPipe) id: number) {
+    @Get('filter-by-postalCode/:postalCode')
+    findByPostalCode(@Param('postalCode') postalCode: string) {
         return this.companyRepository.find({
-            where: {category: {id: id}}
+            where: {
+                postalCode: postalCode
+            }
         });
     }
 
-    @Get('filter-by-company/:id')
-    findByCompanyId(@Param('id', ParseIntPipe) id: number) {
+    @Get('filter-by-city/:city')
+    findByCity(@Param('city') city: string) {
         return this.companyRepository.find({
-            where: {company: {id: id}}
-        });
-    }
-
-    @Get('filter-by-title/:id')
-    findByTitle(@Param('title') title: string) {
-        return this.companyRepository.find({
-            where: {title: title}
+            where: {
+                city: city
+            }
         });
     }
 

@@ -13,6 +13,7 @@ import { Company } from './company/company.model';
 import { Booking } from './booking/booking.model';
 import { Category } from './category/category.model';
 import { User } from './user/user.model';
+import { Comments } from './comments/comments.model';
 
 @Module({
   imports: [
@@ -23,11 +24,11 @@ import { User } from './user/user.model';
       username: 'root',
       password: 'admin',
       database: 'grupo4_backend', // crear esta base de datos en MySQL primero
-      entities: [Treatment, Company, Booking, Category, User, Comment],
+      entities: [Treatment, Company, Booking, Category, User, Comments],
       synchronize: true, // generar tablas en base de datos
       logging: true
     }),
-    TypeOrmModule.forFeature([Treatment, Company, Booking, Category, User, Comment])
+    TypeOrmModule.forFeature([Treatment, Company, Booking, Category, User, Comments])
   ],
 
   
