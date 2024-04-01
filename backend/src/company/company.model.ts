@@ -1,53 +1,48 @@
 
-/*
-export interface Category {
-    id: number;
-    name: string;
-    cif: string;
-    street: string;
-    city: string;
-    postalCode: string;
-    values: string;
-    treatments: any;
-    active: boolean;
-    photo:string;
-}
-*/
-
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinTable,OneToMany,PrimaryGeneratedColumn } from "typeorm";
+import { ApiProperty } from '@nestjs/swagger';
+import { Treatment } from "src/treatment/treatment.model";
 
 @Entity()
 export class Company {
 
-    
+    @ApiProperty()
     @PrimaryGeneratedColumn()
     id: number;
 
+    @ApiProperty()
     @Column()
-  name: string;
+   name: string;
 
-  @Column()
-  cif: string;
+   @ApiProperty()
+   @Column()
+   cif: string;
 
+@ApiProperty()
   @Column()
   street: string;
 
+@ApiProperty()
   @Column()
   city: string;
 
-  @Column()
+@ApiProperty()
+  @Column() 
   postalCode: string;
 
+@ApiProperty()
   @Column()
   values: string;
 
-  @Column()
-  treatments: any;
+  @ApiProperty()
+  @OneToMany(() => Treatment, treatment => treatment.company)
+  treatments: Treatment[];
 
-  @Column()
+  @ApiProperty()
+  @Column({ default: true })
   active: boolean;
-  
-  @Column()
-  photo:string;
 
+  @ApiProperty()
+  @Column()
+  photo: string;
 }
