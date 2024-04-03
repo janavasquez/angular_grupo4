@@ -8,7 +8,7 @@
         <h1 class="mt-5 text-center text-primary-emphasis">Crear tratamiento <i class="bi bi-person-hearts"></i></h1>
       }
 
-      <form class="mt.5" [formGroup]="treatmentForm" (submit)="save()">
+      <form class="mt.5" [formGroup]="treatmentForm" (ngSubmit)="save()">
 
         <div class="form-floating mb-3">
           <input type="text" class="form-control" id="id"

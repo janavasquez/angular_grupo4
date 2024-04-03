@@ -9,7 +9,7 @@
       @if(isForDelete){
         <h1 class="mt-5 text-center text-primary-emphasis">Cancelar reserva{{isForDelete}}</h1>
       }
-      <form class="mt.5" [formGroup]="bookingForm" (submit)="save()">
+      <form class="mt.5" [formGroup]="bookingForm" (ngSubmit)="save()">
         <input type="hidden" formControlName="id">
         <div class="form-floating mb-3">
           <input type="text" class="form-control" id="user"
