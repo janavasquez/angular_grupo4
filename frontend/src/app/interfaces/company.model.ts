@@ -1,7 +1,7 @@
 export interface Company {
  // Centro
-  id: number;
 
+  id: number;
   name: string;
   cif: string;
   street: string;
@@ -10,5 +10,5 @@ export interface Company {
   values: string;
   treatments: string;
   active: boolean;
-  photo:string;
+  photoUrl:string;
 }

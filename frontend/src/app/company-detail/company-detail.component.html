@@ -3,8 +3,8 @@
     <div class="col-4 text-center">
 
       <div class="px-4 py-5">
-        @if (company && company.photo && company.photo.length > 0){
-        <img class="img-fluid" [src]="company.photo" alt="Foto company">
+        @if (company && company.photoUrl && company.photoUrl.length > 0){
+        <img class="img-fluid" [src]="company.photoUrl" alt="Foto company">
 
         <div>
           <button class="btn btn-danger my-2" (click)="deleteCompany()">
