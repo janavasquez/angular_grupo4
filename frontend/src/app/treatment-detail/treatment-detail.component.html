@@ -106,7 +106,6 @@
                     </div>
                   </div>
                 </div>
-
                 } @else {
                 <p>Tratamiento no encontrado.</p>
                 }
@@ -116,7 +115,56 @@
         </div>
       </div>
       }
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h2 class="mt-5">Comentarios y valoraciones</h2>
+      <div>
+        <ul class="list-unstyled">
+          @for (comment of comments; track comment.id) {
+            <li>
+              <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                <img class="bd-placeholder-img" src="https://placehold.co/100">
+                <div class="col-lg-8">
+                  <h6 class="mb-0">
+                    <ngb-rating [(rate)]="comment.rating" [readonly]="true" [max]="5">
+                      <ng-template let-fill="fill" let-index="index">
+                        <i class="bi-star{{ fill === 100 ? '-fill' : '' }} fs-3" style="color:#ffb900;"></i>
+                      </ng-template>
+                    </ngb-rating>
+                    {{comment.rating| date:'dd/MM/yyyy'}}
+                  </h6>
+                  <small class="text-body-secondary">{{comment.rating}}</small>
+                </div>
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+      <div class="col-6">
+        <h2 class="mt-5">Añade un comentario</h2>
+        <form [formGroup]="commentsForm" (ngSubmit)="save()">
 
+          <div class="mb-3">
+            <ngb-rating  formControlName="score" [max]="5">
+              <ng-template let-fill="fill" let-index="index">
+                <i class="bi-star{{ fill === 100 ? '-fill' : '' }} fs-3" style="color:#ffb900;"></i>
+              </ng-template>
+            </ngb-rating>
+          </div>
+
+          <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here"
+            id="comment" formControlName="comment" style="min-height:150px;"></textarea>
+            <label for="comment">Comentario de texto</label>
+          </div>
+
+          <button class="w-100 btn btn-success btn-lg" type="submit">Añadir comentario</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>

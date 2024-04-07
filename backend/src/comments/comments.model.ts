@@ -1,4 +1,5 @@
 import { ApiProperty } from "@nestjs/swagger";
+import { Booking } from "src/booking/booking.model";
 import { Company } from "src/company/company.model";
 import { Treatment } from "src/treatment/treatment.model";
 import { User } from "src/user/user.model";
@@ -16,7 +17,7 @@ export class Comments {
     rating: number;
 
     @ApiProperty()
-    @Column({length: 500})
+    @Column({length: 2000, nullable: true})
     opinion: string;
 
     @ApiProperty()
@@ -30,5 +31,9 @@ export class Comments {
     @ApiProperty()
     @ManyToMany(() => Treatment, {eager: true})
     treatment: Treatment;
+
+    @ApiProperty()
+    @ManyToMany(() => Booking, {eager: true})
+    booking: Booking;
 
 }

@@ -110,7 +110,7 @@ export const routes: Routes = [
     component: BookingDetailComponent
   },
   {
-    path: 'booking/create',
+    path: 'booking/:id/create',
     component: BookingFormComponent
   },
   {
