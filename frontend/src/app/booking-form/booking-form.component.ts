@@ -28,7 +28,8 @@ export class BookingFormComponent implements OnInit {
     startDate: new FormControl(new Date()),
     treatment: new FormControl(),
     discount: new FormControl(),
-    price: new FormControl()
+    price: new FormControl(),
+    company: new FormControl()
   });
 
   booking: Booking | undefined;
@@ -53,6 +54,10 @@ export class BookingFormComponent implements OnInit {
     this.httpClient.get<Treatment[]>(urlTrea)
     .subscribe(treatment => this.treatments = treatment);
 
+    const urlComp = 'http://localhost:3000/company';
+    this.httpClient.get<Company[]>(urlComp)
+    .subscribe(companies => this.companies = companies);
+
     this.activatedRoute.params.subscribe(params => {
       const id = params['id'];
       if(!id) return;
@@ -65,11 +70,11 @@ export class BookingFormComponent implements OnInit {
 
     const booking: Booking = {
       id: this.bookingForm.get('id')?.value ?? 0,
-      user: this.bookingForm.get('user')?.value ?? '',
       startDate: this.bookingForm.get('startdate')?.value ?? new Date,
       treatment: this.bookingForm.get('treatment')?.value ?? '',
       discount: this.bookingForm.get('discount')?.value ?? 0,
-      price: this.bookingForm.get('price')?.value ?? 0
+      price: this.bookingForm.get('price')?.value ?? 0,
+      company: this.bookingForm.get('company')?.value
     };
 
     if(this.isUpdate){
@@ -81,11 +86,6 @@ export class BookingFormComponent implements OnInit {
       this.httpClient.post<Booking>(url, booking)
       .subscribe(data => this.router.navigate(['/booking']));
     }
-    this.httpClient.post<Booking>('http://localhost:3000/booking', booking)
-    .subscribe(booking => {
-      console.log(booking);
-      this.showConfirmMessage = true;
-    });
   };
 
   compareObjects(o1: any, o2: any): boolean {

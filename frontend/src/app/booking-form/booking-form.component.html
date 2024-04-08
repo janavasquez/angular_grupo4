@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-7">
       @if(isUpdate){
         <h1 class="mt-5 text-center text-primary-emphasis">Actualizar o editar reserva</h1>
       } @else {
@@ -11,11 +11,7 @@
       }
       <form class="mt.5" [formGroup]="bookingForm" (ngSubmit)="save()">
         <input type="hidden" formControlName="id">
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="user"
-          formControlName="user" placeholder="">
-          <label for="user">Usuario</label>
-        </div>
+
         <div class="input-group mb-3">
           <input
           class="form-control"
@@ -44,7 +40,7 @@
           id="treatment"
           formControlName="treatment"
           [compareWith]="compareObjects"
-          multiple
+        
           style="min-height: 100px;">
           <option selected>Selecciona un tratamiento</option>
           @for(treatment of treatments; track treatment.id) {
@@ -71,36 +67,36 @@
         </div>
       </form>
     </div>
-    <div class="col-md-5 col-lg-4 order-md-last">
+    <div class="col-md-5 col-lg-5 order-md-last">
       <h2 class="d-flex justify-content-between align-items-center mt-5 mb-3">
         <span class="text-primary-emphasis">Tu reserva</span>
-        <span class="badge bg-primary rounded-pill">{{booking?.treatment}}</span>
+        <span class="badge bg-primary rounded-pill">{{booking?.treatment?.title}}</span>
       </h2>
       <ul class="list-group mb-3">
         @if (treatments) {
         <li class="list-group-item d-flex justify-content-between lh-sm">
           <div>
-            <h6 class="my-0">{{treatments}}</h6>
-              <small class="text-body-secondary">{{treatments}}</small>
+            <h6 class="my-0">Centro de belleza "{{booking?.company?.name}}"</h6>
+              <small class="text-body-secondary">{{booking?.treatment?.price}}€</small>
           </div>
         </li>
       }
-        <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
+        <li class="list-group-item d-flex justify-content-between bg-body-tertiary" nulleable="true">
           <div class="text-success">
             <h6 class="my-0">Promo code</h6>
             <small>EXAMPLECODE</small>
           </div>
-          <span class="text-success">$5</span>
+          <span class="text-success">{{booking?.discount}}€</span>
         </li>
         <li class="list-group-item d-flex justify-content-between">
-          <span>Total (USD)</span>
-          <strong>{{price}}</strong>
+          <span>Total (€)</span>
+          <strong>{{booking?.treatment?.price}}€</strong>
         </li>
       </ul>
       <form class="card p-2">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Promo code">
-          <button type="submit" class="btn btn-secondary">Redeem</button>
+          <input type="text" class="form-control" placeholder="Codigo promocional">
+          <button type="submit" class="btn btn-secondary">Ingresa tu codigo</button>
         </div>
       </form>
     </div>

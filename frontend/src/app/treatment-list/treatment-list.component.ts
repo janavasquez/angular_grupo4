@@ -17,7 +17,7 @@ export class TreatmentListComponent implements OnInit{
   constructor(private http: HttpClient){}
 
   ngOnInit(): void {
-    this.http.get<Treatment[]>('http://localhost:3000/treatments')
+    this.http.get<Treatment[]>('http://localhost:3000/treatment')
     .subscribe(treatments => this.treatments = treatments);
   }
 

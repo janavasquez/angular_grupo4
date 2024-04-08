@@ -25,15 +25,15 @@ export class Comments {
     user: User;
 
     @ApiProperty()
-    @ManyToMany(() => Company, {eager: true})
+    @ManyToOne(() => Company, {eager: true})
     company: Company;
 
     @ApiProperty()
-    @ManyToMany(() => Treatment, {eager: true})
+    @ManyToOne(() => Treatment, {eager: true})
     treatment: Treatment;
 
     @ApiProperty()
-    @ManyToMany(() => Booking, {eager: true})
+    @ManyToOne(() => Booking, {eager: true})
     booking: Booking;
 
 }

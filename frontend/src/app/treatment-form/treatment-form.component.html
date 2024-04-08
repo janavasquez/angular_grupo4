@@ -59,7 +59,7 @@
           id="company"
           formControlName="company"
           [compareWith]="compareObjects"
-          multiple
+          
           style="min-height: 100px;">
           <option selected>Selecciona un centro de servicio</option>
           @for (company of companies; track company.id) {
@@ -73,7 +73,7 @@
           id="categories"
           formControlName="categories"
           aria-label="categorias"
-          [compareWith]="compareObjects">
+          [compareWith]="compareObjects" multiple>
           <option selected>Selecciona una categoria</option>
           @for (category of categories; track category.id) {
             <option [ngValue]="category">{{category.name}}</option>

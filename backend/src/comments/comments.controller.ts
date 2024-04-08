@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Comments } from './comments.model';
 
-@Controller('comments')
+@Controller('comment')
 export class CommentsController {
 
     constructor(

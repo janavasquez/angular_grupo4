@@ -149,17 +149,17 @@
         <form [formGroup]="commentsForm" (ngSubmit)="save()">
 
           <div class="mb-3">
-            <ngb-rating  formControlName="score" [max]="5">
+            <ngb-rating  formControlName="rating" [max]="5">
               <ng-template let-fill="fill" let-index="index">
-                <i class="bi-star{{ fill === 100 ? '-fill' : '' }} fs-3" style="color:#ffb900;"></i>
+                <i class="bi-star{{ fill === 100 ? '-fill' : '' }} fs-3" style="color:#780a99;"></i>
               </ng-template>
             </ngb-rating>
           </div>
 
           <div class="form-floating">
             <textarea class="form-control" placeholder="Leave a comment here"
-            id="comment" formControlName="comment" style="min-height:150px;"></textarea>
-            <label for="comment">Comentario de texto</label>
+            id="opinion" formControlName="opinion" style="min-height:150px;"></textarea>
+            <label for="opinion">Comentario de texto</label>
           </div>
 
           <button class="w-100 btn btn-success btn-lg" type="submit">Añadir comentario</button>

@@ -37,13 +37,13 @@ export class TreatmentDetailComponent implements OnInit{
         return;
       }
 
-      this.httpClient.get<Treatment>(`http://localhost:3000/treatments/${id}`)
+      this.httpClient.get<Treatment>(`http://localhost:3000/treatment/${id}`)
         .subscribe(treatment => this.treatment = treatment);
 
       this.httpClient.get<Booking[]>(`http://localhost:3000/booking/${id}`)
         .subscribe(booking => this.booking = booking);
 
-      this.httpClient.get<Comments[]>(`http://localhost:3000/comments/${id}`)
+      this.httpClient.get<Comments[]>(`http://localhost:3000/comment/filter-by-treatment/${id}`)
         .subscribe(comments => this.comments = comments);
 
     });
