@@ -5,37 +5,37 @@ export class User {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column({nullable: true})
     fullName: string;
 
-    @Column()
+    @Column({nullable: true})
     email: string;
     
-    @Column()
+    @Column({nullable: true})
     phone: string;
 
-    @Column()
+    @Column({nullable: true})
     active: boolean;
 
-    @Column()
+    @Column({type: 'date', nullable: true})
     registerDate: Date;
 
-    @Column()
+    @Column({nullable: true})
     nif: string;
 
-    @Column()
+    @Column({nullable: true})
     street: string;
 
-    @Column()
+    @Column({nullable: true})
     city: string;
 
-    @Column()
+    @Column({nullable: true})
     postalCode: string;
 
-    @Column()
+    @Column({nullable: true})
     photo: string;
 
-    @Column()
+    @Column({nullable: true})
     password: string;
 
 
