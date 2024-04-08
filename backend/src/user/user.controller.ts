@@ -1,14 +1,18 @@
-import { Body, ConflictException, Controller, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
+import { Body, ConflictException, Controller, Get, NotFoundException, Param, ParseIntPipe, Post, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './user.model';
 import { Register } from './register.dto';
 import { Role } from './role.enum';
+import { Login } from './login.dto';
+import { JwtService } from '@nestjs/jwt';
 
 @Controller('user')
 export class UserController {
 
-    constructor(@InjectRepository(User) private userRepository: Repository<User>) {
+    constructor(
+        @InjectRepository(User) private userRepository: Repository<User>,
+        private jwtService: JwtService) {
 
     }
     @Get()
@@ -57,5 +61,44 @@ export class UserController {
             photo: ''
         };
         await this.userRepository.save(user);
+    }
+
+
+    //login
+    
+    @Post('login')
+    async login(@Body() login: Login) {
+
+        // comprobar si el email existe
+        const exists = await this.userRepository.existsBy({
+            email: login.email
+        });
+        if(!exists)
+            throw new NotFoundException("Usuario no encontrado."); // 404 
+
+        // Recuperar el usuario
+        const user = await this.userRepository.findOne({
+            where: {
+                email: login.email
+            }
+        });
+
+        // Comparar contraseñas
+        if (user.password !== login.password) {
+            throw new UnauthorizedException("Credenciales incorrectas"); // 401
+        }
+
+        // Crear y devolver token de acceso (JWT)
+        let userData = {
+            sub: user.id,
+            email: user.email,
+            role: user.role
+        };
+
+        let token = {
+            token: await this.jwtService.signAsync(userData)
+        }
+        return token;
+
     }
 }

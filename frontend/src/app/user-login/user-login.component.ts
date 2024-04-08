@@ -29,7 +29,7 @@ save() {
     password: this.loginForm.get('password')?.value ?? ''
   }
 
-  let url ='http://localhost:3000/login';
+  let url ='http://localhost:3000/user/login';
   this.httpClient.post<Login>(url, login).subscribe(res => {console.log(res);
   this.router.navigate(['/']);
   

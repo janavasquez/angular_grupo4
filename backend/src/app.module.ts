@@ -14,9 +14,14 @@ import { Booking } from './booking/booking.model';
 import { Category } from './category/category.model';
 import { User } from './user/user.model';
 import { Comments } from './comments/comments.model';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
+    JwtModule.register({
+      secret: 'admin',
+      signOptions: {expiresIn: '7d'}
+    }),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost', 
