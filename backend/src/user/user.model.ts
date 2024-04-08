@@ -1,14 +1,15 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Role } from "./role.enum";
 
 @Entity()
 export class User {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({nullable: true})
+    @Column()
     fullName: string;
 
-    @Column({nullable: true})
+    @Column({unique: true})
     email: string;
     
     @Column({nullable: true})
@@ -20,23 +21,30 @@ export class User {
     @Column({type: 'date', nullable: true})
     registerDate: Date;
 
-    @Column({nullable: true})
+    @Column()
     nif: string;
 
-    @Column({nullable: true})
+    @Column()
     street: string;
 
-    @Column({nullable: true})
+    @Column()
     city: string;
 
-    @Column({nullable: true})
+    @Column()
     postalCode: string;
 
     @Column({nullable: true})
     photo: string;
 
-    @Column({nullable: true})
+    @Column()
     password: string;
+
+    @Column({
+        type: 'enum',
+        enum: Role,
+        default: Role.USER
+    })
+    role: Role;
 
 
 }
