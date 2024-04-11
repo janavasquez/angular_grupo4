@@ -91,7 +91,18 @@ export class TreatmentFormComponent implements OnInit{
 
   save() {
 
-    const formData = new FormData();
+    /*const formData: Treatment = {
+      id: this.treatmentForm.get('id')?.value ?? 0,
+      title: this.treatmentForm.get('title')?.value ?? '',
+      price: this.treatmentForm.get('price')?.value ?? 0,
+      descriptionShort: this.treatmentForm.get('descriptionShort')?.value ?? '',
+      image: this.treatmentForm.get('image')?.value ?? '',
+      descriptionLong: this.treatmentForm.get('descriptionLong')?.value ?? '',
+      afterCare: this.treatmentForm.get('afterCare')?.value ?? '',
+      durationInMin: this.treatmentForm.get('durationInMin')?.value ?? 0
+    };*/
+
+    let formData = new FormData();
     formData.append('id', this.treatmentForm.get('id')?.value ?? 0);
     formData.append('title', this.treatmentForm.get('title')?.value ?? '');
     formData.append('price', this.treatmentForm.get('price')?.value + '');
@@ -106,16 +117,15 @@ export class TreatmentFormComponent implements OnInit{
     if(this.photoFile) formData.append('file', this.photoFile);
 
     if(this.isUpdate) {
-      const isForUpdate = 'http://localhost:3000/treatment/' + formData;
-      this.httpClient.put<Treatment>(isForUpdate, formData)
+      const id = this.treatmentForm.get('id')?.value;
+      this.httpClient.put<Treatment>('http://localhost:3000/treatment' + id, formData)
       .subscribe(treatment => {
         this.photoFile = undefined;
         this.photoPreview = undefined;
         this.treatment = treatment;
       });
     } else {
-      const url = 'http://localhost:3000/treatment';
-      this.httpClient.post<Treatment>(url, formData)
+      this.httpClient.post<Treatment>('http://localhost:3000/treatment', formData)
       .subscribe(treatment => {
         this.photoFile = undefined;
         this.photoPreview = undefined;

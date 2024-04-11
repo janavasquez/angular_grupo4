@@ -87,7 +87,7 @@
                         <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
                           Centro de belleza
                         </h3>
-                        <p>{{ treatment.company.name }}</p>
+                        <p>{{ treatment.company?.name }}</p>
                       </div>
                     </div>
                     <div class="col d-flex align-items-start">
@@ -98,8 +98,8 @@
                         <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
                           Categorias
                         </h3>
-                        @for (category of treatment.categories; track category.id) {
-                          <p>{{ category.name }}</p>
+                        @for (category of categories; track category.id) {
+                          <p>{{ treatment.categories?.name }}</p>
                         }
 
                       </div>
@@ -135,9 +135,9 @@
                         <i class="bi-star{{ fill === 100 ? '-fill' : '' }} fs-3" style="color:#ffb900;"></i>
                       </ng-template>
                     </ngb-rating>
-                    {{comment.rating| date:'dd/MM/yyyy'}}
+                    {{comment.rating | date:'dd/MM/yyyy'}}
                   </h6>
-                  <small class="text-body-secondary">{{comment.rating}}</small>
+                  <small class="text-body-secondary">{{comment.opinion}}</small>
                 </div>
               </a>
             </li>

@@ -7,6 +7,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Booking } from '../interfaces/booking.model';
 import { Comments } from '../interfaces/comments.model';
 import { DatePipe } from '@angular/common';
+import { Category } from '../interfaces/category.model';
 
 @Component({
   selector: 'app-treatment-detail',
@@ -20,6 +21,7 @@ export class TreatmentDetailComponent implements OnInit{
   treatment: Treatment | undefined;
   booking: Booking [] = [];
   comments: Comments [] = [];
+  categories: Category [] = [];
 
   commentsForm = new FormGroup({
     rating: new FormControl(0),
