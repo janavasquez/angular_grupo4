@@ -118,14 +118,14 @@ export class TreatmentFormComponent implements OnInit{
 
     if(this.isUpdate) {
       const id = this.treatmentForm.get('id')?.value;
-      this.httpClient.put<Treatment>('http://localhost:3000/treatment' + id, formData)
+      this.httpClient.put<Treatment>('http://localhost:3000/treatment/' + id, formData)
       .subscribe(treatment => {
         this.photoFile = undefined;
         this.photoPreview = undefined;
         this.treatment = treatment;
       });
     } else {
-      this.httpClient.post<Treatment>('http://localhost:3000/treatment', formData)
+      this.httpClient.post<Treatment>('http://localhost:3000/treatment/', formData)
       .subscribe(treatment => {
         this.photoFile = undefined;
         this.photoPreview = undefined;
