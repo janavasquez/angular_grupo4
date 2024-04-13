@@ -5,7 +5,7 @@
 
       <h1 class="my-5">Crear nueva Categoria</h1>
 
-      <form [formGroup]="categoryForm" (submit)="save()">
+      <form [formGroup]="categoryForm" (ngsubmit)="save()">
 
         <div class="form-floating mb-3">
           <input type="text" class="form-control" id="id" formControlName="id" readonly>

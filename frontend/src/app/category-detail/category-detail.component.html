@@ -14,7 +14,7 @@
        <p class="lead mb-4">{{category.name}} tenemos los mejores especialistas </p>
        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
           <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Editar</button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">crear nueva categoria</button>
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4">Crear nuevo tratamiento</button>
 
 
       </div>
@@ -31,12 +31,13 @@
         <table class="table table-striped mt-5">
           <thead>
             <tr>
+              <th scope="col">id</th>
               <th scope="col">Tratamientos</th>
-              <th scope="col">imagen</th>
               <th scope="col">Precio</th>
-              <th scope="col">Edad Minima</th>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Cuidados posteriores</th>
               <th scope="col">Duracion</th>
-              <th scope="col">Centro </th>
+
             </tr>
           </thead>
 
@@ -46,33 +47,11 @@
               <td>{{treatment.id}}</td>
               <td>{{treatment.title}}</td>
               <td>{{treatment.price}}</td>
-              <td>{{treatment.images}}</td>
               <td>{{treatment.descriptionShort}}</td>
-              <td>{{treatment.descriptionLong}}</td>
               <td>{{treatment.afterCare}}</td>
               <td>{{treatment.durationInMin}}</td>
 
-              <td>
-                @if (treatment.id) {
-                  <span class="badge text-bg-success">1</span>
-                } @else {
-                  <span class="badge text-bg-danger">treatments</span>
-                }
-              </td>
-              <td>{{treatment.price}}</td>
 
-              <td>
-                <a [routerLink]="['/treatments', treatment.id, 'detail']">
-                  {{treatment.id}}
-                </a>
-                </td>
-
-
-              <td>
-                <a [routerLink]="['/treatments', treatment.id, 'update']">
-                  {{treatment.durationInMin}}
-                </a>
-              </td>
 
               <td>
                 <button class="btn btn-success me-2" [routerLink]="['/treatments', treatment.id, 'detail']">
@@ -81,6 +60,9 @@
               </td>
             </tr>
             }
+
+
+            
 
 
           </tbody>

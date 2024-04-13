@@ -11,7 +11,7 @@ export class Category{
     name: string;
     
     @Column()
-    photo: string;
+    photoUrl: string;
 
     @Column()
     description: string;

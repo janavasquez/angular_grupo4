@@ -80,6 +80,8 @@ onFileChange(event: Event) {
 
   save() {
 
+    console.log('invocando save')
+
     let formData = new FormData();
     formData.append('id', this.categoryForm.get('id')?.value ?? 0);
     formData.append('name', this.categoryForm.get('name')?.value ?? '');

@@ -9,7 +9,7 @@ import { Treatment } from '../interfaces/treatment.model';
   selector: 'app-category-detail',
   standalone: true,
   imports: [HttpClientModule,RouterLink],
-  templateUrl: './category-detail.component.html', 
+  templateUrl: './category-detail.component.html',
   styleUrl: './category-detail.component.css'
 })
 
@@ -17,6 +17,7 @@ export class CategoryDetailComponent implements OnInit {
 
   category: Category| undefined;
   treatments: Treatment[] = [];
+  commentsForm: any;
 
 
   constructor(private httpClient: HttpClient,
@@ -39,5 +40,6 @@ export class CategoryDetailComponent implements OnInit {
     });
 
   }
+
 
 }

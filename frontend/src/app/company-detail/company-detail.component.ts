@@ -22,7 +22,7 @@ export class CompanyDetailComponent {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       let id = params['id'];
-      this.http.get<Company>(`http://localhost:3000/companies/${id}`).subscribe(company => this.company = company);
+      this.http.get<Company>(`http://localhost:3000/company/${id}`).subscribe(company => this.company = company);
     });
   }
 
