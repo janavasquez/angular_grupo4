@@ -22,7 +22,7 @@ export class TreatmentDetailComponent implements OnInit{
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
       let id = params['id'];
-      this.http.get<Treatment>(`http://localhost:3000/treatments/${id}`)
+      this.http.get<Treatment>(`http://localhost:3000/treatment/${id}`)
         .subscribe(treatment => this.treatment = treatment);
     });
   }

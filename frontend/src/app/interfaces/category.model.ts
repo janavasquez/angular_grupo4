@@ -4,7 +4,7 @@ export interface Category {
   id: number;
   name: string;
   photoUrl: string;
-  treatment: Treatment;
+  // treatment: Treatment;
   description: string;
   minAge: number;
 
