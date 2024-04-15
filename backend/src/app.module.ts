@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Treatment } from './treatment/treatment.model';
 import { BookingController } from './booking/booking.controller';
@@ -48,7 +46,7 @@ import { v4 as uuidv4 } from 'uuid';
   ],
 
   
-  controllers: [AppController, BookingController, CategoryController, CompanyController, TreatmentController, UserController, CommentsController],
-  providers: [AppService],
+  controllers: [BookingController, CategoryController, CompanyController, TreatmentController, UserController, CommentsController],
+  providers: [],
 })
 export class AppModule {}
