@@ -20,7 +20,7 @@
                       <p class="card-text"><small class="text-primary-emphasis">{{treatment.price}}€</small></p>
                       <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/treatments', treatment.id, 'detail']">Descripción</button>
                       <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/treatments', treatment.id, 'update']">Editar</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/booking', treatment.id, 'create']">Reservar</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/booking', 'create']">Reservar</button>
                     </div>
                   </div>
                 </div>
@@ -29,6 +29,3 @@
         }
         </div>
       </div>
-
-      <button class="btn btn-outline-info"
-      routerLink="/treatments/create">Crear Tratamiento</button>

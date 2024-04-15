@@ -2,6 +2,7 @@ import { Treatment } from './../interfaces/treatment.model';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Booking } from '../interfaces/booking.model';
 
 @Component({
   selector: 'app-treatment-list',
@@ -13,6 +14,7 @@ import { RouterLink } from '@angular/router';
 export class TreatmentListComponent implements OnInit{
 
   treatments: Treatment[] = [];
+  booking: Booking | undefined;
 
   constructor(private http: HttpClient){}
 
