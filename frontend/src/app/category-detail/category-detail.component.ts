@@ -8,7 +8,7 @@ import { Treatment } from '../interfaces/treatment.model';
 @Component({
   selector: 'app-category-detail',
   standalone: true,
-  imports: [HttpClientModule,RouterLink],
+  imports: [HttpClientModule, RouterLink],
   templateUrl: './category-detail.component.html',
   styleUrl: './category-detail.component.css'
 })
