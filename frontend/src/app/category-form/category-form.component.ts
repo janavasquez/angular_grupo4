@@ -18,7 +18,7 @@ categoryForm = new FormGroup({
   name: new FormControl(),
   photoUrl: new FormControl(),
   minAge: new FormControl(),
-  treatment: new FormControl(''),
+  //treatment: new FormControl(''),
   description: new FormControl('')
 
 });
@@ -86,7 +86,7 @@ onFileChange(event: Event) {
     formData.append('id', this.categoryForm.get('id')?.value ?? 0);
     formData.append('name', this.categoryForm.get('name')?.value ?? '');
     formData.append('photoUrl', this.categoryForm.get('photoUrl')?.value ?? '');
-    formData.append('treatment', this.categoryForm.get('nametreatment')?.value ?? '');
+    //formData.append('treatment', this.categoryForm.get('treatment')?.value ?? '');
     formData.append('description', this.categoryForm.get('description')?.value ?? '');
     formData.append('minAge', this.categoryForm.get('id')?.value ?? 0);
 
@@ -94,6 +94,8 @@ onFileChange(event: Event) {
     if(this.photoFile) formData.append('file', this.photoFile);
 
     if(this.isUpdate) {
+      console.log("Actualizando category");
+
       const id =  this.categoryForm.get('id')?.value;
       this.httpClient.put<Category>('http://localhost:3000/category/' + id, formData)
         .subscribe(category => {
@@ -103,6 +105,8 @@ onFileChange(event: Event) {
         });
 
     } else {
+      console.log("Creando nueva category");
+
       this.httpClient.post<Category>('http://localhost:3000/category', formData)
         .subscribe(category => {
           this.photoFile = undefined;

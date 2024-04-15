@@ -14,9 +14,25 @@ import { Booking } from './booking/booking.model';
 import { Category } from './category/category.model';
 import { User } from './user/user.model';
 import { Comments } from './comments/comments.model';
+import { MulterModule } from '@nestjs/platform-express';
+import { diskStorage } from 'multer';
+import { extname } from 'path';
+import { v4 as uuidv4 } from 'uuid';
 
 @Module({
   imports: [
+    MulterModule.register({
+      storage: diskStorage({
+        // carpeta destino donde guardar los archivos
+        destination: './uploads',
+        // Opcional: generar un nombre único para el archivo antes de guardarlo:
+        // 1f82d390-d902-4aed-ad23-d543f56f2433.png
+        filename: (req, file, callback) => {
+          let fileName = uuidv4() + extname(file.originalname);
+          callback(null, fileName);
+        }
+      })
+    }),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost', 
