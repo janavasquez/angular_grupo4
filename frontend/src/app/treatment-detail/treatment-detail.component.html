@@ -120,9 +120,8 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-12">
-      <h2 class="mt-5">Comentarios y valoraciones</h2>
-      <div>
+      <div class="col-md-6">
+        <h2 class="mt-5">Valoraciones</h2>
         <ul class="list-unstyled">
           @for (comment of comments; track comment.id) {
             <li>
@@ -144,7 +143,7 @@
           }
         </ul>
       </div>
-      <div class="col-6">
+      <div class="col-md-6">
         <h2 class="mt-5">Añade un comentario</h2>
         <form [formGroup]="commentsForm" (ngSubmit)="save()">
 
@@ -165,6 +164,5 @@
           <button class="w-100 btn btn-success btn-lg" type="submit">Añadir comentario</button>
         </form>
       </div>
-    </div>
   </div>
 </div>

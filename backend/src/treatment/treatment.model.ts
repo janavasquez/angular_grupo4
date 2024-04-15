@@ -40,7 +40,7 @@ export class Treatment {
     durationInMin: number;
 
     @ApiProperty({example: [{id: 1}]})
-    @ManyToOne(() => Category, {eager: true})
+    @ManyToMany(() => Category, {eager: true})
     @JoinTable()
     categories: Category[];
 

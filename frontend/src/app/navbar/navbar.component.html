@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-md navbar-light bg-body-tertiary">
-  <div class="container-fluid bg-custom">
+  <div class="container-fluid">
 
     <a class="navbar-brand" routerLink="/">
-      <img style="max-width:40px;" src="/assets/img/silueta_pelo.png" alt="logo">
-      SIEMPRE BELLA
+      <img style="max-width:80px;" src="/assets/img/logo_bastbeauty.png" alt="logo">
+      BASTBEAUTY
     </a>
 
     <button
@@ -18,26 +18,59 @@
     </button>
 
     <div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
-      <ul class="navbar-nav me-auto fs-5">
+      <ul class="navbar-nav ms-auto">
 
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="/"> Inicio </a>
+        <li class="nav-item" ngbDropdown>
+          <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button"> Tratamientos </a>
+          <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
+            <a ngbDropdownItem routerLink="/treatments" (click)="$event.preventDefault()">Listado</a>
+            <!--@if(isAdmin) {
+              <a ngbDropdownItem routerLink="/treatments/create" (click)="$event.preventDefault()">Crear tratamiento</a>
+            } cuando ya este configurado el usuario-->
+            <a ngbDropdownItem routerLink="/treatments/create" (click)="$event.preventDefault()">Crear tratamiento</a>
+          </div>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link active" [routerLink]="['/treatments']"> Tratamientos </a>
-        </li>
+        <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
+					<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button"> Categorías </a>
+					<div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
+						<a ngbDropdownItem routerLink="/categories" (click)="$event.preventDefault()">Listado</a>
+						<!--@if(isAdmin) {
+              <a ngbDropdownItem routerLink="/categories/create" (click)="$event.preventDefault()">Crear categoría</a>
+            }-->
+            <a ngbDropdownItem routerLink="/categories/create" (click)="$event.preventDefault()">Crear categoría</a>
+					</div>
+				</li>
 
-        <li class="nav-item">
-          <a class="nav-link active" [routerLink]="['/categories']"> Categorías</a>
-        </li>
 
-        <li class="nav-item">
-          <a class="nav-link active" [routerLink]="['/companies']"> Centros </a>
-        </li>
+        <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
+					<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button"> Centros de belleza </a>
+					<div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
+						<a ngbDropdownItem routerLink="/companies" (click)="$event.preventDefault()">Listado</a>
+						<!--@if(isAdmin) {
+              <a ngbDropdownItem routerLink="/editorials/create" (click)="$event.preventDefault()">Crear editorial</a>
+            }-->
+            <a ngbDropdownItem routerLink="/companies/create" (click)="$event.preventDefault()">Crear centro de belleza</a>
+					</div>
+				</li>
 
-        <li class="nav-item">
-          <a class="nav-link active" [routerLink]="['/booking']"> Reservas </a>
+        <!--@if (isLoggedIn) {
+          <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
+            <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button"> Reservas </a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
+              <a ngbDropdownItem routerLink="/reservations" (click)="$event.preventDefault()">Listado reservas</a>
+              @if (isAdmin) {
+              <a ngbDropdownItem routerLink="/reservations/create" (click)="$event.preventDefault()">Crear reserva</a>
+              }
+            </div>
+          </li>
+          }-->
+        <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
+          <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button"> Reservas </a>
+          <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
+            <a ngbDropdownItem routerLink="/booking" (click)="$event.preventDefault()">Listado reservas</a>
+            <a ngbDropdownItem routerLink="/booking/create" (click)="$event.preventDefault()">Crear reserva</a>
+          </div>
         </li>
       </ul>
 
