@@ -48,7 +48,6 @@ export class TreatmentController {
     @Post()
     @UseInterceptors(FileInterceptor('file'))
     async create(@UploadedFile() file: Express.Multer.File,
-    @Param('id', ParseIntPipe) id: number,
     @Body() treatment: Treatment) {
         if(file) {
             treatment.image = file.filename;

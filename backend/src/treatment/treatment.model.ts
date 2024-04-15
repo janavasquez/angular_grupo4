@@ -12,31 +12,31 @@ export class Treatment {
     id: number;
 
     @ApiProperty()
-    @Column({unique: true})
+    @Column({unique: true, nullable: true})
     title: string;
 
     @ApiProperty()
-    @Column({type: 'decimal', default: false})
+    @Column({type: 'decimal', default: 0, nullable: true})
     price: number;
 
     @ApiProperty()
-    @Column()
+    @Column({nullable: true})
     image: string;
 
     @ApiProperty()
-    @Column({length: 80})
+    @Column({length: 80, nullable: true})
     descriptionShort: string;
 
     @ApiProperty()
-    @Column({length: 300})
+    @Column({length: 300, nullable: true})
     descriptionLong: string;
 
     @ApiProperty()
-    @Column()
+    @Column({nullable: true})
     afterCare: string;
 
     @ApiProperty()
-    @Column()
+    @Column({nullable: true})
     durationInMin: number;
 
     @ApiProperty({example: [{id: 1}]})

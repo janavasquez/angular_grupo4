@@ -103,16 +103,16 @@ export class TreatmentFormComponent implements OnInit{
     };*/
 
     let formData = new FormData();
-    formData.append('id', this.treatmentForm.get('id')?.value ?? 0);
+    //formData.append('id', this.treatmentForm.get('id')?.value ?? 0);
     formData.append('title', this.treatmentForm.get('title')?.value ?? '');
-    formData.append('price', this.treatmentForm.get('price')?.value + '');
-    formData.append('descriptionShort', this.treatmentForm.get('descriptionShort')?.value ?? '');
-    formData.append('descriptionLong', this.treatmentForm.get('descriptionlong')?.value ?? '');
-    formData.append('afterCare', this.treatmentForm.get('afterCare')?.value ?? '');
-    formData.append('durationInMin', this.treatmentForm.get('durationInMin')?.value ?? '');
-    formData.append('categories', this.treatmentForm.get('categories')?.value);
-    formData.append('company', this.treatmentForm.get('company')?.value);
-    formData.append('image', this.treatmentForm.get('image')?.value ?? '');
+    //formData.append('price', this.treatmentForm.get('price')?.value + '');
+    //formData.append('descriptionShort', this.treatmentForm.get('descriptionShort')?.value ?? '');
+    //formData.append('descriptionLong', this.treatmentForm.get('descriptionLong')?.value ?? '');
+    //formData.append('afterCare', this.treatmentForm.get('afterCare')?.value ?? '');
+    //formData.append('durationInMin', this.treatmentForm.get('durationInMin')?.value ?? 10);
+    //formData.append('categories', this.treatmentForm.get('categories')?.value);
+    //formData.append('company', this.treatmentForm.get('company')?.value);
+    //formData.append('image', this.treatmentForm.get('image')?.value ?? '');
 
     if(this.photoFile) formData.append('file', this.photoFile);
 
@@ -125,7 +125,7 @@ export class TreatmentFormComponent implements OnInit{
         this.treatment = treatment;
       });
     } else {
-      this.httpClient.post<Treatment>('http://localhost:3000/treatment/', formData)
+      this.httpClient.post<Treatment>('http://localhost:3000/treatment', formData)
       .subscribe(treatment => {
         this.photoFile = undefined;
         this.photoPreview = undefined;
