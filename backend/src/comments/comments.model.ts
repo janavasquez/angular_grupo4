@@ -3,7 +3,7 @@ import { Booking } from "src/booking/booking.model";
 import { Company } from "src/company/company.model";
 import { Treatment } from "src/treatment/treatment.model";
 import { User } from "src/user/user.model";
-import { Column, Entity, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Comments {
@@ -13,7 +13,7 @@ export class Comments {
     id: number;
 
     @ApiProperty()
-    @Column()
+    @Column({nullable: true})
     rating: number;
 
     @ApiProperty()
@@ -21,19 +21,19 @@ export class Comments {
     opinion: string;
 
     @ApiProperty()
-    @ManyToOne(() => User, {eager: true})
+    @ManyToOne(() => User, {eager: true, nullable: true})
     user: User;
 
     @ApiProperty()
-    @ManyToOne(() => Company, {eager: true})
+    @ManyToOne(() => Company, {eager: true, nullable: true})
     company: Company;
 
     @ApiProperty()
-    @ManyToOne(() => Treatment, {eager: true})
+    @ManyToOne(() => Treatment, {eager: true, nullable: true})
     treatment: Treatment;
 
     @ApiProperty()
-    @ManyToOne(() => Booking, {eager: true})
+    @ManyToOne(() => Booking, {eager: true, nullable: true})
     booking: Booking;
 
 }

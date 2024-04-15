@@ -58,7 +58,7 @@ export class TreatmentDetailComponent implements OnInit{
       opinion: this.commentsForm.get('opinion')?.value ?? '',
       treatment: this.treatment
     }
-    this.httpClient.post<Comments>('http://localhost:3000/comments', comment)
+    this.httpClient.post<Comments>('http://localhost:3000/comment', comment)
     .subscribe(comment => {
       this.commentsForm.reset();
       this.httpClient.get<Comments[]>('http://localhost:3000/filter-by-treatment/'+ this.treatment?.id)
