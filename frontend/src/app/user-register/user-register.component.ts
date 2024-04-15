@@ -48,7 +48,7 @@ export class UserRegisterComponent {
       password: this.registerForm.get('password')?.value ?? '',
     };
 
-    let url = 'http://localhost:3000/register';
+    let url = 'http://localhost:3000/user/register';
     this.httpClient.post<Register>(url, register)
                     .subscribe(res => {
                       console.log(res);

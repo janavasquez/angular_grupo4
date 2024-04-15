@@ -10,15 +10,15 @@ export class Category{
     @Column({nullable: false})
     name: string;
     
-    @Column()
-    photo: string;
+    @Column({nullable: true})
+    photoUrl: string;
 
-    @Column()
+    @Column({nullable: true})
     description: string;
 
 
-    @Column()
-    mingAge: number;
+    @Column({nullable: true}) // opcional
+    minAge: number;
 
 
     // para filtar por categoria debe de coincidir con el detail component
