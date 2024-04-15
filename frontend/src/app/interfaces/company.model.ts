@@ -1,3 +1,5 @@
+import { Treatment } from "./treatment.model";
+
 export interface Company {
  // Centro
 
@@ -8,7 +10,7 @@ export interface Company {
   city: string;
   postalCode: string;
   values: string;
-  treatments: string;
+  treatments: Treatment[];
   active: boolean;
   photoUrl:string;
 }

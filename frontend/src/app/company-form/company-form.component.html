@@ -5,7 +5,7 @@
 
        <h1 class="my-5">Actualizar/Editar o Crear Centro</h1>
 
-      <form [formGroup]="companyForm" (Submit)="save()">
+      <form [formGroup]="companyForm" (ngSubmit)="save()">
 
       <div class="form-floating mb-3">
           <input type="text" class="form-control" id="id" formControlName="id" readonly>
@@ -49,17 +49,21 @@
        <label for="title">Código Postal</label>
        </div>
 
+       <!--
       <div class="form-floating mb-3">
       <input type="text" class="form-control" id="treatment" formControlName="treatment"
       placeholder="">
      <label for="treatment">Tratamiento</label>
      </div>
+     -->
 
+     <!--
       <div class="form-floating mb-3">
       <input type="text" class="form-control" id="active" formControlName="active"
        placeholder="">
        <label for="title">active</label>
        </div>
+       -->
 
      <button class="w-100 btn btn-primary btn-lg" type="submit">Guardar</button>
 

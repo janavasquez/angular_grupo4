@@ -22,9 +22,9 @@ export class CompanyFormComponent implements OnInit {
       city: new FormControl(),
       postalCode: new FormControl(),
       values: new FormControl(),
-      treatment: new FormControl(),
-      active: new FormControl(),
-      photo: new FormControl(),
+      //treatment: new FormControl(),
+      //active: new FormControl(),
+      photoUrl: new FormControl(),
     });
 
     photoFile: File | undefined;
@@ -60,9 +60,9 @@ export class CompanyFormComponent implements OnInit {
             city: company.city,
             postalCode: company.postalCode,
             values: company.values,
-            treatment: company.treatments,
-            active: company.active,
-            photo: company.photoUrl,
+            //treatment: company.treatments,
+            //active: company.active,
+            photoUrl: company.photoUrl,
 
           });
 
@@ -95,8 +95,8 @@ export class CompanyFormComponent implements OnInit {
     formData.append('city', this.companyForm.get('city')?.value ?? '');
     formData.append('postalCode', this.companyForm.get('postalCode')?.value ?? 0);
     formData.append('values', this.companyForm.get('values')?.value ?? 0)
-    formData.append('treatment', this.companyForm.get('treatment')?.value ?? '');
-    formData.append('active', this.companyForm.get('active')?.value ?? '');
+    //formData.append('treatment', this.companyForm.get('treatment')?.value ?? '');
+    //formData.append('active', this.companyForm.get('active')?.value ?? '');
 
 
 
