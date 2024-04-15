@@ -1,81 +1,91 @@
 
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div class="col-lg-8">
 
-      <!-- Mostrar "creación" o "actualización" si ya existe el producto -->
+       <h1 class="my-5">Actualizar/Editar o Crear Centro</h1>
 
-      @if(isUpdate){
-        <h1 class="mt-5">Actualizar/Editar o Crear Centro</h1>
-      } @else {
-        <h1 class="mt-5">Crear nuevo Centro</h1>
-      }
+      <form [formGroup]="companyForm" (ngSubmit)="save()">
 
-      <form class="mt-5" [formGroup]="companyForm" (ngSubmit)="save()">
-
-        <!-- Campo oculto id -->
-        <input type="hidden" formControlName="id">
-
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="title" formControlName="title"
-          placeholder="">
-          <label for="title">id</label>
+      <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="id" formControlName="id" readonly>
+          <label for="id">Id</label>
         </div>
 
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="title" formControlName="title"
+            <input type="text" class="form-control" id="name" formControlName="name"
             placeholder="">
-            <label for="title">name</label>
+            <label for="name">Nombre Centro </label>
           </div>
-            <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="title" formControlName="title"
-              placeholder="">
-              <label for="title">cif</label>
-            </div>
 
-              <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="title" formControlName="title"
-                placeholder="">
-                <label for="title">street</label>
-              </div>
+          <input type="hidden" formControlName="photoUrl">
 
-                <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="title" formControlName="title"
-                  placeholder="">
-                  <label for="title">city</label>
-                </div>
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="photoUrl">Subir foto</label>
+            <input type="file" class="form-control" id="photoUrl" (change)="onFileChange($event)">
+          </div>
 
-                  <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="title" formControlName="title"
-                    placeholder="">
-                    <label for="title">postalCode</label>
-                  </div>
-
-                    <div class="form-floating mb-3">
-                      <input type="text" class="form-control" id="title" formControlName="title"
-                      placeholder="">
-                      <label for="title">treatment</label>
-                    </div>
-
-                      <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="title" formControlName="title"
-                        placeholder="">
-                        <label for="title">active</label>
-                      </div>
-
-                        <div class="form-floating mb-3">
-                          <input type="text" class="form-control" id="title" formControlName="title"
-                          placeholder="">
-                          <label for="title">photo</label>
-                        </div>
-
-        <div class="d-grid gap-2">
-          <button class="btn btn-success" type="submit">Enviar</button>
-          <button class="btn btn-danger" type="button">Cancelar</button>
+         <div class="form-floating mb-3">
+         <input type="text" class="form-control" id="cif" formControlName="cif"
+         placeholder="Texto largo" rows="4" cols="50">
+        <label for="title">Cif</label>
         </div>
+
+        <div class="form-floating mb-3">
+       <input type="text" class="form-control" id="street" formControlName="street"
+       placeholder="">
+       <label for="title">Dirección</label>
+       </div>
+
+       <div class="form-floating mb-3">
+       <input type="text" class="form-control" id="city" formControlName="city"
+        placeholder="">
+        <label for="title">Ciudad</label>
+       </div>
+
+       <div class="form-floating mb-3">
+       <input type="text" class="form-control" id="postalCode" formControlName="postalCode"
+       placeholder="">
+       <label for="title">Código Postal</label>
+       </div>
+
+       <!--
+      <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="treatment" formControlName="treatment"
+      placeholder="">
+     <label for="treatment">Tratamiento</label>
+     </div>
+     -->
+
+     <!--
+      <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="active" formControlName="active"
+       placeholder="">
+       <label for="title">active</label>
+       </div>
+       -->
+
+     <button class="w-100 btn btn-primary btn-lg" type="submit">Guardar</button>
 
       </form>
 
     </div>
-  </div>
+  <div class="col-lg-4">
+
+  @if(photoPreview) {
+    <h3 class="my-5">Previsualización de foto</h3>
+    <img class="rounded mx-auto d-block" [src]="photoPreview"
+    style= "max-width: 500px;">
+
+
+  }
+  @if (!photoPreview && category?.photoUrl) {
+    <h3 class="my-5">Previsualización de foto</h3>
+    <img class="img-fluid" [src]="'http://localhost:3000/uploads/' + category?.photoUrl">
+  }
 </div>
+</div>
+</div>
+
+
+

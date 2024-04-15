@@ -15,23 +15,23 @@ export class Company {
    name: string;
 
    @ApiProperty()
-   @Column()
+   @Column({nullable:true})
    cif: string;
 
 @ApiProperty()
-  @Column()
+  @Column({nullable:true})
   street: string;
 
 @ApiProperty()
-  @Column()
+  @Column({nullable:true})
   city: string;
 
 @ApiProperty()
-  @Column() 
+  @Column({nullable:true}) 
   postalCode: string;
 
 @ApiProperty()
-  @Column()
+  @Column({nullable:true})
   values: string;
 
   @ApiProperty()
@@ -43,6 +43,6 @@ export class Company {
   active: boolean;
 
   @ApiProperty()
-  @Column()
-  photo: string;
+  @Column({nullable:true})
+  photoUrl: string;
 }

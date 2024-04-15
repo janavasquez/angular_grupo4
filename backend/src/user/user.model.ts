@@ -1,4 +1,5 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Role } from "./role.enum";
 
 @Entity()
 export class User {
@@ -8,16 +9,16 @@ export class User {
     @Column()
     fullName: string;
 
-    @Column()
+    @Column({unique: true})
     email: string;
     
-    @Column()
+    @Column({nullable: true})
     phone: string;
 
-    @Column()
+    @Column({nullable: true})
     active: boolean;
 
-    @Column()
+    @Column({type: 'date', nullable: true})
     registerDate: Date;
 
     @Column()
@@ -32,11 +33,18 @@ export class User {
     @Column()
     postalCode: string;
 
-    @Column()
+    @Column({nullable: true})
     photo: string;
 
     @Column()
     password: string;
+
+    @Column({
+        type: 'enum',
+        enum: Role,
+        default: Role.USER
+    })
+    role: Role; 
 
 
 }

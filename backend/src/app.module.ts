@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Treatment } from './treatment/treatment.model';
 import { BookingController } from './booking/booking.controller';
@@ -16,14 +14,25 @@ import { User } from './user/user.model';
 import { Comments } from './comments/comments.model';
 import { MulterModule } from '@nestjs/platform-express';
 import { diskStorage } from 'multer';
-import { v4 as uuidv4 } from 'uuid';
 import { extname } from 'path';
+import { v4 as uuidv4 } from 'uuid';
+import { PassportModule } from '@nestjs/passport';
+import { JwtModule } from '@nestjs/jwt';
 
 @Module({
   imports: [
+    PassportModule, // módulo de autenticación
+    JwtModule.register({
+      secret: 'admin',
+      signOptions: {expiresIn: '7d'}
+    }),
+    
     MulterModule.register({
       storage: diskStorage({
+        // carpeta destino donde guardar los archivos
         destination: './uploads',
+        // Opcional: generar un nombre único para el archivo antes de guardarlo:
+        // 1f82d390-d902-4aed-ad23-d543f56f2433.png
         filename: (req, file, callback) => {
           let fileName = uuidv4() + extname(file.originalname);
           callback(null, fileName);
@@ -45,7 +54,7 @@ import { extname } from 'path';
   ],
 
   
-  controllers: [AppController, BookingController, CategoryController, CompanyController, TreatmentController, UserController, CommentsController],
-  providers: [AppService],
+  controllers: [BookingController, CategoryController, CompanyController, TreatmentController, UserController, CommentsController],
+  providers: [],
 })
 export class AppModule {}

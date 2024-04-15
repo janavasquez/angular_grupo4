@@ -363,9 +363,12 @@
             "city": "Madrid",
             "postalCode": "28001",
             "values": "5",
-            "treatments":[
+            "treatments":
+            [
 
-            ]
+            ],
+            "active": true,
+            "photo": "https://picsum.photos/id/944/900/500"
         },
         {
             "id": "2",

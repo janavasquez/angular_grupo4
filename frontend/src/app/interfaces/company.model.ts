@@ -1,14 +1,16 @@
+import { Treatment } from "./treatment.model";
+
 export interface Company {
  // Centro
-  id: number;
 
+  id: number;
   name: string;
   cif: string;
   street: string;
   city: string;
   postalCode: string;
   values: string;
-  treatments: string;
+  treatments: Treatment[];
   active: boolean;
-  photo:string;
+  photoUrl:string;
 }

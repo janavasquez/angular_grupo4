@@ -19,7 +19,7 @@ export class CategoryListComponent  implements OnInit{
     private activetedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.http.get<Category[]>('http://localhost:3000/categories')
+    this.http.get<Category[]>('http://localhost:3000/category')
    .subscribe(categories => this.categories = categories);}
 
 }
