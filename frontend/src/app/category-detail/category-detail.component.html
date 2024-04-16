@@ -5,7 +5,7 @@
     <!--recomendables imagenes cuadradas-->
 
     <img class="d-block mx-auto mb-4 rounded-circle"
-    [src]="category.photoUrl" alt="category"
+    [src]="'http://localhost:3000/uploads/' + category.photoUrl" alt="category"
     style="max-width:150px">
 
     <h1 class="display-5 fw-bold text-body-emphasis">{{category.name}}</h1>
