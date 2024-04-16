@@ -46,6 +46,11 @@ export class BookingFormComponent implements OnInit {
     if(this.router.url.includes('update')) {
       this.isUpdate = true;
     }
+
+    if(this.router.url.includes('delete')) {
+      this.isForDelete = true;
+    }
+
     const urlUser = 'http://localhost:3000/user';
     this.httpClient.get<User[]>(urlUser)
     .subscribe(user => this.user = user);
