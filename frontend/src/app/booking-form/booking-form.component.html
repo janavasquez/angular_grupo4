@@ -2,12 +2,12 @@
   <div class="row">
     <div class="col-lg-7">
       @if(isUpdate){
-        <h1 class="mt-5 text-center text-primary-emphasis">Actualizar o editar reserva</h1>
+        <h1 class="mt-4 mb-4 text-center text-primary-emphasis">Actualizar o editar reserva</h1>
       } @else {
-        <h1 class="mt-5 text-center text-primary-emphasis">Crear reserva</h1>
+        <h1 class="mt-4 mb-4 text-center text-primary-emphasis">Crear reserva</h1>
       }
       @if(isForDelete){
-        <h1 class="mt-5 text-center text-primary-emphasis">Cancelar reserva{{isForDelete}}</h1>
+        <h1 class="mt-4 mb-4 text-center text-primary-emphasis">Cancelar reserva</h1>
       }
       <form class="mt.5" [formGroup]="bookingForm" (ngSubmit)="save()">
         <input type="hidden" formControlName="id">
@@ -40,7 +40,7 @@
           id="treatment"
           formControlName="treatment"
           [compareWith]="compareObjects"
-        
+
           style="min-height: 100px;">
           <option selected>Selecciona un tratamiento</option>
           @for(treatment of treatments; track treatment.id) {
@@ -63,12 +63,12 @@
         </div>
         <div class="d-grid gap-2">
           <button class="btn btn-success" type="submit">Enviar</button>
-          <button class="btn btn-danger" type="button" [routerLink]="['/booking']">Cancelar</button>
+          <button class="btn btn-danger mb-4" type="button" [routerLink]="['/booking']">Cancelar</button>
         </div>
       </form>
     </div>
     <div class="col-md-5 col-lg-5 order-md-last">
-      <h2 class="d-flex justify-content-between align-items-center mt-5 mb-3">
+      <h2 class="d-flex justify-content-between align-items-center mt-4 mb-4">
         <span class="text-primary-emphasis">Tu reserva</span>
         <span class="badge bg-primary rounded-pill">{{booking?.treatment?.title}}</span>
       </h2>
