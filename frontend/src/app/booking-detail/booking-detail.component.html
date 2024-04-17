@@ -28,7 +28,11 @@
                     }
                   </ngb-carousel>
                 }
-                <button type="button" class="btn btn-outline-info" style="margin: 10px;" [routerLink]="['/booking', booking.id, 'delete']">Cancelar reserva</button>
+                @if (showDeletedMessage) {
+                  <ngb-alert type="success" (closed)="closeMessage()" [routerLink]="'/booking'">Reserva cancelada correctamente.</ngb-alert>
+                }
+
+                <button type="button" class="btn btn-outline-info" style="margin: 10px;" (click)="delete(booking)">Cancelar reserva</button>
               </div>
               <div class="col-8 bg-danger-subtle">
                 @if(booking) {

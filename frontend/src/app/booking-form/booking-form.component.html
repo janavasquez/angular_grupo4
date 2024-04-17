@@ -6,9 +6,7 @@
       } @else {
         <h1 class="mt-4 mb-4 text-center text-primary-emphasis">Crear reserva</h1>
       }
-      @if(isForDelete){
-        <h1 class="mt-4 mb-4 text-center text-primary-emphasis">Cancelar reserva</h1>
-      }
+     
       <form class="mt.5" [formGroup]="bookingForm" (ngSubmit)="save()">
         <input type="hidden" formControlName="id">
 
