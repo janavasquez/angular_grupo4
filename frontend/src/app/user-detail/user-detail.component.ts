@@ -30,7 +30,7 @@ export class UserDetailComponent {
 
   deleteUser() {
     const remove = confirm("Quiere eliminar el usuario");
-   // Si no se quiere borrar o no existe el autor
+   // Si no se quiere borrar o no existe el usuario
     if (!remove || !this.user) 
        return; // Si no se quiere borrar no continuamos.
 

@@ -7,7 +7,7 @@ import { User } from '../interfaces/user.model';
   providedIn: 'root'
 })
 export class UserService {
-  backendUrl: string = "http://localhost:3000/users";
+  backendUrl: string = "http://localhost:3000/user";
 
   constructor(private httpClient: HttpClient) { }
 
