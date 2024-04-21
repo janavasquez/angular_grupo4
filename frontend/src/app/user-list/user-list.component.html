@@ -1,50 +1,34 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12">
 
-            <h1 class="mt-5" style="color: rgb(140, 0, 255);">Usuarios registrados <i class="bi bi-people-fill"></i>
-            </h1>
-            <table class="table table-striped mt-3">
-
-                <thead>
-                    <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Nombre Completo</th>
-                        <th scope="col">Correo electrónico</th>
-                        <th scope="col">Fecha de Inscripción</th>
-                        <th scope="col">Ciudad</th>
-                        <th scope="col">Dirección</th>
-                        <th scope="col">Código postal</th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @for(user of users; track user) {
-                    <tr>
-                        <td>{{user.id}}</td>
-                        <td>{{user.fullName}}</td>
-                        <td>{{user.email}}</td>
-                        <td>{{user.registerDate | date:'dd/MM/yyyy'}}</td>
-                        <td>{{user.city}}</td>
-                        <td>{{user.street}}</td>
-                        <td>{{user.postalCode}}</td>
-                        <td>
-
-                            <button class="btn mi-boton-personalizado m-2" [routerLink]="['/users', user.id]">
-                                <i class="bi bi-eye"></i>
-                                Ver detalle
-                            </button>
-                            <button type="button" class="btn mi-boton-personalizado m-2"
-                                [routerLink]="['/users', user.id, 'update']">
-                                <i class="bi bi-pencil"></i>
-                                Editar
-                            </button>
-
-                        </td>
-                    </tr>
-                    }
-                </tbody>
-            </table>
+<div class="container px-4 py-5" id="custom-cards">
+    <h2 class="w-100 btn mi-boton-personalizado btn-lg">Lista de usuarios/as registrados <i class="bi bi-people-fill"></i>
+    </h2>
+  
+    <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+  
+      @for (user of users; track user.id) {
+        <div class="col">
+          <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg" style="background-image: url('unsplash-photo-1.jpg');">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+              <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{user.fullName}}</h3>
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="me-auto">
+                  <button class="btn btn-primary btn-sm" [routerLink]="['/users', user.id, 'detail']">
+                    Ver
+                  </button>
+                </li>
+                <li class="d-flex align-items-center me-3">
+                  <small>{{user.postalCode}}</small>
+                </li>
+                <li class="d-flex align-items-center">
+                  <small>{{user.city}}</small>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      }
+  
+  
     </div>
-</div>
+  </div>
+  
