@@ -6,3 +6,7 @@
 .gold-text {
   color: #CCA831;
 }
+.bordered-text {
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black; /* Sombra de texto negra */
+  -webkit-text-stroke: 1px black; /* Contorno de texto negro para navegadores webkit (Chrome, Safari, etc.) */
+}
