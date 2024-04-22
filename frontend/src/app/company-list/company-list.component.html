@@ -16,6 +16,8 @@
             <th scope="col">Ciudad</th>
             <th scope="col">Código postal</th>
             <th scope="col">Valoración</th>
+            <th scope="col">Tratamientos</th>
+            <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -29,7 +31,13 @@
             <td>{{company.values}}</td>
 
             <!-- Asociación Many To One -->
-            <td>{{company.treatments}}</td>
+            <td>
+              @for (treatment of company.treatments; track treatment.id) {
+                {{treatment.title}}
+              }
+
+
+            </td>
 
             <td>
               <button class="btn btn-success me-2" [routerLink]="['/companies', company.id, 'detail']">
