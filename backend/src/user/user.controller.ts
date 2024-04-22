@@ -46,9 +46,9 @@ export class UserController {
         console.log(user);
         
         if(file) {
-            
-        }
-        
+            user.photoUrl = file.filename;
+         }
+         return await this.userRepository.save(user);
     }
 
 
