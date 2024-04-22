@@ -4,10 +4,13 @@
     /* Otros estilos según sea necesario */
 }
 .container-fluid {
-  background-color: rgba(238, 125, 5, 0.95);
+  background-color: black;
 }
 .navbar {
-  background-color: rgba(238, 125, 5, 0.95);
+  background-color: black;
   padding: 0px;
+}
+.nav-link {
+  color: #CCA831;
 }
 

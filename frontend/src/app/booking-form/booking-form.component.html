@@ -6,10 +6,10 @@
       } @else {
         <h1 class="mt-4 mb-4 text-center text-primary-emphasis">Crear reserva</h1>
       }
-     
+
       <form class="mt.5" [formGroup]="bookingForm" (ngSubmit)="save()">
         <input type="hidden" formControlName="id">
-
+        <!--
         <div class="input-group mb-3">
           <input
           class="form-control"
@@ -19,6 +19,12 @@
           ngbDatepicker
           #d="ngbDatepicker">
           <button class="btn btn-outline-secundary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+        </div> -->
+        <div class="form-floating mb-3">
+          <input type="datetime-local" class="form-control"
+          id="endDate" formControlName="endDate"
+          placeholder="yyyy-mm-dd">
+          <label for="endDate">Fecha fin</label>
         </div>
         <div class="form-floating mb-3">
           <select class="form-select"
