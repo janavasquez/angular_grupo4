@@ -46,7 +46,7 @@ export class User {
 
     @ApiProperty()
     @Column({nullable: true})
-    photo: string;
+    photoUrl: string;
 
     @ApiProperty()
     @Column()

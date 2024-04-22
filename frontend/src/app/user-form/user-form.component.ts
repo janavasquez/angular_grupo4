@@ -57,7 +57,7 @@ export class UserFormComponent implements OnInit{
       street: this.userForm.get('street')?.value ?? '',
       city: this.userForm.get('city')?.value ?? '',
       postalCode: this.userForm.get('postalCode')?.value ?? '',
-      photo: this.userForm.get('photo')?.value ?? []
+      photoUrl: this.userForm.get('photo')?.value ?? []
 
     };
 
