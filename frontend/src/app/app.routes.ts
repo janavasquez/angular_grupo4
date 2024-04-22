@@ -126,7 +126,7 @@ export const routes: Routes = [
     component: UserListComponent
   },
   {
-    path: 'users/:id',
+    path: 'users/:id/detail',
     component: UserDetailComponent
   },
   {

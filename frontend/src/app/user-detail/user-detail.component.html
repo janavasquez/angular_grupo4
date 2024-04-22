@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col-4 text-center">
       <div class="px-4 py-5">
-        @if (user && user.photo && user.photo.length > 0){
-        <img class="img-fluid" [src]="user.photo" alt="Foto user" />
+        @if (user && user.photoUrl && user.photoUrl.length > 0){
+        <img class="img-fluid" [src]="'http://localhost:3000/uploads/img_user/' + user.photoUrl" alt="author" />
 
         <div>
-          <button class="btn btn-danger my-2" (click)="deleteUser()">
+          <button class="btn btn-danger my-2" (click)="deleteUser(user)">
             <i class="bi bi-trash"></i> Borrar
           </button>
         </div>

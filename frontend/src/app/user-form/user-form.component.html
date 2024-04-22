@@ -1,15 +1,15 @@
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-lg-8">
 
             @if(isUpdate){
-            <h1 class="mt-5 text-center" style="color: rgb(140, 0, 255);">Actualizar usuario
+            <h1 class="mt-5 text-center">Actualizar usuario
                 <i class="bi bi-person-fill"></i>
             </h1>
             } @else {
-            <h1 class="mt-5 text-center" style="color: rgb(140, 0, 255);">Crear Usuario
+            <h1 class="mt-5 text-center">Crear Usuario
                 <i class="bi bi-person-plus-fill"></i>
-            
+
             </h1>
             }
 
@@ -18,7 +18,8 @@
                 <input type="hidden" formControlName="id">
 
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="fullName" formControlName="fullName" placeholder="Nombre y Apellidos">
+                    <input type="text" class="form-control" id="fullName" formControlName="fullName"
+                        placeholder="Nombre y Apellidos">
                     <label for="fullName">Nombre completo</label>
                 </div>
                 <div class="form-floating mb-3">
@@ -27,9 +28,13 @@
                     <label for="email">Correo electrónico</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="phone" formControlName="phone"
-                        placeholder="678945123">
+                    <input type="text" class="form-control" id="phone" formControlName="phone" placeholder="678945123">
                     <label for="phone">Teléfono</label>
+                </div>
+
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="photoUrl">Subir foto</label>
+                    <input type="file" class="form-control" id="photoUrl" (change)="onFileChange($event)">
                 </div>
 
                 <div class="form-chek mb-3">
@@ -46,26 +51,30 @@
                     <label for="nif">DNI</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="street"
-                        formControlName="street" placeholder="">
+                    <input type="text" class="form-control" id="street" formControlName="street" placeholder="">
                     <label for="street">Dirección</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="city"
-                        formControlName="city" placeholder="">
+                    <input type="text" class="form-control" id="city" formControlName="city" placeholder="">
                     <label for="city">Ciudad</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="postalCode"
-                        formControlName="postalCode" placeholder="">
+                    <input type="text" class="form-control" id="postalCode" formControlName="postalCode" placeholder="">
                     <label for="postalCode">Código postal</label>
                 </div>
-                
+
                 <div class="d-grid gap-2">
                     <button class="btn mi-boton-personalizado mx-5 mb-2" type="submit">Enviar</button>
-                    <button class="btn mi-boton-personalizado mx-5 " type="button" [routerLink]="['/users']">Cancelar</button>
+                    <button class="btn mi-boton-personalizado mx-5 mb-2" type="button"
+                        [routerLink]="['/users']">Cancelar</button>
                 </div>
             </form>
+        </div>
+        <div class="col-lg-4">
+            @if(photoPreview) {
+            <h3 class="my-5">Previsualización de foto</h3>
+            <img class="img-fluid" [src]="photoPreview">
+            }
         </div>
     </div>
 </div>

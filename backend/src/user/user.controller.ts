@@ -108,7 +108,7 @@ export class UserController {
             street: '',
             city: '',
             postalCode: '',
-            photo: ''
+            photoUrl: ''
         };
         await this.userRepository.save(user);
     }

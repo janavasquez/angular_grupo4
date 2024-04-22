@@ -1,9 +1,5 @@
-th {
-    background-color: rgb(140, 0, 255); /* Color de fondo violeta*/
-    color: white; /* Color del texto blanco */
-    /* Añade otros estilos según sea necesario */
-}
-.mi-boton-personalizado {
+
+.mi-boton-personalizado,h2 {
     background-color: rgb(140, 0, 255); /* Color de fondo violeta */
     color: #ffffff; /* Color del texto blanco */
     /* Otros estilos según sea necesario */
