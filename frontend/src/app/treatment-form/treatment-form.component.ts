@@ -44,6 +44,11 @@ export class TreatmentFormComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
+
+    if(this.router.url.includes('update')) {
+      this.isUpdate = true;
+    }
+
     const urlCom = 'http://localhost:3000/company';
     this.httpClient.get<Company[]>(urlCom)
     .subscribe(companies => this.companies = companies);
@@ -103,16 +108,16 @@ export class TreatmentFormComponent implements OnInit{
     };*/
 
     let formData = new FormData();
-    //formData.append('id', this.treatmentForm.get('id')?.value ?? 0);
+    formData.append('id', this.treatmentForm.get('id')?.value ?? 0);
     formData.append('title', this.treatmentForm.get('title')?.value ?? '');
-    //formData.append('price', this.treatmentForm.get('price')?.value + '');
-    //formData.append('descriptionShort', this.treatmentForm.get('descriptionShort')?.value ?? '');
-    //formData.append('descriptionLong', this.treatmentForm.get('descriptionLong')?.value ?? '');
-    //formData.append('afterCare', this.treatmentForm.get('afterCare')?.value ?? '');
-    //formData.append('durationInMin', this.treatmentForm.get('durationInMin')?.value ?? 10);
-    //formData.append('categories', this.treatmentForm.get('categories')?.value);
-    //formData.append('company', this.treatmentForm.get('company')?.value);
-    //formData.append('image', this.treatmentForm.get('image')?.value ?? '');
+    formData.append('price', this.treatmentForm.get('price')?.value + '');
+    formData.append('descriptionShort', this.treatmentForm.get('descriptionShort')?.value ?? '');
+    formData.append('descriptionLong', this.treatmentForm.get('descriptionLong')?.value ?? '');
+    formData.append('afterCare', this.treatmentForm.get('afterCare')?.value ?? '');
+    formData.append('durationInMin', this.treatmentForm.get('durationInMin')?.value ?? 10);
+    // formData.append('categories', this.treatmentForm.get('categories')?.value);
+    // formData.append('company', this.treatmentForm.get('company')?.value);
+    formData.append('image', this.treatmentForm.get('image')?.value ?? '');
 
     if(this.photoFile) formData.append('file', this.photoFile);
 

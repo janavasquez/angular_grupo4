@@ -1,4 +1,4 @@
-import { Body, ConflictException, Controller, Get, NotFoundException, Param, ParseIntPipe, Post, UnauthorizedException } from '@nestjs/common';
+import { Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './user.model';
@@ -29,10 +29,60 @@ export class UserController {
         });
     }
 
+    @Get('filter-by-city/:city')
+    findByCity(@Param('city') city: string) {
+        return this.userRepository.find({
+            where: {
+                city: city
+            }
+        });
+    }
+
+
     @Post()
     create(@Body() user: User) {
         return this.userRepository.save(user);
     }
+    @Put(':id')
+    async update(
+        @Param('id', ParseIntPipe) id: number,
+        @Body() user: User
+        ) {
+            // await espera a que el método existsBy termine ya que devuelve Promise<boolean>
+            const exists = await this.userRepository.existsBy({
+               id: id
+            });
+
+            if(!exists) {
+                throw new NotFoundException('User not found');
+            }
+
+            return this.userRepository.save(user);
+
+    }
+
+    @Delete(':id')
+    async deleteById(
+        @Param('id', ParseIntPipe) id: number
+    ) {
+
+       const exists = await this.userRepository.existsBy({
+            id: id
+         });
+
+         if(!exists) {
+             throw new NotFoundException('User not found');
+         }
+
+        try {
+            this.userRepository.delete(id);
+        } catch (error) {
+            throw new ConflictException('No se puede borrar el usuario.');
+        }
+        
+    }
+
+
 
     @Post('register')
     async register(@Body() register: Register) {

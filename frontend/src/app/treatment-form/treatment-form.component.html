@@ -3,9 +3,9 @@
     <div class="col-lg-8">
 
       @if(isUpdate){
-        <h1 class="mt-5 text-center text-primary-emphasis">Actualizar o editar tratamiento <i class="bi bi-person-hearts"></i></h1>
+        <h1 class="mt-4 mb-4 text-center text-primary-emphasis">Actualizar o editar tratamiento <i class="bi bi-person-hearts"></i></h1>
       } @else {
-        <h1 class="mt-5 text-center text-primary-emphasis">Crear tratamiento <i class="bi bi-person-hearts"></i></h1>
+        <h1 class="mt-4 mb-4 text-center text-primary-emphasis">Crear tratamiento <i class="bi bi-person-hearts"></i></h1>
       }
 
       <form class="mt.5" [formGroup]="treatmentForm" (ngSubmit)="save()">
@@ -59,7 +59,7 @@
           id="company"
           formControlName="company"
           [compareWith]="compareObjects"
-          
+
           style="min-height: 100px;">
           <option selected>Selecciona un centro de servicio</option>
           @for (company of companies; track company.id) {
@@ -83,7 +83,7 @@
         </div>
         <div class="d-grid gap-2">
           <button class="btn btn-success" type="submit">Guardar</button>
-          <button class="btn btn-danger" type="button" [routerLink]="['/treatments']">Cancelar</button>
+          <button class="btn btn-danger mb-4" type="button" [routerLink]="['/treatments']">Cancelar</button>
         </div>
       </form>
     </div>

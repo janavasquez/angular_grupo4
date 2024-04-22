@@ -2,16 +2,19 @@
   <div class="row">
     <div class="col-12">
 
-      <h1 class="mt-5 text-center text-primary-emphasis">Listado de Tratamientos <i class="bi bi-person-hearts"></i></h1>
+      <h1 class="mt-4 mb-4 text-center text-primary-emphasis">Listado de Tratamientos <i class="bi bi-person-hearts"></i></h1>
 
       <div class="container">
         <div class="row">
           @for (treatment of treatments; track treatment.id) {
           <div class="col-md-6">
-            <div class="card mb-3 bg-success-subtle text-primary-emphasis">
+            <div class="card mb-3 bg-danger-subtle text-primary-emphasis">
                 <div class="row no-gutters">
                   <div class="col-md-4">
-                    <img src="/assets/img/uñas.png" class="card-img" alt="Placeholder">
+                    @if (treatment.image) {
+                      <img class="card-img" [src]="'http://localhost:3000/uploads/' + treatment.image" alt="Random first slide" />
+                    }
+
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
@@ -20,7 +23,7 @@
                       <p class="card-text"><small class="text-primary-emphasis">{{treatment.price}}€</small></p>
                       <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/treatments', treatment.id, 'detail']">Descripción</button>
                       <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/treatments', treatment.id, 'update']">Editar</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/booking', treatment.id, 'create']">Reservar</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/booking', 'create']">Reservar</button>
                     </div>
                   </div>
                 </div>
@@ -29,6 +32,3 @@
         }
         </div>
       </div>
-
-      <button class="btn btn-outline-info"
-      routerLink="/treatments/create">Crear Tratamiento</button>

@@ -17,7 +17,7 @@ users: User[] = [];
 constructor(private http: HttpClient){}
 
   ngOnInit(): void {
-    this.http.get<User[]>('http://localhost:3000/users')
+    this.http.get<User[]>('http://localhost:3000/user')
     .subscribe(user => this.users = user);
   }
 }

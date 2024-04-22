@@ -1,12 +1,13 @@
-<div class="container mt-5 text-center">
-  <h1 class="mt-5 text-center text-primary-emphasis">Detalles de la reserva <i class="bi bi-card-checklist"></i></h1>
+<div class="container mt-0 ml-0 text-center">
+
   <div class="row">
+    <h1 class="mt-4 mb-4 text-center text-primary-emphasis">Detalles de la reserva <i class="bi bi-card-checklist"></i></h1>
     <div class="col tex-center" style="margin: 5px">
 
       @if (booking) {
-        <div class="card mb-3 bg-success-subtle text-primary-emphasis">
-          <div class="card-body card mb-3 bg-success-subtle text-primary-emphasis">
-            <div class="container mt-5">
+        <div class="card mb-3 bg-danger-subtle text-primary-emphasis">
+          <div class="card-body card mb-3 bg-danger-subtle text-primary-emphasis">
+            <div class="container mt-0 bg-danger-subtle">
               <div class="row">
               <div class="col-4 text-center col-md-4 col-sm-12 text-center">
                 @if (booking.treatment?.image) {
@@ -29,10 +30,10 @@
                 }
                 <button type="button" class="btn btn-outline-info" style="margin: 10px;" [routerLink]="['/booking', booking.id, 'delete']">Cancelar reserva</button>
               </div>
-              <div class="col-8">
+              <div class="col-8 bg-danger-subtle">
                 @if(booking) {
-                  <div class="container px-4 py-5" id="icon-grid">
-                    <h2 class="pb-2 border-bottom">{{booking.treatment?.title}}</h2>
+                  <div class="container bg-danger-subtle" id="icon-grid">
+                    <h2 class="pb-0 border-bottom">{{booking.treatment?.title}}</h2>
                     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
                       <div class="col d-flex align-items-start">
                         <i
@@ -148,9 +149,8 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="col-12">
-      <h2 class="mt-5">Comentarios y valoraciones</h2>
-      <div>
+      <div class="col-md-6">
+        <h2 class="mt-0">Valoraciones</h2>
         <ul class="list-unstyled">
           @for (comment of comments; track comment.id) {
             <li>
@@ -163,7 +163,7 @@
                         <i class="bi-star{{ fill === 100 ? '-fill' : '' }} fs-3" style="color:#ffb900;"></i>
                       </ng-template>
                     </ngb-rating>
-                    {{comment.rating| date:'dd/MM/yyyy'}}
+                    {{comment.rating | date:'dd/MM/yyyy'}}
                   </h6>
                   <small class="text-body-secondary">{{comment.opinion}}</small>
                 </div>
@@ -172,12 +172,12 @@
           }
         </ul>
       </div>
-      <div class="col-6">
-        <h2 class="mt-5">Añade un comentario</h2>
+      <div class="col-md-6">
+        <h2 class="mt-0">Añade un comentario</h2>
         <form [formGroup]="commentsForm" (ngSubmit)="save()">
 
           <div class="mb-3">
-            <ngb-rating  formControlName="score" [max]="5">
+            <ngb-rating  formControlName="rating" [max]="5">
               <ng-template let-fill="fill" let-index="index">
                 <i class="bi-star{{ fill === 100 ? '-fill' : '' }} fs-3" style="color:#780a99;"></i>
               </ng-template>
@@ -186,13 +186,12 @@
 
           <div class="form-floating">
             <textarea class="form-control" placeholder="Leave a comment here"
-            id="comment" formControlName="comment" style="min-height:150px;"></textarea>
-            <label for="comment">Comentario de texto</label>
+            id="opinion" formControlName="opinion" style="min-height:150px;"></textarea>
+            <label for="opinion">Comentario de texto</label>
           </div>
 
-          <button class="w-100 btn btn-success btn-lg" type="submit">Añadir comentario</button>
+          <button class="w-100 btn btn-success btn-lg mb-4" type="submit">Añadir comentario</button>
         </form>
       </div>
-    </div>
   </div>
 </div>
