@@ -1,7 +1,13 @@
 .bg-custom {
-    background-color:rgba(238, 125, 5, 0.95);
+    background-color:black;
 }
 .footer {
-  background-color: rgba(238, 125, 5, 0.95);
+  background-color: black;
   padding: 0px;
+}
+.text-center {
+  color: #CCA831;
+}
+.bi {
+  color: #CCA831;
 }

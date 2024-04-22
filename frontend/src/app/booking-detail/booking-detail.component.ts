@@ -2,7 +2,7 @@ import { DatePipe } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { NgbCarouselModule, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAlertModule, NgbCarouselModule, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { Booking } from '../interfaces/booking.model';
 import { Treatment } from '../interfaces/treatment.model';
 import { Comments } from '../interfaces/comments.model';
@@ -11,7 +11,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-booking-detail',
   standalone: true,
-  imports: [HttpClientModule, RouterLink, NgbCarouselModule, NgbRatingModule, ReactiveFormsModule, DatePipe],
+  imports: [HttpClientModule, RouterLink, NgbCarouselModule, NgbRatingModule, ReactiveFormsModule, DatePipe, NgbAlertModule],
   templateUrl: './booking-detail.component.html',
   styleUrl: './booking-detail.component.css'
 })
@@ -20,6 +20,7 @@ export class BookingDetailComponent  implements OnInit{
   booking: Booking | undefined;
   treatment: Treatment [] = [];
   comments: Comments [] = [];
+  showDeletedMessage: boolean = false;
 
   commentsForm = new FormGroup({
     rating: new FormControl(0),
@@ -45,7 +46,23 @@ export class BookingDetailComponent  implements OnInit{
       this.httpClient.get<Comments[]>(`http://localhost:3000/comments/${id}`)
         .subscribe(comments => this.comments = comments);
 
+      this.loadBooking();
+
     });
+  }
+  loadBooking() {
+    this.httpClient.get<Booking>('http://localhost:3000/booking')
+    .subscribe(bookingFromBackend => this.booking = bookingFromBackend);
+  }
+  delete(booking: Booking) {
+    this.httpClient.delete('http://localhost:3000/booking/' + booking.id)
+    .subscribe(response => {
+      this.showDeletedMessage = true;
+      this.loadBooking();
+    });
+  }
+  closeMessage() {
+    this.showDeletedMessage = false;
   }
 
   save() {

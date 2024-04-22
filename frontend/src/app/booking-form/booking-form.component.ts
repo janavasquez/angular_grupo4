@@ -34,7 +34,6 @@ export class BookingFormComponent implements OnInit {
 
   booking: Booking | undefined;
   isUpdate: boolean = false;
-  isForDelete: boolean = false;
   showConfirmMessage = false;
 
   constructor(private httpClient: HttpClient,
@@ -45,10 +44,6 @@ export class BookingFormComponent implements OnInit {
 
     if(this.router.url.includes('update')) {
       this.isUpdate = true;
-    }
-
-    if(this.router.url.includes('delete')) {
-      this.isForDelete = true;
     }
 
     const urlUser = 'http://localhost:3000/user';
