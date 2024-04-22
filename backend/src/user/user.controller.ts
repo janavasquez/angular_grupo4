@@ -43,11 +43,13 @@ export class UserController {
     @UseInterceptors(FileInterceptor('file'))
     async create(@UploadedFile() file: Express.Multer.File, @Body() user: User) {
         console.log(file);
-        console.log(user);
         
         if(file) {
             user.photoUrl = file.filename;
          }
+
+         console.log(user);
+
          return await this.userRepository.save(user);
     }
 
@@ -94,12 +96,14 @@ export class UserController {
             role: Role.USER,
             fullName: '',
             active: false,
-            registerDate: undefined,
+            //registerDate: undefined,
+            birthDate: new Date(),
             nif: '',
             street: '',
             city: '',
             postalCode: '',
-            photoUrl: ''
+            photoUrl: '',
+            
         };
         await this.userRepository.save(user);
     }

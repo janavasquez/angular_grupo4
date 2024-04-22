@@ -6,7 +6,8 @@ export interface User {
   email: string; // sirve para login
   phone: string;
   active: boolean;
-  registerDate: Date;
+  //registerDate: Date;
+  birthDate: Date;
   nif: string;
   password: string, // sirve para login
   street: string;

@@ -13,20 +13,24 @@ export class User {
     fullName: string;
 
     @ApiProperty()
-    @Column({unique: true})
+    @Column({ unique: true })
     email: string;
 
     @ApiProperty()
-    @Column({nullable: true})
+    @Column({ nullable: true })
     phone: string;
 
     @ApiProperty()
-    @Column({nullable: true})
+    @Column({ nullable: true })
     active: boolean;
 
-    @ApiProperty()
+    /*@ApiProperty()
     @Column({type: 'date', nullable: true})
     registerDate: Date;
+    */
+    @ApiProperty()
+    @Column({ type: 'date', nullable: true }) // sin hora minuto
+    birthDate: Date;
 
     @ApiProperty()
     @Column()
@@ -45,7 +49,7 @@ export class User {
     postalCode: string;
 
     @ApiProperty()
-    @Column({nullable: true})
+    @Column({ nullable: true })
     photoUrl: string;
 
     @ApiProperty()
@@ -58,7 +62,7 @@ export class User {
         enum: Role,
         default: Role.USER
     })
-    role: Role; 
+    role: Role;
 
 
 }

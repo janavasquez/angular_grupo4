@@ -13,20 +13,20 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 })
 export class UserFormComponent implements OnInit {
 
-
-  users: User[] = [];
   userForm = new FormGroup({
     id: new FormControl(),
     fullName: new FormControl,
     email: new FormControl(),
     phone: new FormControl(),
     active: new FormControl(),
-    registerDate: new FormControl(new Date()),
+    //registerDate: new FormControl(new Date()),
+    birthDate: new FormControl(),
     nif: new FormControl(),
+    password: new FormControl(),
     street: new FormControl(),
     city: new FormControl(),
     postalCode: new FormControl(),
-    photo: new FormControl(),
+    photoUrl: new FormControl(),
 
   });
 
@@ -84,7 +84,9 @@ export class UserFormComponent implements OnInit {
     formData.append('phone', this.userForm.get('phone')?.value ?? '');
     formData.append('active', this.userForm.get('active')?.value ?? false);
     //formData.append('registerDate', this.userForm.get('registerDate')?.value ?? new Date());
+    formData.append('birthDate', this.userForm.get('birthDate')?.value ?? '');
     formData.append('nif', this.userForm.get('nif')?.value ?? '');
+    formData.append('password', this.userForm.get('password')?.value ?? '');
     formData.append('street', this.userForm.get('street')?.value ?? '');
     formData.append('city', this.userForm.get('city')?.value ?? '');
     formData.append('postalCode', this.userForm.get('postalCode')?.value ?? '');
