@@ -42,7 +42,7 @@ export class UserFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+
   }
 
   onFileChange(event: Event) {
@@ -76,7 +76,7 @@ export class UserFormComponent implements OnInit {
     let formData = new FormData();
 
     if (this.photoFile)
-      formData.append('photo', this.photoFile);
+      formData.append('file', this.photoFile);
 
     formData.append('id', this.userForm.get('id')?.value ?? 0);
     formData.append('firstName', this.userForm.get('fullName')?.value ?? '');
@@ -90,14 +90,14 @@ export class UserFormComponent implements OnInit {
     formData.append('postalCode', this.userForm.get('postalCode')?.value ?? '');
 
     this.httpClient.post('http://localhost:3000/user', formData)
-    .subscribe(user => {
-      this.photoFile = undefined;
-      this.photoPreview = undefined;
-      console.log(user);
+      .subscribe(user => {
+        this.photoFile = undefined;
+        this.photoPreview = undefined;
+        console.log(user);
 
-    })
-    
+      })
 
-    
+
+
   }
 }

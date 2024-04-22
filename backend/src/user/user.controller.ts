@@ -1,4 +1,4 @@
-import { Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put, UnauthorizedException } from '@nestjs/common';
+import { Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put, UnauthorizedException, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './user.model';
@@ -6,6 +6,7 @@ import { Register } from './register.dto';
 import { Role } from './role.enum';
 import { Login } from './login.dto';
 import { JwtService } from '@nestjs/jwt';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('user')
 export class UserController {
@@ -38,28 +39,18 @@ export class UserController {
         });
     }
 
-
     @Post()
-    create(@Body() user: User) {
-        return this.userRepository.save(user);
+    @UseInterceptors(FileInterceptor('file'))
+    async create(@UploadedFile() file: Express.Multer.File, @Body() user: User) {
+        console.log(file);
+        console.log(user);
+        
+        if(file) {
+            
+        }
+        
     }
-    @Put(':id')
-    async update(
-        @Param('id', ParseIntPipe) id: number,
-        @Body() user: User
-        ) {
-            // await espera a que el método existsBy termine ya que devuelve Promise<boolean>
-            const exists = await this.userRepository.existsBy({
-               id: id
-            });
 
-            if(!exists) {
-                throw new NotFoundException('User not found');
-            }
-
-            return this.userRepository.save(user);
-
-    }
 
     @Delete(':id')
     async deleteById(
