@@ -2,16 +2,16 @@
     <div class="row">
         <div class="col-lg-8">
 
-            @if(isUpdate){
+         
             <h1 class="mt-5 text-center">Actualizar usuario
                 <i class="bi bi-person-fill"></i>
             </h1>
-            } @else {
+            
             <h1 class="mt-5 text-center">Crear Usuario
                 <i class="bi bi-person-plus-fill"></i>
 
             </h1>
-            }
+            
 
             <form class="mt.5" [formGroup]="userForm" (ngSubmit)="save()">
 

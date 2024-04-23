@@ -32,8 +32,7 @@ export class UserFormComponent implements OnInit {
 
   photoFile: File | undefined;
   photoPreview: string | undefined;
-  isUpdate: boolean = false;
-  user: User | undefined;
+
 
   constructor(
     private httpClient: HttpClient,
@@ -78,7 +77,7 @@ export class UserFormComponent implements OnInit {
     if (this.photoFile)
       formData.append('file', this.photoFile);
 
-    formData.append('id', this.userForm.get('id')?.value ?? 0);
+    //formData.append('id', this.userForm.get('id')?.value ?? 0);
     formData.append('firstName', this.userForm.get('fullName')?.value ?? '');
     formData.append('email', this.userForm.get('email')?.value ?? '');
     formData.append('phone', this.userForm.get('phone')?.value ?? '');

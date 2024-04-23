@@ -9,7 +9,7 @@ export class User {
     id: number;
 
     @ApiProperty()
-    @Column()
+    @Column({ nullable: true })
     fullName: string;
 
     @ApiProperty()
@@ -33,19 +33,19 @@ export class User {
     birthDate: Date;
 
     @ApiProperty()
-    @Column()
+    @Column({ nullable: true })
     nif: string;
 
     @ApiProperty()
-    @Column()
+    @Column({ nullable: true })
     street: string;
 
     @ApiProperty()
-    @Column()
+    @Column({ nullable: true })
     city: string;
 
     @ApiProperty()
-    @Column()
+    @Column({ nullable: true })
     postalCode: string;
 
     @ApiProperty()
