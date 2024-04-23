@@ -4,3 +4,7 @@
     color: #ffffff; /* Color del texto blanco */
     /* Otros estilos según sea necesario */
 }
+.card-cover {
+    background-position: center;
+    background-size: cover;
+}

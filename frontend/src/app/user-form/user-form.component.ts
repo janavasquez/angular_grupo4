@@ -32,6 +32,8 @@ export class UserFormComponent implements OnInit {
 
   photoFile: File | undefined;
   photoPreview: string | undefined;
+  isUpdate: boolean = false;
+  user: User | undefined;
 
 
   constructor(
@@ -41,7 +43,20 @@ export class UserFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.activatedRoute.params.subscribe(params => {
+      const id = params['id'];
+      if(!id) {
+        return;
+  }
 
+  this.httpClient.get<User>(`http://localhost:3000/user/${id}`).subscribe(user => {
+        this.isUpdate = true;
+        this.user = user;
+        // Si los nombres de los atributos del objeto author coinciden con los del formulario se puede cargar así:
+        this.userForm.reset(user);
+      });
+
+    });
   }
 
   onFileChange(event: Event) {
@@ -74,10 +89,7 @@ export class UserFormComponent implements OnInit {
 
     let formData = new FormData();
 
-    if (this.photoFile)
-      formData.append('file', this.photoFile);
-
-    //formData.append('id', this.userForm.get('id')?.value ?? 0);
+    formData.append('id', this.userForm.get('id')?.value ?? 0);
     formData.append('firstName', this.userForm.get('fullName')?.value ?? '');
     formData.append('email', this.userForm.get('email')?.value ?? '');
     formData.append('phone', this.userForm.get('phone')?.value ?? '');
@@ -90,15 +102,26 @@ export class UserFormComponent implements OnInit {
     formData.append('city', this.userForm.get('city')?.value ?? '');
     formData.append('postalCode', this.userForm.get('postalCode')?.value ?? '');
 
-    this.httpClient.post('http://localhost:3000/user', formData)
-      .subscribe(user => {
-        this.photoFile = undefined;
-        this.photoPreview = undefined;
-        console.log(user);
+    if (this.photoFile) formData.append('file', this.photoFile);
 
-      })
+    if(this.isUpdate) {
+      const id =  this.userForm.get('id')?.value;
+      this.httpClient.put<User>('http://localhost:3000/user/' + id, formData)
+        .subscribe(author => {
+          this.photoFile = undefined;
+          this.photoPreview = undefined;
+          this.user = author;
+        });
 
-
-
+    } else {
+      this.httpClient.post<User>('http://localhost:3000/user', formData)
+        .subscribe(user => {
+          this.photoFile = undefined;
+          this.photoPreview = undefined;
+          this.user = user;
+        });
+    }
   }
+
+    
 }

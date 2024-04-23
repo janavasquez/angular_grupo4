@@ -1,9 +1,9 @@
 <div class="container mt-5 card mb-3 bg-success-subtle text-primary-emphasis">
   <div class="row">
-    <div class="col-4 text-center">
+    <div class="col-12 col-lg-4 text-center">
       <div class="px-4 py-5">
         @if (user && user.photoUrl && user.photoUrl.length > 0){
-        <img class="img-fluid" [src]="'http://localhost:3000/uploads/img_user/' + user.photoUrl" alt="author" />
+        <img class="img-fluid" [src]="'http://localhost:3000/uploads/' + user.photoUrl" alt="author" />
 
         <div>
           <button class="btn btn-danger my-2" (click)="deleteUser(user)">
@@ -16,7 +16,7 @@
         }
       </div>
     </div>
-    <div class="col-8">
+    <div class="col-12 col-lg-8">
       @if(user){
       <div class="container px-4 py-5" id="icon-grid">
         <h2 class="pb-2 border-bottom text-center fw-bold">Usuario Nº {{ user.id }}</h2>

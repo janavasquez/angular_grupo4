@@ -82,6 +82,10 @@
             <h3 class="my-5">Previsualización de foto</h3>
             <img class="img-fluid" [src]="photoPreview">
             }
+            @if (!photoPreview && user?.photoUrl) {
+                <h3 class="my-5">Previsualización de foto</h3>
+                <img class="img-fluid" [src]="'http://localhost:3000/uploads/' + user?.photoUrl">
+              }
         </div>
     </div>
 </div>

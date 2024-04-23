@@ -49,10 +49,27 @@ export class UserController {
          }
 
          console.log(user);
-
          return await this.userRepository.save(user);
     }
 
+    @Put(':id')
+    @UseInterceptors(FileInterceptor('file'))
+    async update(
+        @UploadedFile() file: Express.Multer.File, 
+        @Param('id', ParseIntPipe) id: number,
+        @Body() user: User
+        ) {
+
+            if(!await this.userRepository.existsBy({id: id})) {
+                throw new NotFoundException('User not found');
+            }
+
+            if (file) {
+                user.photoUrl = file.filename;
+            }
+            user.id = id; // Asigna el id para asegurar que sea numérico y actualice en lugar de intentar insertar
+            return await this.userRepository.save(user);
+    }
 
     @Delete(':id')
     async deleteById(
