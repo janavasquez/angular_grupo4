@@ -1,14 +1,18 @@
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { Comments } from './../../../../backend/src/comments/comments.model';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Category } from './../interfaces/category.model';
 import { Component, OnInit } from '@angular/core';
 import { Treatment } from '../interfaces/treatment.model';
+import { NgbCarouselModule, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
   selector: 'app-category-detail',
   standalone: true,
-  imports: [HttpClientModule, RouterLink],
+  imports: [HttpClientModule, RouterLink, NgbRatingModule, NgbCarouselModule, ReactiveFormsModule, DatePipe],
   templateUrl: './category-detail.component.html',
   styleUrl: './category-detail.component.css'
 })
@@ -17,8 +21,14 @@ export class CategoryDetailComponent implements OnInit {
 
   category: Category | undefined;
   treatments: Treatment[] = [];
-  commentsForm: any;
+
   updateUrl: string = ""
+  comments: Comments [] = [];
+
+  commentsForm = new FormGroup({
+    rating: new FormControl(0),
+    opinion: new FormControl('')
+  });
 
 
   constructor(private httpClient: HttpClient,
@@ -38,13 +48,34 @@ export class CategoryDetailComponent implements OnInit {
         .subscribe(category => { this.category = category; this.updateUrl = `/categories/${category.id}/update` });
 
       this.httpClient.get<Treatment[]>('http://localhost:3000/treatment/filter-by-category/' + id)
-        .subscribe(treatments => this.treatments = treatments);
+      .subscribe(treatments => this.treatments = treatments);
+
+      this.httpClient.get<Comments[]>(`http://localhost:3000/comment/filter-by-category/${id}`)
+        .subscribe(comments => this.comments = comments);
+
     });
 
 
   }
 
 
-  }
 
+  save() {
+    const comment: Comments = {
+      id: 0,
+      rating: this.commentsForm.get('rating')?.value ?? 0,
+      opinion: this.commentsForm.get('opinion')?.value ?? '',
+      treatment: this.category,
+      user: undefined,
+      company: undefined,
+      booking: undefined
+    }
+    this.httpClient.post<Comments>('http://localhost:3000/comments', comment)
+    .subscribe(comment => {
+      this.commentsForm.reset();
+      this.httpClient.get<Comments[]>('http://localhost:3000/filter-by-category/'+ this.category?.id)
+      .subscribe(comments => this.comments = comments);
+    });
+  }
+}
 

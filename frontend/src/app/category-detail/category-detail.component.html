@@ -31,13 +31,12 @@
         <table class="table table-striped mt-5">
           <thead>
             <tr>
-              <th scope="col">id</th>
               <th scope="col">Tratamientos</th>
+              <th scope="col">imagen</th>
               <th scope="col">Precio</th>
-              <th scope="col">Descripcion</th>
-              <th scope="col">Cuidados posteriores</th>
+              <th scope="col">Edad Minima</th>
               <th scope="col">Duracion</th>
-
+              <th scope="col">Centro </th>
             </tr>
           </thead>
 
@@ -47,9 +46,33 @@
               <td>{{treatment.id}}</td>
               <td>{{treatment.title}}</td>
               <td>{{treatment.price}}</td>
+              <!-- <td>{{treatment.images}}</td> -->
               <td>{{treatment.descriptionShort}}</td>
+              <td>{{treatment.descriptionLong}}</td>
               <td>{{treatment.afterCare}}</td>
               <td>{{treatment.durationInMin}}</td>
+
+              <td>
+                @if (treatment.id) {
+                  <span class="badge text-bg-success">1</span>
+                } @else {
+                  <span class="badge text-bg-danger">treatments</span>
+                }
+              </td>
+              <td>{{treatment.price}}</td>
+
+              <td>
+                <a [routerLink]="['/treatments', treatment.id, 'detail']">
+                  {{treatment.id}}
+                </a>
+                </td>
+
+
+              <td>
+                <a [routerLink]="['/treatments', treatment.id, 'update']">
+                  {{treatment.durationInMin}}
+                </a>
+              </td>
 
               <td>
                 <button class="btn btn-success me-2" [routerLink]="['/treatments', treatment.id, 'detail']">
@@ -58,10 +81,57 @@
               </td>
             </tr>
             }
-
           </tbody>
         </table>
       </div>
     </div>
   </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="mt-5">Comentarios y valoraciones</h2>
+        <div>
+          <ul class="list-unstyled">
+            @for (comment of comments; track comment.id) {
+              <li>
+                <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+                  <img class="bd-placeholder-img" src="https://placehold.co/100">
+                  <div class="col-lg-8">
+                    <h6 class="mb-0">
+                      <ngb-rating [(rate)]="comment.rating" [readonly]="true" [max]="5">
+                        <ng-template let-fill="fill" let-index="index">
+                          <i class="bi-star{{ fill === 100 ? '-fill' : '' }} fs-3" style="color:#ffb900;"></i>
+                        </ng-template>
+                      </ngb-rating>
+                      {{comment.rating | date:'dd/MM/yyyy'}}
+                    </h6>
+                    <small class="text-body-secondary">{{comment.opinion}}</small>
+                  </div>
+                </a>
+              </li>
+            }
+          </ul>
+        </div>
+        <div class="col-6">
+          <h2 class="mt-5">Añade un comentario</h2>
+          <form [formGroup]="commentsForm" (ngSubmit)="save()">
+
+            <div class="mb-3">
+              <ngb-rating  formControlName="rating" [max]="5">
+                <ng-template let-fill="fill" let-index="index">
+                  <i class="bi-star{{ fill === 100 ? '-fill' : '' }} fs-3" style="color:#780a99;"></i>
+                </ng-template>
+              </ngb-rating>
+            </div>
+
+            <div class="form-floating">
+              <textarea class="form-control" placeholder="Leave a comment here"
+              id="opinion" formControlName="opinion" style="min-height:150px;"></textarea>
+              <label for="opinion">Comentario de texto</label>
+            </div>
+
+            <button class="w-100 btn btn-success btn-lg" type="submit">Añadir comentario</button>
+          </form>
+
 
