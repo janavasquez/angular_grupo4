@@ -52,7 +52,7 @@ export class UserFormComponent implements OnInit {
       this.httpClient.get<User>(`http://localhost:3000/user/${id}`).subscribe(user => {
         this.isUpdate = true;
         this.user = user;
-        // Si los nombres de los atributos del objeto author coinciden con los del formulario se puede cargar así:
+        // Si los nombres de los atributos del objeto category coinciden con los del formulario se puede cargar así:
         this.userForm.reset(user);
       });
 
@@ -123,5 +123,5 @@ export class UserFormComponent implements OnInit {
     }
   }
 
-    
+
 }
