@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 import { Role } from "./role.enum";
 import { ApiProperty } from "@nestjs/swagger";
 
@@ -24,10 +24,10 @@ export class User {
     @Column({ nullable: true })
     active: boolean;
 
-    /*@ApiProperty()
-    @Column({type: 'date', nullable: true})
-    registerDate: Date;
-    */
+    @ApiProperty()
+    @CreateDateColumn()
+    registerDate?: Date;
+    
     @ApiProperty()
     @Column({ type: 'date', nullable: true }) // sin hora minuto
     birthDate: Date;
