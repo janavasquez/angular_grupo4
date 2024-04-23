@@ -1,5 +1,5 @@
 .mi-boton-rc {
-    background-color: #CCA831; 
+    background-color: #CCA831;
     color: black;
 }
 .container-fluid {
@@ -10,6 +10,9 @@
   padding: 0px;
 }
 .nav-link {
+  color: #CCA831;
+}
+.navbar-brand {
   color: #CCA831;
 }
 
