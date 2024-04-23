@@ -16,6 +16,11 @@
                   <button class="btn btn-primary btn-sm fs-5" [routerLink]="['/users', user.id, 'detail']">
                     Ver
                   </button>
+
+                  <button class="btn btn-primary btn-sm fs-5" [routerLink]="['/users', user.id, 'update']">
+                    Editar
+                  </button>
+
                 </li>
                 <li class="d-flex align-items-center me-3">
                   <small>{{user.postalCode}}</small>

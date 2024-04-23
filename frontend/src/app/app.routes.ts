@@ -86,14 +86,6 @@ export const routes: Routes = [
     component:CategoryFormComponent
   },
   {
-    path: 'users',
-    component: UserListComponent
-  },
-  {
-    path: 'users/:id',
-    component: UserDetailComponent
-  },
-  {
     path: 'login',
     component: UserLoginComponent
   },
@@ -126,19 +118,15 @@ export const routes: Routes = [
     component: UserListComponent
   },
   {
+    path: 'users/create',
+    component: UserFormComponent
+  },
+  {
     path: 'users/:id/detail',
     component: UserDetailComponent
   },
   {
-    path: 'users/:id/create',
-    component: UserFormComponent
-  },
-  {
     path: 'users/:id/update',
-    component: UserFormComponent
-  },
-  {
-    path: 'users/:id/delete',
     component: UserFormComponent
   }
 ];
