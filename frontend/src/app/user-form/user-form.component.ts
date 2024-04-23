@@ -107,10 +107,10 @@ export class UserFormComponent implements OnInit {
     if(this.isUpdate) {
       const id =  this.userForm.get('id')?.value;
       this.httpClient.put<User>('http://localhost:3000/user/' + id, formData)
-        .subscribe(author => {
+        .subscribe(user => {
           this.photoFile = undefined;
           this.photoPreview = undefined;
-          this.user = author;
+          this.user = user;
         });
 
     } else {
