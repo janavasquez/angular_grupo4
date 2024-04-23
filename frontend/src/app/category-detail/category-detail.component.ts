@@ -1,4 +1,4 @@
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Category } from './../interfaces/category.model';
 import { Component, OnInit } from '@angular/core';
@@ -15,31 +15,36 @@ import { Treatment } from '../interfaces/treatment.model';
 
 export class CategoryDetailComponent implements OnInit {
 
-  category: Category| undefined;
+  category: Category | undefined;
   treatments: Treatment[] = [];
   commentsForm: any;
+  updateUrl: string = ""
 
 
   constructor(private httpClient: HttpClient,
-    private activatedRoute: ActivatedRoute) {}
+    private activatedRoute: ActivatedRoute,
+  private route: Router) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
-      const id = params ['id'];
-      if(!id){
+      const id = params['id'];
+      if (!id) {
         return; // si no hay categoria se termina el metodo
       }
 
       // traer categoria y tratamiento
 
       this.httpClient.get<Category>('http://localhost:3000/category/' + id)
-      .subscribe(category => this.category = category);
+        .subscribe(category => { this.category = category; this.updateUrl = `/categories/${category.id}/update` });
 
       this.httpClient.get<Treatment[]>('http://localhost:3000/treatment/filter-by-category/' + id)
-      .subscribe(treatments => this.treatments = treatments);
+        .subscribe(treatments => this.treatments = treatments);
     });
+
 
   }
 
 
-}
+  }
+
+

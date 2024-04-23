@@ -3,7 +3,15 @@
   <div class="row">
     <div class="col-lg-8">
 
-      <h1 class="my-5">Crear nueva Categoria</h1>
+
+      @if(isUpdate) {
+        <h1 class="mt-5 text-center">Actualizar categoría
+            <i class="bi bi-person-fill"></i>
+        </h1>
+    } @else {
+
+      <h1 class="my-5"> Crear Categoria</h1>
+    }
 
       <form [formGroup]="categoryForm" (ngSubmit)="save()">
 
