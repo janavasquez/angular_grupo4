@@ -15,5 +15,11 @@ export class NavbarComponent {
   isLoggedIn = false;
   userEmail: string | undefined;
   isAdmin = false;
+  activeLink: string = '';
+  setActive(link: string): void {
+    this.activeLink = link;
+  }
+
+  
 
 }
