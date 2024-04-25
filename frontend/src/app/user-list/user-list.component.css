@@ -1,10 +1,22 @@
 
-.mi-boton-personalizado,h2 {
-    background-color: rgb(140, 0, 255); /* Color de fondo violeta */
-    color: #ffffff; /* Color del texto blanco */
+.btn_user2{
+    background-color: #CCA831; /* Color de fondo violeta */
+    color: #000000; /* Color del texto blanco */
     /* Otros estilos según sea necesario */
+    transition: opacity 0.3s ease; /* Transición de opacidad durante 0.3 segundos */
+}
+
+.btn_user2:hover {
+    opacity: 0.8; /* Cambia la opacidad al pasar el ratón por encima */
+}
+.btn_user2:active {
+    opacity: 0.5; /* Cambia la opacidad al hacer clic */
 }
 .card-cover {
-    background-position: center;
+    background-position: center top 20%;
     background-size: cover;
+    
+}
+.card-cover:hover {
+    opacity: 0.8; /* Cambia la opacidad al pasar el ratón por encima */
 }
