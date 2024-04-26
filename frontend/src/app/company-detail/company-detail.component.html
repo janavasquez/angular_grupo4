@@ -4,7 +4,8 @@
 
       <div class="px-4 py-5">
         @if (company && company.photoUrl && company.photoUrl.length > 0){
-        <img class="img-fluid" [src]="company.photoUrl" alt="Foto company">
+        <img class="img-fluid rounded" [src]="'http://localhost:3000/uploads/' + company.photoUrl" alt="Random first slide" />
+
 
         <div>
           <button class="btn btn-danger my-2" (click)="deleteCompany()">
