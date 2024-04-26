@@ -1,0 +1,10 @@
+.btn_company3 {
+color:black;
+border-color: #CCA831;
+border-radius: 30px;
+}
+
+.btn_company3:hover {
+color:#000000;
+background-color: #CCA831;
+}
