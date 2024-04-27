@@ -75,6 +75,7 @@
       </ul>
 
       <ul class="navbar-nav ms-auto fs-5">
+        @if(isAdmin) {
         <li class="nav-item" ngbDropdown>
 					<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown2" role="button"> Usuarios </a>
 					<div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu dropdown-menu-end">
@@ -82,9 +83,24 @@
 						<a ngbDropdownItem [routerLink]="['/users/:id/create']" (click)="$event.preventDefault()">Crear Usuario</a>
 					</div>
 				</li>
+        }
+        @if(userEmail) {
+          <li class="nav-item">
+            <button routerLink="/account" class="btn btn-outline-success btn-sm mx-3">
+              {{userEmail}}
+            </button>
+          </li>
+        }
+        @if(isLoggedIn) {
+          <li class="nav-item">
+            <button type="button" class="btn btn-warning me-3 mb-2" (click)="logout()">
+              Logout <i class="bi bi-box-arrow-right ms-2"></i>
+            </button>
+          </li>
+        } @else {
         <li class="nav-item">
           <button type="button" class="btn mi-boton-rc me-3 mb-2" routerLink="/login">
-            Login <i class="bi bi-box-arrow-right ms-2"></i>
+            Login <i class="bi bi-box-arrow-in-right ms-2"></i>
           </button>
         </li>
         <li class="nav-item">
@@ -92,6 +108,7 @@
             Registro <i class="bi bi-person-plus ms-2"></i>
           </button>
         </li>
+        }
       </ul>
 
     </div>

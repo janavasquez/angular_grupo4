@@ -7,6 +7,7 @@ import { Role } from './role.enum';
 import { Login } from './login.dto';
 import { JwtService } from '@nestjs/jwt';
 import { FileInterceptor } from '@nestjs/platform-express';
+import * as bcrypt from 'bcrypt';
 
 @Controller('user')
 export class UserController {
@@ -104,22 +105,24 @@ export class UserController {
         if(exists)
             throw new ConflictException("Email ocupado");
 
+        const password = bcrypt.hashSync(register.password, 10);
+
         // crear usuario en base de datos
         const user: User = {
             id: 0,
             email: register.email,
-            password: register.password,
-            phone: '',
+            password: password,
+            phone: null,
             role: Role.USER,
-            fullName: '',
-            active: false,
+            fullName: null,
+            active: null,
             //registerDate: undefined,
-            birthDate: new Date(),
-            nif: '',
-            street: '',
-            city: '',
-            postalCode: '',
-            photoUrl: '',
+            birthDate: null,
+            nif: null,
+            street: null,
+            city: null,
+            postalCode: null,
+            photoUrl: null,
             
         };
         await this.userRepository.save(user);
