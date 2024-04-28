@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { NgbAlertModule, NgbCarouselModule, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
@@ -11,7 +11,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-booking-detail',
   standalone: true,
-  imports: [HttpClientModule, RouterLink, NgbCarouselModule, NgbRatingModule, ReactiveFormsModule, DatePipe, NgbAlertModule],
+  imports: [RouterLink, NgbCarouselModule, NgbRatingModule, ReactiveFormsModule, DatePipe, NgbAlertModule],
   templateUrl: './booking-detail.component.html',
   styleUrl: './booking-detail.component.css'
 })

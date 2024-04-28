@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Register } from '../register.model';
@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-user-register',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './user-register.component.html',
   styleUrl: './user-register.component.css'
 })

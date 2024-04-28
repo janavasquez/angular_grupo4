@@ -28,8 +28,10 @@
                       <p class="card-text">{{treatment.descriptionShort}}</p>
                       <p class="card-text"><small class="text-primary-emphasis">{{treatment.price}}€</small></p>
                       <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/treatments', treatment.id, 'detail']">Descripción</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/treatments', treatment.id, 'update']">Editar</button>
                       <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/booking', 'create']">Reservar</button>
+                      @if(isAdmin) {
+                      <button type="button" class="btn btn-sm btn-outline-secondary" [routerLink]="['/treatments', treatment.id, 'update']">Editar</button>
+                      }
                     </div>
                   </div>
                 </div>

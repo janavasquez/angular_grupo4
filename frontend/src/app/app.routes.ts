@@ -17,6 +17,7 @@ import { BookingDetailComponent } from './booking-detail/booking-detail.componen
 import { BookingFormComponent } from './booking-form/booking-form.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { CategoryFormComponent } from './category-form/category-form.component';
+import { roleAdminGuard } from './authentication/guards/role.guard';
 
 export const routes: Routes = [
 
@@ -38,17 +39,20 @@ export const routes: Routes = [
   // La pantalla creación de un tratamiento
   {
     path: 'treatments/create',
-    component: TreatmentFormComponent
+    component: TreatmentFormComponent,
+    canActivate: [roleAdminGuard]
   },
   // La  pantalla de modificación de un tratamiento
   {
     path: 'treatments/:id/update',
-    component: TreatmentFormComponent
+    component: TreatmentFormComponent,
+    canActivate: [roleAdminGuard]
   },
   // La pantalla de borrar un tratamiento
   {
     path: 'treatments/:id/delete',
-    component: TreatmentFormComponent
+    component: TreatmentFormComponent,
+    canActivate: [roleAdminGuard]
   },
   // Rutas componente company
   {
@@ -84,14 +88,6 @@ export const routes: Routes = [
   {
     path:'categories/:id/update',
     component:CategoryFormComponent
-  },
-  {
-    path: 'users',
-    component: UserListComponent
-  },
-  {
-    path: 'users/:id',
-    component: UserDetailComponent
   },
   {
     path: 'login',

@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Booking } from '../interfaces/booking.model';
@@ -7,7 +7,7 @@ import { Booking } from '../interfaces/booking.model';
 @Component({
   selector: 'app-booking-list',
   standalone: true,
-  imports: [HttpClientModule, RouterLink, DatePipe],
+  imports: [RouterLink, DatePipe],
   templateUrl: './booking-list.component.html',
   styleUrl: './booking-list.component.css'
 })

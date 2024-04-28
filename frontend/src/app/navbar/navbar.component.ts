@@ -23,6 +23,7 @@ export class NavbarComponent {
   ) {
     this.authService.isLoggedIn.subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn);
     this.authService.userEmail.subscribe(userEmail => this.userEmail = userEmail);
+    this.authService.isAdmin.subscribe(isAdmin => this.isAdmin = isAdmin);
   }
 
   logout() {

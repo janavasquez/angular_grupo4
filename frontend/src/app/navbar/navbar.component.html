@@ -24,10 +24,10 @@
           <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button"> Tratamientos </a>
           <div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
             <a ngbDropdownItem routerLink="/treatments" (click)="$event.preventDefault()">Listado</a>
-            <!--@if(isAdmin) {
+            @if(isAdmin) {
               <a ngbDropdownItem routerLink="/treatments/create" (click)="$event.preventDefault()">Crear tratamiento</a>
-            } cuando ya este configurado el usuario-->
-            <a ngbDropdownItem routerLink="/treatments/create" (click)="$event.preventDefault()">Crear tratamiento</a>
+            }
+            <!--<a ngbDropdownItem routerLink="/treatments/create" (click)="$event.preventDefault()">Crear tratamiento</a>-->
           </div>
         </li>
 
@@ -35,10 +35,10 @@
 					<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button"> Categorías </a>
 					<div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
 						<a ngbDropdownItem routerLink="/categories" (click)="$event.preventDefault()">Listado</a>
-						<!--@if(isAdmin) {
+						@if(isAdmin) {
               <a ngbDropdownItem routerLink="/categories/create" (click)="$event.preventDefault()">Crear categoría</a>
-            }-->
-            <a ngbDropdownItem routerLink="/categories/create" (click)="$event.preventDefault()">Crear categoría</a>
+            }
+            <!--<a ngbDropdownItem routerLink="/categories/create" (click)="$event.preventDefault()">Crear categoría</a>-->
 					</div>
 				</li>
 
@@ -47,14 +47,14 @@
 					<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button"> Centros de belleza </a>
 					<div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
 						<a ngbDropdownItem routerLink="/companies" (click)="$event.preventDefault()">Listado</a>
-						<!--@if(isAdmin) {
+						@if(isAdmin) {
               <a ngbDropdownItem routerLink="/editorials/create" (click)="$event.preventDefault()">Crear editorial</a>
-            }-->
-            <a ngbDropdownItem routerLink="/companies/create" (click)="$event.preventDefault()">Crear centro de belleza</a>
+            }
+            <!--<a ngbDropdownItem routerLink="/companies/create" (click)="$event.preventDefault()">Crear centro de belleza</a>-->
 					</div>
 				</li>
 
-        <!--@if (isLoggedIn) {
+        @if (isLoggedIn) {
           <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
             <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button"> Reservas </a>
             <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
@@ -64,14 +64,14 @@
               }
             </div>
           </li>
-          }-->
-        <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
+          }
+        <!--<li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
           <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button"> Reservas </a>
           <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
             <a ngbDropdownItem routerLink="/booking" (click)="$event.preventDefault()">Listado reservas</a>
             <a ngbDropdownItem routerLink="/booking/create" (click)="$event.preventDefault()">Crear reserva</a>
           </div>
-        </li>
+        </li>-->
       </ul>
 
       <ul class="navbar-nav ms-auto fs-5">

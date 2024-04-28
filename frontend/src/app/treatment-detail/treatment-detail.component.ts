@@ -1,4 +1,4 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Treatment } from './../interfaces/treatment.model';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
@@ -12,7 +12,7 @@ import { Category } from '../interfaces/category.model';
 @Component({
   selector: 'app-treatment-detail',
   standalone: true,
-  imports: [HttpClientModule, RouterLink, NgbCarouselModule, ReactiveFormsModule, NgbRatingModule, DatePipe],
+  imports: [RouterLink, NgbCarouselModule, ReactiveFormsModule, NgbRatingModule, DatePipe],
   templateUrl: './treatment-detail.component.html',
   styleUrl: './treatment-detail.component.css'
 })
