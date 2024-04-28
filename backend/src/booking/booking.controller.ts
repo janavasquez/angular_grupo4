@@ -63,8 +63,12 @@ export class BookingController {
     }
 
     @Post()
-    create(@Body() treatment: Treatment) {
-        return this.bookingRepository.save(treatment);
+    @UseGuards(AuthGuard('jwt'))
+    create(
+        @Body() booking: Booking,
+        @Request() request) {
+            booking.user = request.user;
+        return this.bookingRepository.save(booking);
     }
 
     @Put(':id')

@@ -1,7 +1,8 @@
-import { Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put } from '@nestjs/common';
+import { Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put, Request, UseGuards } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Comments } from './comments.model';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('comment')
 export class CommentsController {
@@ -45,8 +46,12 @@ export class CommentsController {
     }
 
     @Post()
-    create(@Body() comment: Comments) {
-        return this.commentRepository.save(comment);
+    @UseGuards(AuthGuard('jwt'))
+    create(
+        @Body() comment: Comments,
+        @Request() request) {
+            comment.user = request.user;
+            return this.commentRepository.save(comment);
     }
 
     @Put(':id')

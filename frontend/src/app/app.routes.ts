@@ -18,6 +18,7 @@ import { BookingFormComponent } from './booking-form/booking-form.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { CategoryFormComponent } from './category-form/category-form.component';
 import { roleAdminGuard } from './authentication/guards/role.guard';
+import { AccountFormComponent } from './account-form/account-form.component';
 
 export const routes: Routes = [
 
@@ -136,5 +137,9 @@ export const routes: Routes = [
   {
     path: 'users/:id/delete',
     component: UserFormComponent
+  },
+  {
+    path: 'account',
+    component: AccountFormComponent
   }
 ];

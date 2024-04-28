@@ -52,11 +52,16 @@ export class UserRegisterComponent {
     };
 
     let url = 'http://localhost:3000/user/register';
-    this.httpClient.post<Register>(url, register)
-                    .subscribe(res => {
-                      console.log(res);
-                    });
+    this.httpClient.post<Register>(url, register).subscribe({
+      next: data => {
+        this.router.navigate(['/login']);
+      },
+      error: error => {
 
-
+        if (error.status === 409) {
+          this.error = 'Datos ocupados, elige otros datos.';
+        }
+      }
+    });
   }
 }
