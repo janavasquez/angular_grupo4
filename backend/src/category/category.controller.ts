@@ -74,26 +74,30 @@ async update(
 }
 
 
-@Delete(':name')
-async deleteById(
-    @Param('name', ParseIntPipe) name: string
-) {
-    const exists = await this.categoryRepo.existsBy({
-        name: name
-     });
+// @Delete(':id') EST ES PARA REVISAR
+//     async deleteById(@Param('id', ParseIntPipe) id: number) {
+//         this.log.debug(`REST request to delete category with id ${id}`);
 
-     if(!exists) {
-         throw new NotFoundException('Category not found');
-     }
+//         if(! await this.categoryRepo.existsBy({id: id})) {
+//             this.log.warn(`category not found with id: ${id}`);
+//             throw new NotFoundException();
+//         }
 
-    try {
+//         this.categoryRepo.delete({
+//             id: id
+//         });
+    }
+
+
+
+    /* try {
         // Opción 1: Borrar categorias
         // Primero desasociar o borrar aquellas cosas que apunten a categoria
         // this.categoryRepository.delete(id);
 
         // Opción 2: Despublicar categoria
         const category = await this.categoryRepo.findOne({
-            where: {name: name}
+            where: {id: id}
         });
         //Category.= false;
        // await this.save(Category);
@@ -101,8 +105,4 @@ async deleteById(
     } catch (error) {
         console.log("Error al borrar la categoria");
         throw new ConflictException('No se puede borrar.');
-    }
-    
-
-}
-}
+    } */

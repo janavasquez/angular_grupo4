@@ -58,24 +58,5 @@ export class CategoryDetailComponent implements OnInit {
 
   }
 
-
-
-  save() {
-    const comment: Comments = {
-      id: 0,
-      rating: this.commentsForm.get('rating')?.value ?? 0,
-      opinion: this.commentsForm.get('opinion')?.value ?? '',
-      treatment: this.category,
-      user: undefined,
-      company: undefined,
-      booking: undefined
-    }
-    this.httpClient.post<Comments>('http://localhost:3000/comments', comment)
-    .subscribe(comment => {
-      this.commentsForm.reset();
-      this.httpClient.get<Comments[]>('http://localhost:3000/filter-by-category/'+ this.category?.id)
-      .subscribe(comments => this.comments = comments);
-    });
-  }
 }
 
