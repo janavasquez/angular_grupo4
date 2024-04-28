@@ -1,8 +1,10 @@
-import { Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put, UploadedFile, UseInterceptors } from '@nestjs/common';
+import { Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put, UploadedFile, UseGuards, UseInterceptors, Request, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Treatment } from './treatment.model';
 import { Repository } from 'typeorm';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { AuthGuard } from '@nestjs/passport';
+import { Role } from 'src/user/role.enum';
 
 @Controller('treatment')
 export class TreatmentController {
@@ -13,11 +15,14 @@ export class TreatmentController {
     ) {}
 
     @Get()
-    findAll() {
+    @UseGuards(AuthGuard('jwt'))
+    findAll(@Request() request) {
+        console.log(request.user);
         return this.treatmentRepository.find();
     }
 
     @Get(':id')
+    @UseGuards(AuthGuard('jwt'))
     findById(@Param('id', ParseIntPipe) id: number) {
         return this.treatmentRepository.findOne({
             where: {id: id}
@@ -46,11 +51,17 @@ export class TreatmentController {
     }
 
     @Post()
+    @UseGuards(AuthGuard('jwt'))
     @UseInterceptors(FileInterceptor('file'))
-    async create(@UploadedFile() file: Express.Multer.File,
-    @Body() treatment: Treatment) {
-        if(file) {
-            treatment.image = file.filename;
+    async create(
+        @Request() request,
+        @UploadedFile() file: Express.Multer.File,
+        @Body() treatment: Treatment) {
+            console.log(typeof request.user.role);
+            if(request.user.role !== Role.ADMIN)
+                throw new UnauthorizedException('Sin permisos para crear');
+            if(file) {
+                treatment.image = file.filename;
         }
         console.log(treatment)
         return await this.treatmentRepository.save(treatment);

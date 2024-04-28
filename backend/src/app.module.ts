@@ -18,10 +18,11 @@ import { extname } from 'path';
 import { v4 as uuidv4 } from 'uuid';
 import { PassportModule } from '@nestjs/passport';
 import { JwtModule } from '@nestjs/jwt';
+import { JwtValidator } from './user/jwt.validator';
 
 @Module({
   imports: [
-    PassportModule, // módulo de autenticación
+    PassportModule, 
     JwtModule.register({
       secret: 'admin',
       signOptions: {expiresIn: '7d'}
@@ -29,10 +30,7 @@ import { JwtModule } from '@nestjs/jwt';
     
     MulterModule.register({
       storage: diskStorage({
-        // carpeta destino donde guardar los archivos
         destination: './uploads',
-        // Opcional: generar un nombre único para el archivo antes de guardarlo:
-        // 1f82d390-d902-4aed-ad23-d543f56f2433.png
         filename: (req, file, callback) => {
           let fileName = uuidv4() + extname(file.originalname);
           callback(null, fileName);
@@ -55,6 +53,6 @@ import { JwtModule } from '@nestjs/jwt';
 
   
   controllers: [BookingController, CategoryController, CompanyController, TreatmentController, UserController, CommentsController],
-  providers: [],
+  providers: [JwtValidator],
 })
 export class AppModule {}
