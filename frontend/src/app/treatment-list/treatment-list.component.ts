@@ -1,5 +1,5 @@
 import { Treatment } from './../interfaces/treatment.model';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Booking } from '../interfaces/booking.model';
@@ -19,13 +19,13 @@ export class TreatmentListComponent implements OnInit{
   isAdmin = false;
 
   constructor(
-    private http: HttpClient,
+    private httpClient: HttpClient,
     private authService: AuthenticationService) {
       this.authService.isAdmin.subscribe(isAdmin => this.isAdmin = isAdmin);
     }
 
   ngOnInit(): void {
-    this.http.get<Treatment[]>('http://localhost:3000/treatment')
+    this.httpClient.get<Treatment[]>('http://localhost:3000/treatment')
     .subscribe(treatments => this.treatments = treatments);
   }
 

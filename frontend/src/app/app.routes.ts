@@ -19,6 +19,7 @@ import { UserFormComponent } from './user-form/user-form.component';
 import { CategoryFormComponent } from './category-form/category-form.component';
 import { roleAdminGuard } from './authentication/guards/role.guard';
 import { AccountFormComponent } from './account-form/account-form.component';
+import { AvatarFormComponent } from './avatar-form/avatar-form.component';
 
 export const routes: Routes = [
 
@@ -141,5 +142,9 @@ export const routes: Routes = [
   {
     path: 'account',
     component: AccountFormComponent
+  },
+  {
+    path: 'account/avatar',
+    component: AvatarFormComponent
   }
 ];

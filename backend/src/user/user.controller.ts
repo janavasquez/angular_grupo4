@@ -1,4 +1,4 @@
-import { Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put, Request, UnauthorizedException, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common';
+import { BadRequestException, Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put, Request, UnauthorizedException, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './user.model';
@@ -171,4 +171,19 @@ export class UserController {
         return token;
 
     }
+
+    @Post('avatar')
+    @UseInterceptors(FileInterceptor('file'))
+    @UseGuards(AuthGuard('jwt'))
+    async uploadAvatar(
+        @UploadedFile() file: Express.Multer.File,
+        @Request() request
+    ) {
+        if (!file) {
+            throw new BadRequestException('Archivo incorrecto');
+        }
+        request.user.photoUrl = file.filename;
+        return await this.userRepository.save(request.user);
+    }
+
 }
