@@ -42,7 +42,7 @@
 					<div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
 						<a ngbDropdownItem routerLink="/companies" (click)="$event.preventDefault()">Listado</a>
 						@if(isAdmin) {
-              <a ngbDropdownItem routerLink="/editorials/create" (click)="$event.preventDefault()">Crear editorial</a>
+              <a ngbDropdownItem routerLink="/companies/create" (click)="$event.preventDefault()">Crear centro de belleza</a>
             }
             <!--<a ngbDropdownItem routerLink="/companies/create" (click)="$event.preventDefault()">Crear centro de belleza</a>-->
 					</div>
@@ -52,14 +52,14 @@
           <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
             <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button"> Reservas </a>
             <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
-              <a ngbDropdownItem routerLink="/reservations" (click)="$event.preventDefault()">Listado reservas</a>
+              <a ngbDropdownItem routerLink="/booking" (click)="$event.preventDefault()">Listado reservas</a>
               @if (isAdmin) {
-              <a ngbDropdownItem routerLink="/reservations/create" (click)="$event.preventDefault()">Crear reserva</a>
+              <a ngbDropdownItem routerLink="/booking/create" (click)="$event.preventDefault()">Crear reserva</a>
               }
             </div>
           </li>
           }
-        
+
 
         <!--<li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
           <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button"> Reservas </a>
