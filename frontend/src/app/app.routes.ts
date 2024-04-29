@@ -9,14 +9,17 @@ import { CompanyListComponent } from './company-list/company-list.component';
 import { CompanyDetailComponent } from './company-detail/company-detail.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
-import { UserLoginComponent } from './user-login/user-login.component';
-import { UserRegisterComponent } from './user-register/user-register.component';
+import { UserLoginComponent } from './authentication/user-login/user-login.component';
+import { UserRegisterComponent } from './authentication/user-register/user-register.component';
 import { CompanyFormComponent } from './company-form/company-form.component';
 import { BookingListComponent } from './booking-list/booking-list.component';
 import { BookingDetailComponent } from './booking-detail/booking-detail.component';
 import { BookingFormComponent } from './booking-form/booking-form.component';
 import { UserFormComponent } from './user-form/user-form.component';
 import { CategoryFormComponent } from './category-form/category-form.component';
+import { roleAdminGuard } from './authentication/guards/role.guard';
+import { AccountFormComponent } from './account-form/account-form.component';
+import { AvatarFormComponent } from './avatar-form/avatar-form.component';
 
 export const routes: Routes = [
 
@@ -38,17 +41,20 @@ export const routes: Routes = [
   // La pantalla creación de un tratamiento
   {
     path: 'treatments/create',
-    component: TreatmentFormComponent
+    component: TreatmentFormComponent,
+    canActivate: [roleAdminGuard]
   },
   // La  pantalla de modificación de un tratamiento
   {
     path: 'treatments/:id/update',
-    component: TreatmentFormComponent
+    component: TreatmentFormComponent,
+    canActivate: [roleAdminGuard]
   },
   // La pantalla de borrar un tratamiento
   {
     path: 'treatments/:id/delete',
-    component: TreatmentFormComponent
+    component: TreatmentFormComponent,
+    canActivate: [roleAdminGuard]
   },
   // Rutas componente company
   {
@@ -128,5 +134,17 @@ export const routes: Routes = [
   {
     path: 'users/:id/update',
     component: UserFormComponent
+  },
+  {
+    path: 'users/:id/delete',
+    component: UserFormComponent
+  },
+  {
+    path: 'account',
+    component: AccountFormComponent
+  },
+  {
+    path: 'account/avatar',
+    component: AvatarFormComponent
   }
 ];

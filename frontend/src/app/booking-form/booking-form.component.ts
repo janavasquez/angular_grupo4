@@ -11,7 +11,7 @@ import { Company } from '../interfaces/company.model';
 @Component({
   selector: 'app-booking-form',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule, NgbDatepickerModule, RouterLink],
+  imports: [ReactiveFormsModule, NgbDatepickerModule, RouterLink],
   templateUrl: './booking-form.component.html',
   styleUrl: './booking-form.component.css'
 })

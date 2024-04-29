@@ -1,4 +1,4 @@
-import { Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put, UnauthorizedException, UploadedFile, UseInterceptors } from '@nestjs/common';
+import { BadRequestException, Body, ConflictException, Controller, Delete, Get, NotFoundException, Param, ParseIntPipe, Post, Put, Request, UnauthorizedException, UploadedFile, UseGuards, UseInterceptors } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './user.model';
@@ -7,6 +7,8 @@ import { Role } from './role.enum';
 import { Login } from './login.dto';
 import { JwtService } from '@nestjs/jwt';
 import { FileInterceptor } from '@nestjs/platform-express';
+import * as bcrypt from 'bcrypt';
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller('user')
 export class UserController {
@@ -21,7 +23,7 @@ export class UserController {
         return this.userRepository.find();
     }
 
-    @Get(':id') // :id es una variable, parámetro en la url
+    @Get(':id') 
     findById( @Param('id', ParseIntPipe) id: number ) {
         return this.userRepository.findOne({
             where: {
@@ -39,20 +41,22 @@ export class UserController {
         });
     }
 
-    @Post()
-    @UseInterceptors(FileInterceptor('file'))
-    async create(@UploadedFile() file: Express.Multer.File, @Body() user: User) {
-        console.log(file);
-        
-        if(file) {
-            user.photoUrl = file.filename;
-         }
-
-         console.log(user);
-         return await this.userRepository.save(user);
+    @Get('account')
+    @UseGuards(AuthGuard('jwt'))
+    public getCurretnAccountUser(@Request() request) {
+        return request.user;
     }
 
-    @Put(':id')
+    @Put()
+    @UseGuards(AuthGuard('jwt'))
+    public update(@Body() user: User, @Request() request) {
+        if(request.user.role !== Role.ADMIN && user.id !== request.user.id) {
+            throw new UnauthorizedException();
+        }
+        return this.userRepository.save(user);
+    }
+
+    /*@Put(':id')
     @UseInterceptors(FileInterceptor('file'))
     async update(
         @UploadedFile() file: Express.Multer.File, 
@@ -67,9 +71,9 @@ export class UserController {
             if (file) {
                 user.photoUrl = file.filename;
             }
-            user.id = id; // Asigna el id para asegurar que sea numérico y actualice en lugar de intentar insertar
+            user.id = id; 
             return await this.userRepository.save(user);
-    }
+    }*/
 
     @Delete(':id')
     async deleteById(
@@ -92,7 +96,18 @@ export class UserController {
         
     }
 
+    @Post()
+    @UseInterceptors(FileInterceptor('file'))
+    async create(@UploadedFile() file: Express.Multer.File, @Body() user: User) {
+        console.log(file);
+        
+        if(file) {
+            user.photoUrl = file.filename;
+         }
 
+         console.log(user);
+         return await this.userRepository.save(user);
+    }
 
     @Post('register')
     async register(@Body() register: Register) {
@@ -104,53 +119,46 @@ export class UserController {
         if(exists)
             throw new ConflictException("Email ocupado");
 
-        // crear usuario en base de datos
+        const password = bcrypt.hashSync(register.password, 10);
+
         const user: User = {
             id: 0,
             email: register.email,
-            password: register.password,
-            phone: '',
+            password: password,
+            phone: null,
             role: Role.USER,
-            fullName: '',
-            active: false,
-            //registerDate: undefined,
-            birthDate: new Date(),
-            nif: '',
-            street: '',
-            city: '',
-            postalCode: '',
-            photoUrl: '',
+            fullName: null,
+            active: null,
+            birthDate: null,
+            nif: null,
+            street: null,
+            city: null,
+            postalCode: null,
+            photoUrl: null,
             
         };
         await this.userRepository.save(user);
     }
-
-
-    //login
     
     @Post('login')
     async login(@Body() login: Login) {
 
-        // comprobar si el email existe
         const exists = await this.userRepository.existsBy({
             email: login.email
         });
         if(!exists)
             throw new NotFoundException("Usuario no encontrado."); // 404 
 
-        // Recuperar el usuario
         const user = await this.userRepository.findOne({
             where: {
                 email: login.email
             }
         });
 
-        // Comparar contraseñas
-        if (user.password !== login.password) {
-            throw new UnauthorizedException("Credenciales incorrectas"); // 401
+        if (! bcrypt.compareSync(login.password, user.password)) {
+            throw new UnauthorizedException("Credenciales incorrectas."); // 401
         }
 
-        // Crear y devolver token de acceso (JWT)
         let userData = {
             sub: user.id,
             email: user.email,
@@ -163,4 +171,19 @@ export class UserController {
         return token;
 
     }
+
+    @Post('avatar')
+    @UseInterceptors(FileInterceptor('file'))
+    @UseGuards(AuthGuard('jwt'))
+    async uploadAvatar(
+        @UploadedFile() file: Express.Multer.File,
+        @Request() request
+    ) {
+        if (!file) {
+            throw new BadRequestException('Archivo incorrecto');
+        }
+        request.user.photoUrl = file.filename;
+        return await this.userRepository.save(request.user);
+    }
+
 }
