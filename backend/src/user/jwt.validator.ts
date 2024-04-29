@@ -11,7 +11,7 @@ import { DecodedToken } from "./decoded-token.dto";
 export class JwtValidator extends PassportStrategy(Strategy) {
     constructor(@InjectRepository(User) private userRepository: Repository<User>) {
         super({
-            jwtFromRecuest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+            jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
             ignoreExpiration: false,
             secretOrKey: 'admin'
         });
