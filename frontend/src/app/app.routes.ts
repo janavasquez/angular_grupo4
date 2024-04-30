@@ -87,10 +87,16 @@ export const routes: Routes = [
     component:CategoryFormComponent
 
   },
+
   {
     path:'categories/:id/update',
     component:CategoryFormComponent
   },
+    {
+    path:'categories/:id/delete',
+    component:CategoryFormComponent
+    },
+
   {
     path: 'login',
     component: UserLoginComponent

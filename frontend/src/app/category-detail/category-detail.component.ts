@@ -17,7 +17,6 @@ export class CategoryDetailComponent implements OnInit {
 
   category: Category | undefined;
   treatments: Treatment[] = [];
-  commentsForm: any;
   updateUrl: string = ""
 
 
@@ -40,11 +39,21 @@ export class CategoryDetailComponent implements OnInit {
       this.httpClient.get<Treatment[]>('http://localhost:3000/treatment/filter-by-category/' + id)
         .subscribe(treatments => this.treatments = treatments);
     });
+  }
+    delete(category: Category) {
+    const remove = confirm("¿Està seguro que quieres eliminar esta categoría?");
+     // Si no se quiere borrar o no existe el usuario
+      if (!remove || !this.category)
+         return; // Si no se quiere borrar no continuamos.
+      this.httpClient.delete('http://localhost:3000/category/' + category.id)
+      .subscribe(response => {
+
+        this.route.navigate(['/category']);
+      });
 
 
   }
+}
 
-
-  }
 
 
