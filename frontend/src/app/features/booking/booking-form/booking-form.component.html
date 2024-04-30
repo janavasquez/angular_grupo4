@@ -5,71 +5,85 @@
         <h1 class="mt-4 mb-4 text-center text-primary-emphasis">Actualizar o editar reserva</h1>
       } @else {
         <h1 class="mt-4 mb-4 text-center text-primary-emphasis">Crear reserva</h1>
+      } 
+      @if(showConfirmMessage) {
+        <ngb-alert type="success" [dismissible]="false" class="mt-5" style="min-height:200px">
+          Has completado tu reserva de {{booking?.treatment?.title}}.
+          <br>
+          Para el dia {{booking?.startDate}}.
+          <br>
+          En el centro de belleza {{booking?.company?.name}}.
+          <br>
+          Por un valor de {{booking?.treatment?.price}}€.
+          <br>
+          Para cualquier duda contacte con soporte en soporte&commat;bastbeauty.com
+        </ngb-alert>
+        <button class="w-100 btn btn-primary btn-lg" routerLink="/booking">Volver a tratamientos</button>
+      } @else {
+        <form class="mt.5" [formGroup]="bookingForm" (ngSubmit)="save()">
+          <input type="hidden" formControlName="id">
+          <!--
+          <div class="input-group mb-3">
+            <input
+            class="form-control"
+            id="startDate"
+            placeholder="yyyy-mm-dd"
+            formControlName="startDate"
+            ngbDatepicker
+            #d="ngbDatepicker">
+            <button class="btn btn-outline-secundary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
+          </div> -->
+          <div class="form-floating mb-3">
+            <input type="datetime-local" class="form-control"
+            id="endDate" formControlName="endDate"
+            placeholder="yyyy-mm-dd">
+            <label for="endDate">Fecha fin</label>
+          </div>
+          <div class="form-floating mb-3">
+            <select class="form-select"
+            id="company"
+            formControlName="company"
+            [compareWith]="compareObjects"
+            style="min-height: 10px;">
+            <option selected>Selecciona un centro de belleza</option>
+            @for(company of companies; track company.id) {
+              <option [ngValue]="company">{{company.name}}</option>
+            }
+          </select>
+          <label for="company">Centro de belleza</label>
+          </div>
+          <div class="form-floating mb-3">
+            <select class="form-select"
+            id="treatment"
+            formControlName="treatment"
+            [compareWith]="compareObjects"
+
+            style="min-height: 100px;">
+            <option selected>Selecciona un tratamiento</option>
+            @for(treatment of treatments; track treatment.id) {
+              <option [ngValue]="treatment">{{treatment.title}}</option>
+            }
+          </select>
+          <label for="treatment">Tratamiento</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="number" min="0" step="0.1"
+            class="form-control" id="price"
+            formControlName="price" placeholder="">
+            <label for="price">Precio (€)</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="number" min="0" step="0.1"
+            class="form-control" id="discount"
+            formControlName="discount" placeholder="">
+            <label for="discount">Descuento (€)</label>
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-success" type="submit">Enviar</button>
+            <button class="btn btn-danger mb-4" type="button" [routerLink]="['/booking']">Cancelar</button>
+          </div>
+        </form>
       }
-
-      <form class="mt.5" [formGroup]="bookingForm" (ngSubmit)="save()">
-        <input type="hidden" formControlName="id">
-        <!--
-        <div class="input-group mb-3">
-          <input
-          class="form-control"
-          id="startDate"
-          placeholder="yyyy-mm-dd"
-          formControlName="startDate"
-          ngbDatepicker
-          #d="ngbDatepicker">
-          <button class="btn btn-outline-secundary bi bi-calendar3" (click)="d.toggle()" type="button"></button>
-        </div> -->
-        <div class="form-floating mb-3">
-          <input type="datetime-local" class="form-control"
-          id="endDate" formControlName="endDate"
-          placeholder="yyyy-mm-dd">
-          <label for="endDate">Fecha fin</label>
-        </div>
-        <div class="form-floating mb-3">
-          <select class="form-select"
-          id="company"
-          formControlName="company"
-          [compareWith]="compareObjects"
-          style="min-height: 10px;">
-          <option selected>Selecciona un centro de belleza</option>
-          @for(company of companies; track company.id) {
-            <option [ngValue]="company">{{company.name}}</option>
-          }
-        </select>
-        <label for="company">Centro de belleza</label>
-        </div>
-        <div class="form-floating mb-3">
-          <select class="form-select"
-          id="treatment"
-          formControlName="treatment"
-          [compareWith]="compareObjects"
-
-          style="min-height: 100px;">
-          <option selected>Selecciona un tratamiento</option>
-          @for(treatment of treatments; track treatment.id) {
-            <option [ngValue]="treatment">{{treatment.title}}</option>
-          }
-        </select>
-        <label for="treatment">Tratamiento</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="number" min="0" step="0.1"
-          class="form-control" id="price"
-          formControlName="price" placeholder="">
-          <label for="price">Precio (€)</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="number" min="0" step="0.1"
-          class="form-control" id="discount"
-          formControlName="discount" placeholder="">
-          <label for="discount">Descuento (€)</label>
-        </div>
-        <div class="d-grid gap-2">
-          <button class="btn btn-success" type="submit">Enviar</button>
-          <button class="btn btn-danger mb-4" type="button" [routerLink]="['/booking']">Cancelar</button>
-        </div>
-      </form>
     </div>
     <div class="col-md-5 col-lg-5 order-md-last">
       <h2 class="d-flex justify-content-between align-items-center mt-4 mb-4">
