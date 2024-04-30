@@ -1,0 +1,143 @@
+<div class="container mt-5 card mb-3 bg-success-subtle text-primary-emphasis">
+    <div class="row">
+    <div class="col-4 text-center">
+
+      <div class="px-4 py-5">
+        @if (company && company.photoUrl && company.photoUrl.length > 0){
+        <img class="img-fluid" [src]="'http://localhost:3000/uploads/' + company.photoUrl" alt="Foto company">
+
+        <div>
+          <button class="btn btn-danger my-2" (click)="deleteCompany()">
+            <i class="bi bi-trash"></i> Borrar
+          </button>
+        </div>
+
+        }
+      </div>
+
+    </div>
+    <div class="col-8">
+
+      @if(company){
+
+        <div class="container px-4 py-5" id="icon-grid">
+          <h2 class="pb-2 border-bottom">Icon grid</h2>
+
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 py-5">
+            <div class="col d-flex align-items-start">
+              <i class=" bi bi-shop-window me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Empresa</h3>
+                <p>{{company.name}}</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class="bi bi-pencil-square me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">CIF</h3>
+                <p>{{company.cif}}</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <i class= "bi bi-buildings me-3 fs-2"></i>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Ciudad</h3>
+                <p>{{company.city}}</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#home"/></svg>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading.</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#speedometer2"/></svg>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading.</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#toggles2"/></svg>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading.</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#geo-fill"/></svg>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading.</p>
+              </div>
+            </div>
+            <div class="col d-flex align-items-start">
+              <svg class="bi text-body-secondary flex-shrink-0 me-3" width="1.75em" height="1.75em"><use xlink:href="#tools"/></svg>
+              <div>
+                <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Featured title</h3>
+                <p>Paragraph of text beneath the heading to explain the heading.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      <!-- <div class="container px-4 py-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom">Número de Centro {{company.id}}</h2>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
+
+
+          <div class="col d-flex align-items-start">
+            <i class=" bi bi-shop-window me-3 fs-2"></i>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Nombre del centro </h3>
+              <p>{{company.name}}</p>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col d-flex align-items-start">
+          <i class="bi bi-pencil-square me-3 fs-2"></i>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">CIF </h3>
+            <p>{{company.cif}}</p>
+          </div>
+        </div>
+
+
+        <div class="col d-flex align-items-start">
+          <i class= "bi bi-buildings me-3 fs-2"></i>
+          <div>
+            <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Ciudad</h3>
+            <p>{{company.city}}</p>
+          </div>
+
+        <div class="col d-flex align-items-start">
+            <i class= "bi bi-geo-alt me-3 fs-2"></i>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Dirección</h3>
+              <p>{{company.street}}</p>
+            </div>
+
+          </div>
+        <div class="col d-flex align-items-start">
+            <i class= "bi bi-envelope me-3 fs-2"></i>
+            <div>
+              <h3 class="fw-bold mb-0 fs-4 text-body-emphasis">Código postal</h3>
+              <p>{{company.postalCode}}</p>
+            </div>
+        </div>
+
+        </div>
+      </div> -->
+
+
+    } @else {
+    <p>company no encontrada.</p>
+    }
+  </div>
+</div>
+

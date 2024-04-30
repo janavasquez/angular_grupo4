@@ -1,0 +1,86 @@
+<div class="container mt-5 card mb-3 bg-success-subtle text-primary-emphasis">
+  <div class="row">
+    <div class="col-12 col-lg-4 text-center">
+      <div class="px-4 py-5">
+        @if (user && user.photoUrl && user.photoUrl.length > 0){
+        <img class="img-fluid" [src]="'http://localhost:3000/uploads/' + user.photoUrl" alt="author" />
+
+        <div>
+          <button class="btn btn-danger my-2" (click)="deleteUser(user)">
+            <i class="bi bi-trash"></i> Borrar
+          </button>
+        </div>
+
+        } @else {
+        <img class="img-fluid" src="https://ui-avatars.com/api/?name=A&size=256" />
+        }
+      </div>
+    </div>
+    <div class="col-12 col-lg-8">
+      @if(user){
+      <div class="container px-4 py-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom text-center fw-bold">Usuario Nº {{ user.id }}</h2>
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
+          <div class="col d-flex align-items-start">
+            <i class="bi bi-person text-info flex-shrink-0 me-3 fs-2"></i>
+
+            <div>
+              <h3 class="mb-0 fs-4 text-body-emphasis">
+                Nombre completo
+              </h3>
+              <p>{{ user.fullName }}</p>
+            </div>
+          </div>
+
+          <div class="col d-flex align-items-start">
+            <i class="bi bi-envelope text-info flex-shrink-0 me-3 fs-2"></i>
+            <div>
+              <h3 class="mb-0 fs-4 text-body-emphasis">
+                Correo electrónico
+              </h3>
+              <p>{{ user.email }}</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <i class="bi bi-calendar-check text-info flex-shrink-0 me-3 fs-2"></i>
+            <div>
+              <h3 class="mb-0 fs-4 text-body-emphasis">
+                Fecha de Nacimiento
+              </h3>
+              <p>{{ user.birthDate }}</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <i class="bi bi-buildings text-info flex-shrink-0 me-3 fs-2"></i>
+            <div>
+              <h3 class="mb-0 fs-4 text-body-emphasis">Ciudad</h3>
+              <p>{{ user.city }}</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <i class="bi bi-house text-info flex-shrink-0 me-3 fs-2"></i>
+            <div>
+              <h3 class="mb-0 fs-4 text-body-emphasis">Dirección</h3>
+              <p>{{ user.street }}</p>
+            </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <i class="bi bi-geo-alt text-info flex-shrink-0 me-3 fs-2"></i>
+            <div>
+              <h3 class="mb-0 fs-4 text-body-emphasis">
+                Código postal
+              </h3>
+              <p>{{ user.postalCode }}</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      } @else {
+      <p>user no encontrado.</p>
+      }
+    </div>
+  </div>
+</div>

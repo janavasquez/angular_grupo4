@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+    @if(booking) {
+    <div class="col tex-center mt-5">
+    <div class="reservation-details text-center">
+      <div class="product-image">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+        [style.background-image]="'url(http://localhost:3000/uploads/' + booking?.treatment?.image">
+        @if(booking?.treatment) {
+        <div class="user-info gold-text bordered-text">
+          <h2>Tu reserva</h2>
+          <p>{{booking?.treatment?.title}}</p>
+        </div>
+        <div class="product-info gold-text bordered-text">
+          <h2>Centro de belleza</h2>
+          <p>{{booking?.company?.name}}</p>
+        </div>
+        <div class="reservation-info gold-text bordered-text">
+          <h2>Fecha y Hora de la Reserva</h2>
+          <p>{{booking?.startDate}}</p>
+        </div>
+        <div class="price-info gold-text bordered-text">
+          <h2>Precio</h2>
+          <p>{{booking?.treatment?.price}}€</p>
+        </div>
+        <button
+                  type="button"
+                  class="btn btn-outline-info"
+                  style="margin: 10px"
+                  (click)="delete(booking)"
+                >
+                  Cancelar reserva
+                </button>
+      }
+        </div>
+
+       <!-- @if(booking?.treatment?.image) {
+        <img class="img-fluid"
+        [src]="'http://localhost:3000/uploads/' + booking?.treatment?.image" alt="Random first slide" />
+        } -->
+      </div>
+
+    </div>
+    </div>
+  }
+  </div>
+</div>

@@ -1,0 +1,9 @@
+.btn_user3 {
+    color: black; /* Cambia #FF0000 por tu color personalizado */
+    border-color: #CCA831; /* Usa el mismo color para el borde */
+    border-radius: 30px;
+}
+.btn_user3:hover {
+    color: #000000; /* Cambia el color del texto al pasar el ratón por encima, por ejemplo, a blanco */
+    background-color: #CCA831; /* Color de fondo al pasar el ratón por encima */
+}

@@ -63,7 +63,7 @@ async update(
     ) {
 
         if(!await this.categoryRepo.existsBy({id: id})) {
-            throw new NotFoundException('Author not found');
+            throw new NotFoundException('category not found');
         }
 
         if (file) {
@@ -87,9 +87,9 @@ async deleteById(
      }
 
     try {
-        // Opción 1: Borrar categotias
+        // Opción 1: Borrar categorias
         // Primero desasociar o borrar aquellas cosas que apunten a categoria
-        // this.bookRepository.delete(id);
+        // this.categoryRepository.delete(id);
 
         // Opción 2: Despublicar categoria
         const category = await this.categoryRepo.findOne({

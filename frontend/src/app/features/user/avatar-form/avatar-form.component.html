@@ -1,0 +1,31 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-8">
+
+			<h1 class="my-5">Avatar de usuario</h1>
+
+			<form>
+
+				<div class="input-group mb-3">
+					<label class="input-group-text" for="photoUrl">Subir foto</label>
+					<input type="file" class="form-control" id="photoUrl" (change)="onFileChange($event)">
+				</div>
+
+				<button class="w-100 btn btn-primary btn-lg" type="button" (click)="save()">Subir avatar</button>
+
+			</form>
+
+		</div>
+		<div class="col-lg-4">
+
+			@if(photoPreview) {
+			<h3 class="my-5">Nuevo avatar a subir</h3>
+			<img class="img-fluid" [src]="photoPreview">
+			}
+			@if (!photoPreview && user?.photoUrl) {
+			<h3 class="my-5">Avatar existente</h3>
+			<img class="img-fluid" [src]="'http://localhost:3000/uploads/' + user?.photoUrl">
+			}
+		</div>
+	</div>
+</div>
