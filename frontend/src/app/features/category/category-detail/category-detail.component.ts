@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Category } from '../../../interfaces/category.model';
 import { Component, OnInit } from '@angular/core';
 import { Treatment } from '../../../interfaces/treatment.model';
+import { AuthenticationService } from '../../../authentication/services/authentication.service';
 
 
 @Component({
@@ -17,12 +18,18 @@ export class CategoryDetailComponent implements OnInit {
 
   category: Category | undefined;
   treatments: Treatment[] = [];
-  updateUrl: string = ""
+  updateUrl: string = "";
+  isAdmin = false;
 
 
-  constructor(private httpClient: HttpClient,
+
+  constructor(
+    private httpClient: HttpClient,
     private activatedRoute: ActivatedRoute,
-  private route: Router) { }
+    private route: Router,
+    private authService: AuthenticationService) {
+      this.authService.isAdmin.subscribe(isAdmin => this.isAdmin = isAdmin);
+    }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
