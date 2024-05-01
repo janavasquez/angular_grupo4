@@ -45,3 +45,7 @@
   color: #000000; /* Cambia el color del texto al pasar el ratón por encima, por ejemplo, a blanco */
   background-color: #CCA831; /* Color de fondo al pasar el ratón por encima */
 }
+
+.card {
+  border-color: #CCA831;
+}
