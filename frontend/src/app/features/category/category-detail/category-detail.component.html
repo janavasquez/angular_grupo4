@@ -1,32 +1,44 @@
 
 
 @if(category){
-  <div class="px-4 py-5 my-5 text-center">
-    <!--recomendables imagenes cuadradas-->
+<div class="container mt-5 ">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-4">
+      <div class=" text-center">
+        <img class="d-block mx-auto mb-4 rounded-2"
+        [src]="'http://localhost:3000/uploads/' + category.photoUrl" alt="category"
+        style="max-width:350px">
+      </div>
 
-    <img class="d-block mx-auto mb-4 rounded-circle"
-    [src]="'http://localhost:3000/uploads/' + category.photoUrl" alt="category"
-    style="max-width:150px">
-
-    <h1 class="display-5 fw-bold text-body-emphasis">{{category.name}}</h1>
-    <div class="col-lg-6 mx-auto">
-
-       <p class="lead mb-4">{{category.name}} tenemos los mejores especialistas </p>
-       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <button type="button" class="btn btn-category btn-lg px-4 gap-3" [routerLink]="updateUrl"> Modificar </button>
-          <button type="button" class="btn btn-category btn-lg px-4"(click)="delete(category)" > Borrar Categoría </button>
+    </div>
+    <div class="col-sm-12 col-md-12 col-lg-8">
+      <div class=" text-center">
+        <!--recomendables imagenes cuadradas-->
 
 
+
+        <h1 class="display-5 fw-bold text-body-emphasis">{{category.name}}</h1>
+        <div class="col-lg-6 mx-auto">
+
+           <p class="lead mb-4">{{category.name}} tenemos los mejores especialistas </p>
+           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+              <button type="button" class="btn btn-category btn-lg px-4 gap-3" [routerLink]="updateUrl"> Modificar </button>
+<!--               <button type="button" class="btn btn-category btn-lg px-4"(click)="delete(category)" > Borrar Categoría </button>
+ -->
+
+          </div>
+        </div>
       </div>
     </div>
   </div>
+</div>
   }
 
   <div class="container">
     <div class="row">
       <div class="col-12">
 
-        <h2 class="mt-5">Categorias de tratamientos</h2>
+        <h2 class="mt-5">Categorías de tratamientos</h2>
 
         <table class="table table-striped mt-5">
           <thead>
@@ -34,9 +46,10 @@
               <th scope="col">id</th>
               <th scope="col">Tratamientos</th>
               <th scope="col">Precio</th>
-              <th scope="col">Descripcion</th>
+              <th scope="col">Descripción</th>
               <th scope="col">Cuidados posteriores</th>
-              <th scope="col">Duracion</th>
+              <th scope="col">Duración</th>
+              <th scope="col">Acciones</th>
 
             </tr>
           </thead>

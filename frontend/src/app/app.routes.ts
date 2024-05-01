@@ -3,7 +3,6 @@ import { TreatmentListComponent } from './features/treatment/treatment-list/trea
 import { TreatmentDetailComponent } from './features/treatment/treatment-detail/treatment-detail.component';
 import { HomeComponent } from './layout/home/home.component';
 import { CategoryListComponent } from './features/category/category-list/category-list.component';
-import { CategoryDetailComponent } from './features/category/category-detail/category-detail.component';
 import { TreatmentFormComponent } from './features/treatment/treatment-form/treatment-form.component';
 import { CompanyListComponent } from './features/company/company-list/company-list.component';
 import { CompanyDetailComponent } from './features/company/company-detail/company-detail.component';
@@ -20,6 +19,7 @@ import { CategoryFormComponent } from './features/category/category-form/categor
 import { roleAdminGuard } from './authentication/guards/role.guard';
 import { AccountFormComponent } from './features/user/account-form/account-form.component';
 import { AvatarFormComponent } from './features/user/avatar-form/avatar-form.component';
+import { CategoryDetailComponent } from './features/category/category-detail/category-detail.component';
 
 export const routes: Routes = [
 
