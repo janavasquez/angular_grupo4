@@ -1,0 +1,15 @@
+.bg-company2{
+  background-color:white; /* Color de fondo */
+    border-color: #CCA831;
+
+
+  /* Otros estilos según sea necesario */
+
+}
+
+.btn_company3{
+  background-color: #CCA831; /* Color de fondo */
+  color:black; /* Color del texto blanco */
+  /* Otros estilos según sea necesario */
+  transition: opacity 0.3s ease; /* Transición de opacidad durante 0.3 segundos */
+}
