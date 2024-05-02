@@ -3,6 +3,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Category } from '../../../interfaces/category.model';
 import { Component, OnInit } from '@angular/core';
 import { Treatment } from '../../../interfaces/treatment.model';
+import { AuthenticationService } from '../../../authentication/services/authentication.service';
 
 
 @Component({
@@ -17,13 +18,18 @@ export class CategoryDetailComponent implements OnInit {
 
   category: Category | undefined;
   treatments: Treatment[] = [];
-  commentsForm: any;
-  updateUrl: string = ""
+  updateUrl: string = "";
+  isAdmin = false;
 
 
-  constructor(private httpClient: HttpClient,
+
+  constructor(
+    private httpClient: HttpClient,
     private activatedRoute: ActivatedRoute,
-  private route: Router) { }
+    private route: Router,
+    private authService: AuthenticationService) {
+      this.authService.isAdmin.subscribe(isAdmin => this.isAdmin = isAdmin);
+    }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -40,11 +46,21 @@ export class CategoryDetailComponent implements OnInit {
       this.httpClient.get<Treatment[]>('http://localhost:3000/treatment/filter-by-category/' + id)
         .subscribe(treatments => this.treatments = treatments);
     });
+  }
+    delete(category: Category) {
+    const remove = confirm("¿Està seguro que quieres eliminar esta categoría?");
+     // Si no se quiere borrar o no existe el usuario
+      if (!remove || !this.category)
+         return; // Si no se quiere borrar no continuamos.
+      this.httpClient.delete('http://localhost:3000/category/' + category.id)
+      .subscribe(response => {
+
+        this.route.navigate(['/category']);
+      });
 
 
   }
+}
 
-
-  }
 
 
