@@ -1,0 +1,13 @@
+.btn_company{
+  background-color: #CCA831; /* Color de fondo */
+  color: #000000; /* Color del texto blanco */
+  /* Otros estilos según sea necesario */
+  transition: opacity 0.3s ease; /* Transición de opacidad durante 0.3 segundos */
+}
+
+.btn_company:hover {
+  opacity: 0.8; /* Cambia la opacidad al pasar el ratón por encima */
+}
+.btn_company:active {
+  opacity: 0.5; /* Cambia la opacidad al hacer clic */
+}
