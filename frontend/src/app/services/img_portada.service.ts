@@ -11,7 +11,7 @@ export class ImageService {
   getImages(): string[] {
     return [
       this.document.location.origin + '/assets/img_company/pelu 3.jpg',
-      this.document.location.origin + '/assets/img_company/pelu 2.jpg',
+      this.document.location.origin + '/assets/img_home/Eurovision.jpg',
       this.document.location.origin + '/assets/img_company/pelu 9.jpg'
     ];
   }

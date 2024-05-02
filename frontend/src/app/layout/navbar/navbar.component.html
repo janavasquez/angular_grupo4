@@ -1,10 +1,10 @@
-<nav class="navbar navbar-expand-md navbar-light bg-body-tertiary" style="height: auto;">
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary" style="height: auto;">
   <div class="container-fluid">
-    <a class="navbar-brand fw-bold" routerLink="/">
-      <img style="max-width:100px;" src="/assets/img_home/logo_bastbeauty.png" alt="logo">
-      BASTBEAUTY
-    </a>
-
+      <a class="navbar-brand fw-bold" routerLink="/">
+        <img style="max-width:100px;" src="/assets/img_home/logo_bastbeauty.png" alt="logo">
+        BASTBEAUTY
+      </a>
+   
     <button class="navbar-toggler custom-toggler" type="button" aria-controls="navbarContent"
       [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
       <span class="navbar-toggler-icon"></span>
@@ -24,7 +24,7 @@
           </div>
         </li>
 
-        <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
+        <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-start">
 					<a class="nav-link" tabindex="0" ngbDropdownToggle (click)="setActive('categorías')"
             [class.active]="activeLink === 'categorías'"> Categorías </a>
 					<div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
@@ -37,7 +37,7 @@
 				</li>
 
 
-        <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
+        <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-start">
 					<a class="nav-link" tabindex="0" ngbDropdownToggle (click)="setActive('tratamientos')"
             [class.active]="activeLink === 'tratamientos'"> Centros de belleza </a>
 					<div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
@@ -49,7 +49,7 @@
 				</li>
 
         @if (isLoggedIn) {
-          <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
+          <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-start">
             <a class="nav-link" tabindex="0" ngbDropdownToggle (click)="setActive('reservas')"
             [class.active]="activeLink === 'reservas'"> Reservas </a>
             <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
@@ -73,37 +73,39 @@
 
       <ul class="navbar-nav ms-auto fs-5">
         @if(isAdmin) {
-        <li class="nav-item" ngbDropdown>
-					<a class="nav-link" tabindex="0" ngbDropdownToggle (click)="setActive('usuarios')"
-            [class.active]="activeLink === 'usuarios'"> Usuarios </a>
-					<div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu dropdown-menu-end">
-						<a ngbDropdownItem [routerLink]="['/users']" (click)="$event.preventDefault()">Listado</a>
-						<a ngbDropdownItem [routerLink]="['/users/:id/create']" (click)="$event.preventDefault()">Crear Usuario</a>
-					</div>
-				</li>
+          <li class="nav-item" ngbDropdown display="dynamic" placement="bottom-start">
+            <a class="nav-link" tabindex="0" ngbDropdownToggle (click)="setActive('usuario')"
+            [class.active]="activeLink === 'usuario'"> Usuario </a>
+            <div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
+              <a ngbDropdownItem routerLink="/users" (click)="$event.preventDefault()">Listado</a>
+              @if (isAdmin) {
+              <a ngbDropdownItem routerLink="/users/:id/create" (click)="$event.preventDefault()">Crear usuario</a>
+              }
+            </div>
+          </li>
         }
         @if(userEmail) {
           <li class="nav-item">
-            <button routerLink="/account" class="btn btn-outline-success btn-sm mx-3">
+            <button routerLink="/account" class="btn btn_nav2 me-2 mt-1">
               {{userEmail}}
             </button>
           </li>
         }
         @if(isLoggedIn) {
           <li class="nav-item">
-            <button type="button" class="btn mi-boton-rc me-3 mt-1" (click)="logout()">
-              Logout <i class="bi bi-box-arrow-right ms-2"></i>
+            <button type="button" class="btn btn_nav2 me-2 mt-1 mb-1" (click)="logout()">
+              Salir
             </button>
           </li>
         } @else {
         <li class="nav-item">
-          <button type="button" class="btn mi-boton-rc me-3 mt-1" routerLink="/login">
+          <button type="button" class="btn btn_nav me-3 mt-1" routerLink="/login">
             Login <i class="bi bi-box-arrow-in-right ms-2"></i>
           </button>
         </li>
         <li class="nav-item">
-          <button type="button" class="btn mi-boton-rc me-2 mt-1" routerLink="/register">
-            Registro <i class="bi bi-person-plus ms-2"></i>
+          <button type="button" class="btn btn_nav me-2 mt-1" routerLink="/register">
+            Registro<i class="bi bi-person-plus ms-2"></i>
           </button>
         </li>
         }
