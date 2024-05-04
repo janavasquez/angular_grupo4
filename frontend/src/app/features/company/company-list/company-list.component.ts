@@ -1,8 +1,9 @@
 import { DatePipe } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { Company } from '../../../interfaces/company.model';
+import { AuthenticationService } from '../../../authentication/services/authentication.service';
 
 @Component({
   selector: 'app-company-list',
@@ -15,8 +16,15 @@ import { Company } from '../../../interfaces/company.model';
 export class CompanyListComponent implements OnInit {
 
   companies: Company[] = [];
+  isAdmin = false;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    private activetedRoute: ActivatedRoute,
+    private authService: AuthenticationService ) {
+      this.authService.isAdmin.subscribe(isAdmin => this.isAdmin = isAdmin);
+    }
+
 
   ngOnInit(): void {
     this.httpClient.get<Company[]>('http://localhost:3000/company')
