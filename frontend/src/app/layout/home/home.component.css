@@ -24,6 +24,12 @@
   1px 1px 0 #000000; /* Crear un borde de color */
 }
 
+.carousel-image {
+  width: 100%; /* Asegura que la imagen sea tan ancha como su contenedor */
+  height: 80vh; /* Altura fija */
+  object-fit: cover; /* Cubre el área del contenedor sin distorsionar la imagen */
+  border-radius: 8px; /* Si quieres bordes redondeados */
+}
 
 /* MARKETING CONTENT
 -------------------------------------------------- */
