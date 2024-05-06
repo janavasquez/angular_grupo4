@@ -1,4 +1,4 @@
-import { DatePipe, NgFor } from '@angular/common';
+import { DatePipe, NgFor, NgStyle } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
@@ -7,7 +7,7 @@ import { User } from '../../../interfaces/user.model';
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [HttpClientModule,RouterLink, NgFor,DatePipe],
+  imports: [HttpClientModule,RouterLink, NgFor,DatePipe,NgStyle],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.css'
 })

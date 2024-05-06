@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-
+  volverArriba() {
+    window.scrollTo(0, 0);
+  }
 }
