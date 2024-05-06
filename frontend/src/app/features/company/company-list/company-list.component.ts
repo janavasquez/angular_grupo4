@@ -1,4 +1,4 @@
-import { DatePipe } from '@angular/common';
+import { DatePipe, NgStyle } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
@@ -8,7 +8,7 @@ import { AuthenticationService } from '../../../authentication/services/authenti
 @Component({
   selector: 'app-company-list',
   standalone: true,
-  imports: [HttpClientModule, RouterLink, DatePipe, RouterOutlet],
+  imports: [HttpClientModule, RouterLink, DatePipe, RouterOutlet, NgStyle],
   templateUrl: './company-list.component.html',
   styleUrl: './company-list.component.css'
 })
