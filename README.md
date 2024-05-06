@@ -1,4 +1,6 @@
-prueba
+# PROYECTO BASTBEAUTY 
+
+![Página home](home.png "Home")
 
 1. Componente home: una imagen grande con un texto centrado en el medio 
 
