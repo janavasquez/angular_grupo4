@@ -6,7 +6,7 @@ export interface Booking {
   id: number;
   startDate: Date;
   price: number;
-  discount: number;
+  discount: boolean;
   user?: User;
   treatment?: Treatment;
   company?: Company;

@@ -1,6 +1,6 @@
 <main class="form-signin w-100 m-auto">
   <form [formGroup]="registerForm" (ngSubmit)="save()">
-    <h1 class="h3 mb-3 fw-normal">Crear nueva cuenta</h1>
+    <h1 class="h3 mb-3 fw-normal text-emphasis text-center"><strong>Crear nueva cuenta</strong></h1>
 
     <!--
     <div class="form-floating">
@@ -24,7 +24,7 @@
     </div>
 -->
     <div class="form-floating">
-      <input type="email" class="form-control" id="email" placeholder="name@example.com" formControlName="email">
+      <input type="email" class="form-control border-warning border-1 shadow mb-2" id="email" placeholder="name@example.com" formControlName="email">
       <label for="email">Email</label>
       @if(registerForm.controls.email.touched && registerForm.controls.email.errors) {
         <div>
@@ -58,28 +58,28 @@
 -->
 
     <div class="form-floating">
-      <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+      <input type="password" class="form-control border-warning border-1 shadow mb-2" id="password" placeholder="Password" formControlName="password">
       <label for="password">Contraseña</label>
     </div>
 
     <div class="form-floating">
-      <input type="password" class="form-control" id="passwordConfirm" placeholder="Password" formControlName="passwordConfirm">
-      <label for="passwordConfirm">Confirmación contraseña</label>
+      <input type="password" class="form-control border-warning border-1 shadow mb-2" id="passwordConfirm" placeholder="Password" formControlName="passwordConfirm">
+      <label for="passwordConfirm">Confirma tu contraseña</label>
       @if(registerForm.controls.passwordConfirm.touched && registerForm.getError('confirmError')) {
-        <div>
-            <small class="text-danger">Las contraseñas no coinciden.</small>
+        <div class="mb-2">
+            <small class="text-warning"><strong>Las contraseñas no coinciden.</strong></small>
         </div>
       }
     </div>
 
-    <button class="btn btn-primary w-100 py-2" type="submit" [disabled]="registerForm.invalid">Crear cuenta</button>
+    <button class="btn btn-outline-info w-100 py-2" type="submit" [disabled]="registerForm.invalid">Crear cuenta</button>
     @if (registerForm.invalid) {
-      <small class="text-danger">Debes completar de forma correcta todos los campos para poder guardar.</small>
+      <small class="text-warning"><strong>Debes completar de forma correcta todos los campos para poder guardar.</strong></small>
     }
     @if (error) {
       <small class="text-danger"> {{error}} </small>
     }
 
-    <p class="mt-5 mb-3 text-body-secondary">© 2017–2024</p>
+    <p class="mt-5 mb-3 text-emphasis text-center"><strong>© 2023–2024</strong></p>
   </form>
 </main>
