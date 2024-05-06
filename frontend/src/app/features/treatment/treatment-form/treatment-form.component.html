@@ -3,59 +3,59 @@
     <div class="col-lg-8">
 
       @if(isUpdate){
-        <h1 class="mt-4 mb-4 text-center text-primary-emphasis">Actualizar o editar tratamiento <i class="bi bi-person-hearts"></i></h1>
+        <h1 class="mt-4 mb-4 text-center text-emphasis">Actualizar o editar tratamiento <i class="bi bi-person-hearts"></i></h1>
       } @else {
-        <h1 class="mt-4 mb-4 text-center text-primary-emphasis">Crear tratamiento <i class="bi bi-person-hearts"></i></h1>
+        <h1 class="mt-4 mb-4 text-center text-emphasis">Crear tratamiento <i class="bi bi-person-hearts"></i></h1>
       }
 
       <form class="mt.5" [formGroup]="treatmentForm" (ngSubmit)="save()">
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="id"
+          <input type="text" class="form-control border-warning border-1 shadow" id="id"
           formControlName="id" readonly>
           <label for="id">Id</label>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="title"
+          <input type="text" class="form-control border-warning border-1 shadow" id="title"
           formControlName="title" placeholder="">
           <label for="title">Nombre del tratamiento</label>
         </div>
         <div class="input-group mb-3">
           <label class="input-group-text" for="photoUrl">Foto del tratamiento</label>
-          <input type="file" class="form-control" id="photoUrl" (change)="onFileChange($event)">
+          <input type="file" class="form-control border-warning border-1 shadow" id="photoUrl" (change)="onFileChange($event)">
         </div>
         <div class="form-floating mb-3">
           <input type="number" min="0" step="0.01"
-          class="form-control" id="price"
+          class="form-control border-warning border-1 shadow" id="price"
           formControlName="price" placeholder="">
           <label for="price">Precio (€)</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="descriptionShort"
+          <input type="text" class="form-control border-warning border-1 shadow" id="descriptionShort"
           formControlName="descriptionShort" placeholder="">
           <label for="descriptionShort">Descripción corta</label>
         </div>
         <div class="form-floating mb-3">
-          <textarea type="text" class="form-control" id="descriptionLong"
+          <textarea type="text" class="form-control border-warning border-1 shadow" id="descriptionLong"
           formControlName="descriptionLong"
           placeholder="Texto largo" rows="4" cols="50">
         </textarea>
           <label for="descriptionLong">Descripción larga</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="afterCare"
+          <input type="text" class="form-control border-warning border-1 shadow" id="afterCare"
           formControlName="afterCare" placeholder="">
           <label for="afterCare">Cuidados posteriores</label>
         </div>
         <div class="form-floating mb-3">
           <input type="number" min="0" step="0.01"
-          class="form-control" id="durationInMin"
+          class="form-control border-warning border-1 shadow" id="durationInMin"
           formControlName="durationInMin" placeholder="">
           <label for="durationInMin">Duración (min)</label>
         </div>
         <div class="form-floating mb-3">
-          <select class="form-select"
+          <select class="form-select border-warning border-1 shadow"
           id="company"
           formControlName="company"
           [compareWith]="compareObjects"
@@ -69,7 +69,7 @@
         <label for="company">Centro de servicio</label>
         </div>
         <div class="form-floating mb-3">
-          <select class="form-select"
+          <select class="form-select border-warning border-1 shadow"
           id="categories"
           formControlName="categories"
           aria-label="categorias"
@@ -82,8 +82,8 @@
         <label for="category">Categoria</label>
         </div>
         <div class="d-grid gap-2">
-          <button class="btn btn-success" type="submit">Guardar</button>
-          <button class="btn btn-danger mb-4" type="button" [routerLink]="['/treatments']">Cancelar</button>
+          <button class="btn-outline-info" type="submit">Guardar</button>
+          <button class="btn-outline-info mb-4" type="button" [routerLink]="['/treatments']">Cancelar</button>
         </div>
       </form>
     </div>

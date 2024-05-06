@@ -10,3 +10,13 @@
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black; /* Sombra de texto negra */
   -webkit-text-stroke: 1px black; /* Contorno de texto negro para navegadores webkit (Chrome, Safari, etc.) */
 }
+.btn-outline-info {
+  color: black; /* Cambia #FF0000 por tu color personalizado */
+  border-color: #CCA831; /* Usa el mismo color para el borde */
+  border-radius: 30px;
+}
+.btn-outline-info:hover {
+  color: #000000; /* Cambia el color del texto al pasar el ratón por encima, por ejemplo, a blanco */
+  background-color: #CCA831; /* Color de fondo al pasar el ratón por encima */
+  opacity: 0.8;
+}

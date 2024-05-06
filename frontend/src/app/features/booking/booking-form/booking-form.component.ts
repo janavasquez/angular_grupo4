@@ -2,16 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { User } from '../../../interfaces/user.model';
 import { Treatment } from '../../../interfaces/treatment.model';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAlert, NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { Booking } from '../../../interfaces/booking.model';
 import { Company } from '../../../interfaces/company.model';
 
 @Component({
   selector: 'app-booking-form',
   standalone: true,
-  imports: [ReactiveFormsModule, NgbDatepickerModule, RouterLink],
+  imports: [ReactiveFormsModule, NgbDatepickerModule, RouterLink, NgbAlert],
   templateUrl: './booking-form.component.html',
   styleUrl: './booking-form.component.css'
 })
@@ -80,11 +80,14 @@ export class BookingFormComponent implements OnInit {
     if(this.isUpdate){
       const urlForUpdate = 'http://localhost:3000/booking' + booking.id;
       this.httpClient.put<Booking>(urlForUpdate, booking)
-      .subscribe(data => this.router.navigate(['/booking']));
+      .subscribe(data => this.showConfirmMessage = true);
     } else {
       const url = 'http://localhost:3000/booking';
       this.httpClient.post<Booking>(url, booking)
-      .subscribe(data => this.router.navigate(['/booking']));
+      .subscribe(data => {
+        this.showConfirmMessage = true;
+        this.booking = booking;
+      });
     }
   };
 

@@ -1,18 +1,18 @@
 <div class="container mt-0 ml-0 text-center">
 
   <div class="row">
-    <h1 class="text-center text-primary-emphasis mt-4 mb-4">Descripción del tratamiento<i class="bi bi-card-checklist"></i></h1>
+    <h1 class="text-center text-emphasis mt-4 mb-4">Descripción del tratamiento   <i class="bi bi-card-checklist"></i></h1>
     <div class="col text-center" style="margin: 5px">
 
       @if (treatment) {
 
-      <div class="card mb-3 text-primary-emphasis">
-        <div class="card-body card mb-0 text-primary-emphasis">
+      <div class="card mb-3 text-emphasis">
+        <div class="card-body card mb-0 text-emphasis border-warning border-1 shadow">
           <div class="container-fluid mt-0">
             <div class="row">
-              <div class="col-4 text-center col-md-4 col-sm-12 text-center">
+              <div class="col-4 text-center col-md-4 col-sm-12 ">
                 @if (treatment.image) {
-                  <img class="img-fluid" [src]="'http://localhost:3000/uploads/' + treatment.image" alt="Random first slide" />
+                  <img class="img-fluid mt-2" [src]="'http://localhost:3000/uploads/' + treatment.image" alt="Random first slide" />
 
                   <!--
                 <ngb-carousel>
@@ -42,10 +42,10 @@
                   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-4">
                     <div class="col d-flex align-items-start">
                       <i
-                        class="bi bi-clipboard-check-fill text-info flex-shrink-0 me-3 fs-2"
+                        class="bi bi-clipboard-check-fill text_detail flex-shrink-0 me-3 fs-2"
                       ></i>
                       <div>
-                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
+                        <h3 class="fw-bold mb-0 fs-4">
                           Descripción
                         </h3>
                         <p>{{ treatment.descriptionLong }}</p>
@@ -53,10 +53,10 @@
                     </div>
                     <div class="col d-flex align-items-start">
                       <i
-                        class="bi bi-clipboard2-heart-fill text-info flex-shrink-0 me-3 fs-2"
+                        class="bi bi-clipboard2-heart-fill text_detail flex-shrink-0 me-3 fs-2"
                       ></i>
                       <div>
-                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
+                        <h3 class="fw-bold mb-0 fs-4 text-emphasis">
                           Cuidados posteriores
                         </h3>
                         <p>{{ treatment.afterCare }}</p>
@@ -64,10 +64,10 @@
                     </div>
                     <div class="col d-flex align-items-start">
                       <i
-                        class="bi bi-hourglass-split text-info flex-shrink-0 me-3 fs-2"
+                        class="bi bi-hourglass-split text_detail flex-shrink-0 me-3 fs-2"
                       ></i>
                       <div>
-                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
+                        <h3 class="fw-bold mb-0 fs-4 text-emphasis">
                           Duración
                         </h3>
                         <p>{{ treatment.durationInMin }} minutos</p>
@@ -75,10 +75,10 @@
                     </div>
                     <div class="col d-flex align-items-start">
                       <i
-                        class="bi bi-currency-euro text-info flex-shrink-0 me-3 fs-2"
+                        class="bi bi-currency-euro text_detail flex-shrink-0 me-3 fs-2"
                       ></i>
                       <div>
-                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
+                        <h3 class="fw-bold mb-0 fs-4 text-emphasis">
                           Precio
                         </h3>
                         <p>{{ treatment.price }}€</p>
@@ -86,10 +86,10 @@
                     </div>
                     <div class="col d-flex align-items-start">
                       <i
-                        class="bi bi-building-fill-exclamation text-info flex-shrink-0 me-3 fs-2"
+                        class="bi bi-building-fill-exclamation text_detail flex-shrink-0 me-3 fs-2"
                       ></i>
                       <div>
-                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
+                        <h3 class="fw-bold mb-0 fs-4 text-emphasis">
                           Centro de belleza
                         </h3>
                         <p>{{ treatment.company?.name }}</p>
@@ -97,10 +97,10 @@
                     </div>
                     <div class="col d-flex align-items-start">
                       <i
-                        class="bi bi-tag-fill text-info flex-shrink-0 me-3 fs-2"
+                        class="bi bi-tag-fill text_detail flex-shrink-0 me-3 fs-2"
                       ></i>
                       <div>
-                        <h3 class="fw-bold mb-0 fs-4 text-primary-emphasis">
+                        <h3 class="fw-bold mb-0 fs-4 text-emphasis">
                           Categorias
                         </h3>
                         @for (category of categories; track category.id) {
@@ -137,11 +137,11 @@
                 } @else {
                 <img class="bd-placeholder-img" src="https://placehold.co/100">
                 }
-                <div class="col-lg-8">
+                <div class="col-lg-8 ">
                   <h6 class="mb-0">
                     <ngb-rating [(rate)]="comment.rating" [readonly]="true" [max]="5">
                       <ng-template let-fill="fill" let-index="index">
-                        <i class="bi-star{{ fill === 100 ? '-fill' : '' }} fs-3" style="color:#ffb900;"></i>
+                        <i class="bi-star{{ fill === 100 ? '-fill' : '' }} fs-3" style="color:#CCA831;"></i>
                       </ng-template>
                     </ngb-rating>
                     {{comment.rating | date:'dd/MM/yyyy'}}
@@ -160,18 +160,20 @@
           <div class="mb-3">
             <ngb-rating  formControlName="rating" [max]="5">
               <ng-template let-fill="fill" let-index="index">
-                <i class="bi-star{{ fill === 100 ? '-fill' : '' }} fs-3" style="color:#780a99;"></i>
+                <i class="bi-star{{ fill === 100 ? '-fill' : '' }} fs-3" style="color:#CCA831;"></i>
               </ng-template>
             </ngb-rating>
           </div>
 
           <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here"
+            <textarea class="form-control text-emphasis border-warning border-1 shadow" placeholder="Leave a comment here"
             id="opinion" formControlName="opinion" style="min-height:150px;"></textarea>
             <label for="opinion">Comentario de texto</label>
           </div>
+          <div class="text-center mt-2 d-grid gap-2">
+            <button class="btn-outline-info" type="submit">Añadir comentario</button>
+          </div>
 
-          <button class="w-100 btn btn-success btn-lg mb-4" type="submit">Añadir comentario</button>
         </form>
       </div>
   </div>
