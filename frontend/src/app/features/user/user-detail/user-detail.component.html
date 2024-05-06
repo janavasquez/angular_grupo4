@@ -1,32 +1,26 @@
-<div class="container mt-5 card mb-3 bg-success-subtle text-primary-emphasis">
+<div class="container mt-5 card mb-3 bg-white">
   <div class="row">
-    <div class="col-12 col-lg-4 text-center">
+    <div class="col-12 col-lg-3 text-center">
       <div class="px-4 py-5">
+
         @if (user && user.photoUrl && user.photoUrl.length > 0){
-        <img class="img-fluid" [src]="'http://localhost:3000/uploads/' + user.photoUrl" alt="author" />
-
-        <div>
-          <button class="btn btn-danger my-2" (click)="deleteUser(user)">
-            <i class="bi bi-trash"></i> Borrar
-          </button>
-        </div>
-
+        <img class="img-fluid rounded" [src]="'http://localhost:3000/uploads/' + user.photoUrl" alt="author" />
         } @else {
-        <img class="img-fluid" src="https://ui-avatars.com/api/?name=A&size=256" />
+        <img class="img-fluid" src="/assets/img_home/logo_bastbeauty.png" />
         }
       </div>
     </div>
-    <div class="col-12 col-lg-8">
+
+    <div class="col-12 col-lg-9">
       @if(user){
       <div class="container px-4 py-5" id="icon-grid">
-        <h2 class="pb-2 border-bottom text-center fw-bold">Usuario Nº {{ user.id }}</h2>
-
+        <h2 class="pb-2 border-bottom text-center">Usuario Nº {{ user.id }}</h2>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
           <div class="col d-flex align-items-start">
-            <i class="bi bi-person text-info flex-shrink-0 me-3 fs-2"></i>
+            <i class="bi bi-person text_detail flex-shrink-0 me-2 fs-3"></i>
 
             <div>
-              <h3 class="mb-0 fs-4 text-body-emphasis">
+              <h3 class="mb-0 fs-5 text-body-emphasis">
                 Nombre completo
               </h3>
               <p>{{ user.fullName }}</p>
@@ -34,48 +28,54 @@
           </div>
 
           <div class="col d-flex align-items-start">
-            <i class="bi bi-envelope text-info flex-shrink-0 me-3 fs-2"></i>
+            <i class="bi bi-envelope text_detail flex-shrink-0 me-2 fs-3"></i>
             <div>
-              <h3 class="mb-0 fs-4 text-body-emphasis">
+              <h3 class="mb-0 fs-5 text-body-emphasis">
                 Correo electrónico
               </h3>
               <p>{{ user.email }}</p>
             </div>
           </div>
           <div class="col d-flex align-items-start">
-            <i class="bi bi-calendar-check text-info flex-shrink-0 me-3 fs-2"></i>
+            <i class="bi bi-calendar-check text_detail flex-shrink-0 me-2 fs-3"></i>
             <div>
-              <h3 class="mb-0 fs-4 text-body-emphasis">
+              <h3 class="mb-0 fs-5 text-body-emphasis">
                 Fecha de Nacimiento
               </h3>
               <p>{{ user.birthDate }}</p>
             </div>
           </div>
           <div class="col d-flex align-items-start">
-            <i class="bi bi-buildings text-info flex-shrink-0 me-3 fs-2"></i>
+            <i class="bi bi-buildings text_detail flex-shrink-0 me-2 fs-3"></i>
             <div>
-              <h3 class="mb-0 fs-4 text-body-emphasis">Ciudad</h3>
+              <h3 class="mb-0 fs-5 text-body-emphasis">Ciudad</h3>
               <p>{{ user.city }}</p>
             </div>
           </div>
           <div class="col d-flex align-items-start">
-            <i class="bi bi-house text-info flex-shrink-0 me-3 fs-2"></i>
+            <i class="bi bi-house text_detail flex-shrink-0 me-2 fs-3"></i>
             <div>
-              <h3 class="mb-0 fs-4 text-body-emphasis">Dirección</h3>
+              <h3 class="mb-0 fs-5 text-body-emphasis">Dirección</h3>
               <p>{{ user.street }}</p>
             </div>
           </div>
           <div class="col d-flex align-items-start">
-            <i class="bi bi-geo-alt text-info flex-shrink-0 me-3 fs-2"></i>
+            <i class="bi bi-geo-alt text_detail flex-shrink-0 me-2 fs-3"></i>
             <div>
-              <h3 class="mb-0 fs-4 text-body-emphasis">
+              <h3 class="mb-0 fs-5 text-body-emphasis">
                 Código postal
               </h3>
               <p>{{ user.postalCode }}</p>
             </div>
           </div>
-
+          <div>
+          </div>
         </div>
+      </div>
+      <div class="mb-5 text-center">
+        <button class="btn btn_deleted my-2" (click)="deleteUser(user)">
+          <i class="bi bi-trash"></i> Eliminar usuario
+        </button>
       </div>
 
       } @else {

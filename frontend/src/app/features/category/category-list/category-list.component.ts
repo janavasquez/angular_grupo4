@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Category } from '../../../interfaces/category.model';
 import { RouterLink, RouterOutlet, ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { AuthenticationService } from '../../../authentication/services/authentication.service';
 
 @Component({
   selector: 'app-category-list',
@@ -14,9 +15,16 @@ import { DatePipe } from '@angular/common';
 export class CategoryListComponent  implements OnInit{
 
   categories: Category[] = [];
+  isAdmin = false;
 
-   constructor(private http: HttpClient,
-    private activetedRoute: ActivatedRoute) {}
+   constructor(
+    private http: HttpClient,
+    private activetedRoute: ActivatedRoute,
+    private authService: AuthenticationService ) {
+      this.authService.isAdmin.subscribe(isAdmin => this.isAdmin = isAdmin);
+    }
+
+
 
   ngOnInit(): void {
     this.http.get<Category[]>('http://localhost:3000/category')

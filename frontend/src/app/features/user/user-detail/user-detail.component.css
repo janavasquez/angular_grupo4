@@ -1,0 +1,16 @@
+.text_detail {
+    color: #CCA831;
+}
+.card {
+    border-color: #CCA831;
+}
+.btn_deleted {
+    color: #000000; /* Cambia #FF0000 por tu color personalizado */
+    border-radius: 30px;
+    background-color: #CCA831;
+  }
+  .btn_deleted:hover {
+    color: #FF0000;/* Cambia el color del texto al pasar el ratón por encima, por ejemplo, a blanco */
+    border-color: red;
+    background-color: #000000; /* Color de fondo al pasar el ratón por encima */
+  }
