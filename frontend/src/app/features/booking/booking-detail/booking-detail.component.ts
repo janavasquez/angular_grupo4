@@ -55,6 +55,9 @@ export class BookingDetailComponent  implements OnInit{
     .subscribe(bookingFromBackend => this.booking = bookingFromBackend);
   }
   delete(booking: Booking) {
+    const remove = confirm("¿Esta seguro de cancelar la reserva?");
+    if(!remove || !this.booking)
+      return;
     this.httpClient.delete('http://localhost:3000/booking/' + booking.id)
     .subscribe(response => {
       this.showDeletedMessage = true;

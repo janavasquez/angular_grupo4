@@ -20,7 +20,7 @@ export class BookingFormComponent implements OnInit {
   user: User[] = [];
   treatments: Treatment[] = [];
   companies: Company [] = [];
-  price = 0;
+  price: Treatment[] = [];
 
   bookingForm = new FormGroup({
     id: new FormControl(),
@@ -80,7 +80,8 @@ export class BookingFormComponent implements OnInit {
     if(this.isUpdate){
       const urlForUpdate = 'http://localhost:3000/booking' + booking.id;
       this.httpClient.put<Booking>(urlForUpdate, booking)
-      .subscribe(data => this.showConfirmMessage = true);
+      .subscribe(data =>
+        this.showConfirmMessage = true);
     } else {
       const url = 'http://localhost:3000/booking';
       this.httpClient.post<Booking>(url, booking)

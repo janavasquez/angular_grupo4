@@ -7,57 +7,57 @@
       <form [formGroup]="userForm" (ngSubmit)="save()">
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="fullName" formControlName="fullName"
+          <input type="text" class="form-control border-warning border-1 shadow" id="fullName" formControlName="fullName"
           placeholder="Nombre completo">
-          <label for="fullName">Nombre</label>
+          <label for="fullName">Nombre de usuario</label>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="phone" formControlName="phone"
-          placeholder="654321478">
-          <label for="phone">Teléfono</label>
-        </div>
-
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="birthDate" formControlName="birthDate"
+          <input type="date" class="form-control border-warning border-1 shadow"
+          id="birthDate" formControlName="birthDate"
           placeholder="dd-MM-yy">
           <label for="birthDate">Fecha de cumpleaños</label>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="nif" formControlName="nif"
+          <input type="text" class="form-control border-warning border-1 shadow" id="phone" formControlName="phone"
+          placeholder="654321478">
+          <label for="phone">Teléfono</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control border-warning border-1 shadow" id="nif" formControlName="nif"
           placeholder="123456">
           <label for="nif">NIF</label>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="addressStreet" formControlName="addressStreet"
+          <input type="text" class="form-control border-warning border-1 shadow" id="addressStreet" formControlName="addressStreet"
           placeholder="Calle Falsa 2, 6D">
           <label for="addressStreet">Dirección (calle, portal, piso, puerta)</label>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="city" formControlName="city"
+          <input type="text" class="form-control border-warning border-1 shadow" id="city" formControlName="city"
           placeholder="Madrid">
           <label for="city">Ciudad</label>
         </div>
 
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="postalCode" formControlName="postalCode"
-          placeholder="28017">
-          <label for="postalCode">Fecha de cumpleaños</label>
-        </div>
-
-        <button class="w-100 btn btn-primary btn-lg" type="submit">Guardar</button>
+        <button class="w-100 btn btn-outline-info btn-lg mb-4" type="submit">Guardar cambios</button>
 
       </form>
 
     </div>
     <div class="col-lg-4">
-      <button class="w-100 btn btn-success btn-lg mt-5" type="button"
+      @if(photoPreview && user?.photoUrl) {
+        <h3 class="my-5">Previsualización de foto</h3>
+        <img class="rounded mx-auto d-block" [src]="'http://localhost:3000/uploads/' + user?.photoUrl"
+        style="max-width: 500px;">
+      }
+      <button class="w-100 btn btn-outline-info btn-lg mt-5" type="button"
       routerLink="/account/avatar">
         <i class="bi bi-card-image me-2 fs-3"></i>
-        Cambiar avatar
+        Cambiar foto de perfil
       </button>
 
     </div>
