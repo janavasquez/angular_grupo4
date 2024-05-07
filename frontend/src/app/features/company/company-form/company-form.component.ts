@@ -36,6 +36,7 @@ export class CompanyFormComponent implements OnInit {
      constructor(
       private httpClient: HttpClient,
       private activatedRoute: ActivatedRoute,
+      private router: Router
 
       ) {}
 
@@ -110,6 +111,7 @@ export class CompanyFormComponent implements OnInit {
           this.photoFile = undefined;
           this.photoPreview = undefined;
           this.company = company;
+          this.router.navigate(['/companies']);
         });
 
     } else {
@@ -118,6 +120,8 @@ export class CompanyFormComponent implements OnInit {
           this.photoFile = undefined;
           this.photoPreview = undefined;
           this.company = company;
+          this.router.navigate(['/companies']);
+
         });
 
   }
