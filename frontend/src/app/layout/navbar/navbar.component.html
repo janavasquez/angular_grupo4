@@ -4,7 +4,7 @@
         <img style="max-width:100px;" src="/assets/img_home/logo_bastbeauty.png" alt="logo">
         BASTBEAUTY
       </a>
-   
+
     <button class="navbar-toggler custom-toggler" type="button" aria-controls="navbarContent"
       [attr.aria-expanded]="!collapsed" aria-label="Toggle navigation" (click)="collapsed = !collapsed">
       <span class="navbar-toggler-icon"></span>
@@ -32,7 +32,7 @@
 						@if(isAdmin) {
               <a ngbDropdownItem routerLink="/categories/create" (click)="$event.preventDefault()">Crear categoría</a>
             }
-            
+
 					</div>
 				</li>
 
@@ -60,7 +60,7 @@
             </div>
           </li>
           }
-        
+
 
         <!--<li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
           <a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button"> Reservas </a>
@@ -90,7 +90,7 @@
               {{userEmail}}
             </button>
           </li>
-        }
+        } 
         @if(isLoggedIn) {
           <li class="nav-item">
             <button type="button" class="btn btn_nav2 me-2 mt-1 mb-1" (click)="logout()">

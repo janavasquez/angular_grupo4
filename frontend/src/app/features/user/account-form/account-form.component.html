@@ -49,9 +49,14 @@
 
     </div>
     <div class="col-lg-4">
-      @if(photoPreview && user?.photoUrl) {
+      @if(photoPreview) {
         <h3 class="my-5">Previsualización de foto</h3>
-        <img class="rounded mx-auto d-block" [src]="'http://localhost:3000/uploads/' + user?.photoUrl"
+        <img class="rounded mx-auto d-block" [src]="photoPreview"
+        style="max-width: 500px;">
+      }
+      @if(!photoPreview && user?.photoUrl) {
+        <h3 class="my-5">Previsualización de foto</h3>
+        <img class="rounded mx-auto d-block" [src]="photoPreview"
         style="max-width: 500px;">
       }
       <button class="w-100 btn btn-outline-info btn-lg mt-5" type="button"
