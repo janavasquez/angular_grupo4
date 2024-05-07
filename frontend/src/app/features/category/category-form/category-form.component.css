@@ -1,0 +1,7 @@
+
+.btn-category2{
+  background-color: #CCA831; /* Color de fondo violeta */
+  color: #000000; /* Color del texto blanco */
+  /* Otros estilos según sea necesario */
+  transition: opacity 0.3s ease; /* Transición de opacidad durante 0.3 segundos */
+}
