@@ -7,40 +7,40 @@
       <form [formGroup]="companyForm" (ngSubmit)="save()">
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="id" formControlName="id" readonly>
+          <input type="text" class="form-control border-warning border-1 shadow" id="id" formControlName="id" readonly>
           <label for="id">Id</label>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="name" formControlName="name" placeholder="">
+          <input type="text" class="form-control border-warning border-1 shadow" id="name" formControlName="name" placeholder="">
           <label for="name">Nombre Centro </label>
         </div>
 
         <input type="hidden" formControlName="photoUrl">
 
         <div class="input-group mb-3">
-          <label class="input-group-text" for="photoUrl">Subir foto</label>
-          <input type="file" class="form-control" id="photoUrl" (change)="onFileChange($event)">
+          <label class="input-group-text border-warning border-1 shadow" for="photoUrl">Subir foto</label>
+          <input type="file" class="form-control border-warning border-1 shadow" id="photoUrl" (change)="onFileChange($event)">
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="cif" formControlName="cif" placeholder="Texto largo" rows="4"
+          <input type="text" class="form-control border-warning border-1 shadow" id="cif" formControlName="cif" placeholder="Texto largo" rows="4"
             cols="50">
           <label for="title">Cif</label>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="street" formControlName="street" placeholder="">
+          <input type="text" class="form-control border-warning border-1 shadow" id="street" formControlName="street" placeholder="">
           <label for="title">Dirección</label>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="city" formControlName="city" placeholder="">
+          <input type="text" class="form-control border-warning border-1 shadow" id="city" formControlName="city" placeholder="">
           <label for="title">Ciudad</label>
         </div>
 
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="postalCode" formControlName="postalCode" placeholder="">
+          <input type="text" class="form-control border-warning border-1 shadow" id="postalCode" formControlName="postalCode" placeholder="">
           <label for="title">Código Postal</label>
         </div>
 
@@ -61,7 +61,7 @@
        -->
 
         <div class="d-grid gap-2">
-          <button class="btn btn_company3 mx-5 mb-2 fs-6" type="submit">Enviar</button>
+          <button class="btn btn_company3 mx-5 mb-2 fs-6" type="submit">Guardar</button>
           <button class="btn btn_company3 mx-5 mb-2 fs-6" type="button"
           [routerLink]="['/companies']">Cancelar</button>
 

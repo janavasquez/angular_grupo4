@@ -1,18 +1,16 @@
-<div class="container mt-5 card mb-3 bg-company2">
-    <div class="row">
+<div class="container mt-5 card mb-3 border-warning border-2">
+  <div class="row">
     <div class="col-4 text-center">
 
       <div class="px-4 py-5">
         @if (company && company.photoUrl && company.photoUrl.length > 0){
         <img class="img-fluid" [src]="'http://localhost:3000/uploads/' + company.photoUrl" alt="Foto company">
-
-        <div>
-          <button class="btn btn_company3 my-2" (click)="deleteCompany()">
-            <i class="bi bi-trash"></i> Borrar
-          </button>
-        </div>
-
+        } @else {
+        <img class="img-fluid" src="/assets/img_home/logo_bastbeauty.png" />
         }
+
+
+
       </div>
 
     </div>
@@ -20,67 +18,72 @@
 
       @if(company){
 
-        <div class="container px-4 py-5" id="icon-grid">
-          <h2 class="pb-2 border-bottom text-center">Centro</h2>
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
-            <div class="col d-flex align-items-start">
-              <i class=" bi bi-shop-window me-3 fs-2"></i>
-              <div>
-                <h3 class="mb-0 fs-4 text-body-emphasis">
-                  Empresa
-                </h3>
-                <p>{{ company.name }}</p>
-              </div>
+      <div class="container px-4 py-5" id="icon-grid">
+        <h2 class="pb-2 border-bottom text-center">Centro</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
+          <div class="col d-flex align-items-start">
+            <i class=" bi bi-shop-window me-3 fs-2"></i>
+            <div>
+              <h3 class="mb-0 fs-4 text-body-emphasis">
+                Empresa
+              </h3>
+              <p>{{ company.name }}</p>
             </div>
+          </div>
 
-            <div class="col d-flex align-items-start">
-              <i class="bi bi-pencil-square me-3 fs-2"></i>              <div>
-                <h3 class="mb-0 fs-4 text-body-emphasis">
-                  Cif
-                </h3>
-                <p>{{ company.cif }}</p>
-              </div>
+          <div class="col d-flex align-items-start">
+            <i class="bi bi-pencil-square me-3 fs-2"></i>
+            <div>
+              <h3 class="mb-0 fs-4 text-body-emphasis">
+                Cif
+              </h3>
+              <p>{{ company.cif }}</p>
             </div>
-            <div class="col d-flex align-items-start">
-              <i class= "bi bi-buildings me-3 fs-2"></i>
-              <div>
-                <h3 class="mb-0 fs-4 text-body-emphasis">
-                  Ciudad
-                </h3>
-                <p>{{ company.city }}</p>
-              </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <i class="bi bi-buildings me-3 fs-2"></i>
+            <div>
+              <h3 class="mb-0 fs-4 text-body-emphasis">
+                Ciudad
+              </h3>
+              <p>{{ company.city }}</p>
             </div>
-            <div class="col d-flex align-items-start">
-              <i class= "bi bi-geo-alt me-3 fs-2"></i>
-              <div>
-                <h3 class="mb-0 fs-4 text-body-emphasis">Dirección</h3>
-                <p>{{ company.street }}</p>
-              </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <i class="bi bi-geo-alt me-3 fs-2"></i>
+            <div>
+              <h3 class="mb-0 fs-4 text-body-emphasis">Dirección</h3>
+              <p>{{ company.street }}</p>
             </div>
-            <div class="col d-flex align-items-start">
-              <i class= "bi bi-envelope me-3 fs-2"></i>
+          </div>
+          <div class="col d-flex align-items-start">
+            <i class="bi bi-envelope me-3 fs-2"></i>
 
-              <div>
-                <h3 class="mb-0 fs-4 text-body-emphasis">Código Postal</h3>
-                <p>{{ company.postalCode }}</p>
-              </div>
+            <div>
+              <h3 class="mb-0 fs-4 text-body-emphasis">Código Postal</h3>
+              <p>{{ company.postalCode }}</p>
             </div>
-            <div class="col d-flex align-items-start">
-              <i class="bi bi-check-circle me-3 fs-2"></i>              <div>
-                <h3 class="mb-0 fs-4 text-body-emphasis">
-                  Valoración
-                </h3>
-                <p class="text-center">{{ company.values }}</p>
-              </div>
+          </div>
+          <div class="col d-flex align-items-start">
+            <i class="bi bi-check-circle me-3 fs-2"></i>
+            <div>
+              <h3 class="mb-0 fs-4 text-body-emphasis">
+                Valoración
+              </h3>
+              <p class="text-center">{{ company.values }}</p>
             </div>
-
           </div>
 
         </div>
 
-    } @else {
-    <p>company no encontrada.</p>
-    }
+      </div>
+      <div class="mb-5 text-center">
+        <button class="btn btn_deleted my-2" (click)="deleteCompany(company)">
+          <i class="bi bi-trash"></i> Eliminar centro
+        </button>
+      </div>
+      } @else {
+      <p>company no encontrada.</p>
+      }
+    </div>
   </div>
-</div>
-

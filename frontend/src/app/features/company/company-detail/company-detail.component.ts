@@ -1,7 +1,7 @@
 import { NgClass } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Company } from '../../../interfaces/company.model';
 
 @Component({
@@ -17,7 +17,8 @@ export class CompanyDetailComponent {
 
   // constructor con httpClient
   constructor(private http: HttpClient,
-              private activatedRoute: ActivatedRoute) {}
+              private activatedRoute: ActivatedRoute,
+              private router: Router) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -26,8 +27,17 @@ export class CompanyDetailComponent {
     });
   }
 
-  deleteCompany() {
-
+  deleteCompany(company: Company) {
+    const remove = confirm("Quiere eliminar el usuario");
+    // Si no se quiere borrar o no existe el usuario
+     if (!remove || !this.company)
+        return; // Si no se quiere borrar no continuamos.
+     this.http.delete('http://localhost:3000/company/' + company.id)
+     .subscribe(response => {
+       //this.showDeletedMessage = true;
+       //this.loadUsers();
+       this.router.navigate(['/companies']);
+     });
   }
 
 }

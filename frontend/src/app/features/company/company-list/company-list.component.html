@@ -9,7 +9,7 @@
     <div class="col">
       <!--<div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
           [style.background-image]="'url(http://localhost:3000/uploads/' + user.photoUrl + ')'"> -->
-      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+      <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg border-warning border-2"
         [ngStyle]="{'background-image': company.photoUrl ? 'url(http://localhost:3000/uploads/' + company.photoUrl + ')' : 'url(/assets/img_home/logo_bastbeauty.png)'}">
 
         <div class="d-flex flex-column h-100 p-5 pb-3 text_company2_list">
@@ -21,11 +21,11 @@
 
             </div>
             <li class="me-auto">
-              <button class="btn btn_company2 btn-sm fs-6 me-2" [routerLink]="['/users', company.id, 'detail']">
+              <button class="btn btn_company2 btn-sm fs-6 me-2" [routerLink]="['/companies', company.id, 'detail']">
                 Ver
               </button>
 
-              <button class="btn btn_company2 btn-sm fs-6" [routerLink]="['/users', company.id, 'update']">
+              <button class="btn btn_company2 btn-sm fs-6" [routerLink]="['/companies', company.id, 'update']">
                 Editar
               </button>
 
