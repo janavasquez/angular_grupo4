@@ -3,9 +3,15 @@
     color: black;
 }
 .btn_nav2 {
-  background-color:white;
-  color: black;
-  border-color: #CCA831;
+  color: #CCA831; /* Cambia #FF0000 por tu color personalizado */
+  border-color: #CCA831; /* Usa el mismo color para el borde */
+  border-radius: 30px;
+  background-color: #000000;
+}
+.btn_nav2:hover {
+  color: #000000;/* Cambia el color del texto al pasar el ratón por encima, por ejemplo, a blanco */
+  border-color: #000000;
+  background-color: #CCA831; /* Color de fondo al pasar el ratón por encima */
 }
 .container-fluid {
   background-color: black;

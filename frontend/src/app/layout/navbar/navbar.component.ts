@@ -15,6 +15,7 @@ export class NavbarComponent {
   collapsed = true;
   isLoggedIn = false;
   userEmail: string | undefined;
+  userName: string | undefined;
   isAdmin = false;
   activeLink: string = '';
   setActive(link: string): void {
@@ -30,6 +31,7 @@ export class NavbarComponent {
     this.authService.isLoggedIn.subscribe(isLoggedIn => this.isLoggedIn = isLoggedIn);
     this.authService.userEmail.subscribe(userEmail => this.userEmail = userEmail);
     this.authService.isAdmin.subscribe(isAdmin => this.isAdmin = isAdmin);
+    this.authService.userName.subscribe(userName => this.userName = userName);
   }
 
   logout() {
