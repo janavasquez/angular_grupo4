@@ -28,7 +28,7 @@ export class CompanyDetailComponent {
   }
 
   deleteCompany(company: Company) {
-    const remove = confirm("Quiere eliminar el usuario");
+    const remove = confirm("Quiere eliminar el centro");
     // Si no se quiere borrar o no existe el usuario
      if (!remove || !this.company)
         return; // Si no se quiere borrar no continuamos.
